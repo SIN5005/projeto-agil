@@ -1,14 +1,11 @@
 # SIN5005
 Work Repository for SIN5005 Project
 
-# CodeClimate
 <a href="https://codeclimate.com/github/SIN5005/projeto-agil"><img src="https://codeclimate.com/github/SIN5005/projeto-agil/badges/gpa.svg" /></a>
 
-# Travis CI
-https://travis-ci.org/SIN5005/projeto-agil.svg?branch=master
+<a href="https://travis-ci.org/SIN5005/projeto-agil"><img src="https://travis-ci.org/SIN5005/projeto-agil.svg?branch=master" /></a>
 
-# Heroku
-https://sin5005.herokuapp.com
+<a href="https://sin5005.herokuapp.com"><img src="https://heroku-badge.herokuapp.com/?app=projeto-agil" /></a>
 
 # Pivotal Tracker
 https://www.pivotaltracker.com/n/projects/1791013
