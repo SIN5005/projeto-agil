@@ -9,5 +9,9 @@ Sistema de Organizacao de Financas Pessoais
 #
 *[Pivotal Tracker](https://www.pivotaltracker.com/n/projects/1791013)*
 
-##### *Team:* 
-@ricardocalegaro
+##### *Team:*
+###### Ricardo Calegaro | *@ricardocalegaro*
+###### Herik Lima | *@HerikLyma*
+###### Bruno | *@cryzon*
+###### Fiamma | *@FiammaEva*
+###### Lucas Freire | 
