@@ -5,7 +5,7 @@
 
 
 # Financial App 
-Sistema de Organização de Financas Pessoais
+Sistema de Organização de Finanças Pessoais
 #
 *[Pivotal Tracker](https://www.pivotaltracker.com/n/projects/1791013)*
 
