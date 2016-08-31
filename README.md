@@ -5,13 +5,13 @@
 
 
 # Financial App 
-Sistema de Organizacao de Financas Pessoais
+Sistema de Organização de Financas Pessoais
 #
 *[Pivotal Tracker](https://www.pivotaltracker.com/n/projects/1791013)*
 
 ##### *Team:*
 ###### Ricardo Calegaro | *@ricardocalegaro*
-###### Herik Lima | *@HerikLyma*
+###### Herik Lima | Nº USP: 9885074 | *@HerikLyma*
 ###### Bruno | *@cryzon*
 ###### Fiamma | *@FiammaEva*
 ###### Lucas Freire | 
