@@ -208,6 +208,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   jbuilder (~> 2.5)
+  jdbc-sqlite3
   jquery-rails
   listen (~> 3.0.5)
   puma (~> 3.0)
