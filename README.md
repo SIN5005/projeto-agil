@@ -10,7 +10,7 @@ Sistema de Organização de Finanças Pessoais
 *[Pivotal Tracker](https://www.pivotaltracker.com/n/projects/1791013)*
 
 ##### *Team:*
-###### Ricardo Calegaro | *@ricardocalegaro*
+###### Ricardo Calegaro | Nº USP: 6411782 | *@ricardocalegaro*
 ###### Herik Lima | Nº USP: 9885074 | *@HerikLyma*
 ###### Bruno | *@cryzon*
 ###### Fiamma | *@FiammaEva*
