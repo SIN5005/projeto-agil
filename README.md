@@ -14,4 +14,5 @@ Sistema de Organização de Finanças Pessoais
 ###### Herik Lima | Nº USP: 9885074 | *@HerikLyma*
 ###### Bruno | *@cryzon*
 ###### Fiamma | *@FiammaEva*
-###### Lucas Freire | 
+###### Lucas Freire |
+###### Fabio Andreolli Leivas | Nº USP: 7320813 
