@@ -14,4 +14,4 @@ Sistema de Organização de Finanças Pessoais
 ###### Bruno Casado |  Nº USP: 9869617 | *@cryzon*
 ###### Fiamma | N°USP: 9769755 | *@FiammaEva*
 ###### Lucas Freire Lima |  Nº USP: 9566679 | *@darknerd*
-###### Fabio Andreolli Leivas | Nº USP: 7320813 
+###### Fabio Andreolli Leivas | Nº USP: 7320813 | *@andreolli*
