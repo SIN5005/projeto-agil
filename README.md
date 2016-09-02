@@ -3,7 +3,7 @@
 [![Travis-CI](https://travis-ci.org/SIN5005/projeto-agil.svg?branch=master)](https://travis-ci.org/SIN5005/projeto-agil)
 [![Heroku](https://heroku-badge.herokuapp.com/?app=sin5005)](https://sin5005.herokuapp.com)
 
-# Financial App 
+# Pluto - Financial App 
 Sistema de Organização de Finanças Pessoais
 #
 *[Pivotal Tracker](https://www.pivotaltracker.com/n/projects/1791013)*
