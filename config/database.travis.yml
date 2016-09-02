@@ -1,6 +1,6 @@
-sqlite: &sqlite
-  adapter: sqlite3
-  database: db/<%= ENV['RAILS_ENV'] %>.sqlite3
+#sqlite: &sqlite
+#  adapter: sqlite3
+#  database: db/<%= ENV['RAILS_ENV'] %>.sqlite3
 
 #mysql: &mysql
 #  adapter: mysql2
@@ -8,12 +8,12 @@ sqlite: &sqlite
 #  password:
 #  database: invoicer_<%= ENV['RAILS_ENV'] %>
 
-#postgresql: &postgresql
-#  adapter: postgresql
-#  username: postgres
-#  password:
-#  database: invoicer_<%= ENV['RAILS_ENV'] %>
-#  min_messages: ERROR
+postgresql: &postgresql
+  adapter: postgresql
+  username: postgres
+  password:
+  database: invoicer_<%= ENV['RAILS_ENV'] %>
+  min_messages: ERROR
 
 defaults: &defaults
   pool: 5
