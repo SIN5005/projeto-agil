@@ -2,9 +2,9 @@ language: ruby
 rvm:
   - 2.3.1
 env:
-  - DB=sqlite
+#  - DB=sqlite
 #  - DB=mysql
-#  - DB=postgresql
+  - DB=postgresql
 before_install: cp config/database.travis.yml config/database.yml
 script:
   - export RAILS_ENV=test
