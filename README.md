@@ -11,7 +11,7 @@ Sistema de Organização de Finanças Pessoais
 ##### *Team:*
 ###### Ricardo Calegaro | Nº USP: 6411782 | *@ricardocalegaro*
 ###### Herik Lima | Nº USP: 9885074 | *@HerikLyma*
-###### Bruno | *@cryzon*
+###### Bruno Casado |  Nº USP: 9869617 | *@cryzon*
 ###### Fiamma | N°USP: 9769755 | *@FiammaEva*
-###### Lucas Freire |
+###### Lucas Freire Lima |  Nº USP: 9566679 | *@darknerd*
 ###### Fabio Andreolli Leivas | Nº USP: 7320813 
