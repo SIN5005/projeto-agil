@@ -41,7 +41,7 @@ group :development, :test do
   gem "rspec-rails"
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
-  gem "sqlite3", :platform => [:ruby, :mswin, :mingw]
+  #gem "sqlite3", :platform => [:ruby, :mswin, :mingw]
   gem "jdbc-sqlite3", :platform => :jruby
 end
 
