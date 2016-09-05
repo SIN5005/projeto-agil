@@ -6,7 +6,7 @@
 # Pluto - Financial App 
 Sistema de Organização de Finanças Pessoais
 #
-*[Pivotal Tracker](https://www.pivotaltracker.com/n/projects/1791013)*
+*[Pivotal Tracker](https://www.pivotaltracker.com/n/projects/1860247)*
 
 ##### *Team:*
 ###### Ricardo Calegaro | Nº USP: 6411782 | *@ricardocalegaro*
