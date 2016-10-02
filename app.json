@@ -1,0 +1,9 @@
+{
+  "name": "Pluto",
+  "description": "Pluto Financial App",
+  "repository": "https://github.com/SIN5005/projeto-agil",
+  "logo": "https://pluto-finapp.herokuapp.com/assets/clippluto22-0e7f41ec8313afdfffe3678838f808b2582d69d3e0363f1d4587e48fe8778cdf.gif",
+  "keywords": ["node", "express", "static"]
+}
+
+
