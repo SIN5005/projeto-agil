@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'login/', to: 'login#index'
+  post 'login/login', to: 'login#login'
+
   resources :users
   resources :categories
   root 'welcome#index'

@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161002182659) do
+ActiveRecord::Schema.define(version: 20161004151903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pgcrypto"
 
   create_table "categories", force: :cascade do |t|
     t.string   "title"
@@ -21,12 +22,21 @@ ActiveRecord::Schema.define(version: 20161002182659) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "logins", force: :cascade do |t|
+    t.boolean  "success"
+    t.integer  "users_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["users_id"], name: "index_logins_on_users_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "locked",     default: false
   end
 
 end

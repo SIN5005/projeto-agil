@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+#nav-bar{
+    margin-bottom: 1.5%;
+}
+
+#flash-alert, #flash-notice{
+    text-align: center;
+    font-size: 140%;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 1.5%;
+    margin-right: 0;
+    margin-top: 0;
+    padding: 0.5%;
+}

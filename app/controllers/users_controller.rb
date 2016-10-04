@@ -24,13 +24,20 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    query = <<-SQL
+       INSERT INTO USERS (
+           NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT)
+       VALUES(
+          %s, %s, crypt(%s, gen_salt('md5')), now(), now());
+    SQL
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+    if User.find_by_sql(query % [User.connection.quote(user_params[:name]),User.connection.quote(user_params[:email]), User.connection.quote(user_params[:password])])
+      respond_to do |format|
+        format.html { redirect_to action: "index", notice: "User was successfully created." }
         format.json { render :show, status: :created, location: @user }
-      else
+      end
+    else
+      respond_to do |format|
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end

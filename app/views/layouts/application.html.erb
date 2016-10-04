@@ -10,7 +10,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-static-top navbar-inverse">
+<nav id="nav-bar" class="navbar navbar-default navbar-static-top navbar-inverse">
   <div class="container">
     <ul class="nav navbar-nav">
       <li class="active">
@@ -26,11 +26,20 @@
           </ul>
       </li>
       <li>
-        <a href="/"><span class="glyphicon glyphicon-user"></span> Login</a>
+        <a id="login" href="/login"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Entrar</a>
+      </li>
+      <li>
+	<a href="/login/login"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Cadastrar</a>
       </li>      
     </ul>
   </div>
 </nav>
+<% if notice %>
+<div id="flash-notice" class="alert alert-success"><%= notice %></div>
+<% end %>
+<% if alert %>
+<div id="flash-alert" class="alert alert-danger"><%= alert %></div>
+<% end %>
 <%= yield %>
 </body>
 </html>
