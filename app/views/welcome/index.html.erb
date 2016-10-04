@@ -1,10 +1,31 @@
-<div class="jumbotron text-center">
-  <div class="container">
-    <a href="/" class="lang-logo" ="logo">
-      <img src="<%= asset_path('clippluto22.gif') %>">
-    </a>
-    <p></p>
-    <p></p>
-    <h2>Coming Soon...</h2>
-  </div>
-</div>
+<html>
+ 
+    <head>
+      <title>index</title>
+    </head>
+
+    <body>
+      
+      <h1 style="text-align:center;"><b>PLUTO - Financial App</b></h1>
+      <h5 style="text-align:center;"><b>Sistema de Organização de Finanças Pessoais</b></h5>
+      
+      <center><p style="font-size: 12px; width: 650px; margin-top: 0px"; align="center">
+        O PLUTO - Financial App é um sistema de organização de finanças pessoais  
+        desenvolvido especialmente para quem almeja um controle financeiro.<br>Essa ferramenta vai te ajudar 
+        a cuidar do seu dinheiro pessoal com funções para programar as contas a pagar, planejar gastos futuros, 
+        oferece também relatórios de despesas, orçamentos e outras funções mais.<br>Saiba exatamente o saldo 
+        de todas as suas contas, o que entrou e saiu, e o que está programado para os próximos dias, semanas e meses.
+      </p></center>
+      
+      <div class="jumbotron text-center">
+        <div class="container">
+          <a href="/" class="lang-logo" ="logo">
+            <img src="<%= asset_path('clippluto22.gif') %>">
+          </a>
+          <p> <%=link_to "Login", "/login"%> </p>
+          <p> <%=link_to "Cadastro", "/cadastro"%> </p>
+        </div>
+      </div>
+      
+    </body>
+</html>
