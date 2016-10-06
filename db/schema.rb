@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161004151903) do
+ActiveRecord::Schema.define(version: 20161006000827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "pgcrypto"
 
   create_table "categories", force: :cascade do |t|
     t.string   "title"
@@ -30,6 +29,18 @@ ActiveRecord::Schema.define(version: 20161004151903) do
     t.index ["users_id"], name: "index_logins_on_users_id", using: :btree
   end
 
+  create_table "transactions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.float    "value"
+    t.date     "transaction_date"
+    t.string   "transaction_type", limit: 1
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["category_id"], name: "index_transactions_on_category_id", using: :btree
+    t.index ["user_id"], name: "index_transactions_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -39,4 +50,6 @@ ActiveRecord::Schema.define(version: 20161004151903) do
     t.boolean  "locked",     default: false
   end
 
+  add_foreign_key "transactions", "categories"
+  add_foreign_key "transactions", "users"
 end

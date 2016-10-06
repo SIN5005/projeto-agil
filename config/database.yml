@@ -6,10 +6,12 @@
 #
 default: &default
   adapter: postgresql
-  encode: unicode
+#  encoding: unicode
   pool: 5
-  timeout: 5000
-  template: template0
+  username: postgres
+#  password: SIN5005
+  host: localhost
+  port: 5432
 
 development:
   <<: *default
