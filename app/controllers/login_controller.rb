@@ -17,7 +17,6 @@ class LoginController < ApplicationController
         EMAIL = %s
     SQL
     
-    @users_id = nil
     @success = false
     result = User.find_by_sql(query % [User.connection.quote(@passwd), User.connection.quote(@email)])
     unless result.empty?
@@ -28,21 +27,36 @@ class LoginController < ApplicationController
         elsif r.id && r.match
           @success = true
         end
-        @users_id = r.id
-        login_params = { users_id: r.id, success: @success}
-        Login.new(login_params).save
+        if register_session(id=r.id)
+          login_params = { users_id: r.id, success: @success}
+          Login.new(login_params).save
+        else
+          @success = false
+          flash[:alert] = "Erro ao registrar sessão"
+        end
       end
     else
       flash[:alert] = "Usuário não cadastrado."
     end
     if @success
-      flash[:notice] = "Logar usuário."
       redirect_to action: index
       return
     else
       redirect_to action: index
       return
     end
+  end
+
+  def register_session(id=nil)
+    @status = false
+    if id.present?
+      user = User.find(id=id)
+      if user.present?
+        session[:user] = User.find(id=id)
+        @status = true
+      end
+    end
+    return @status
   end
 
   def count_attempts(users_id, format=:int)
