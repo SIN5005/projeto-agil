@@ -1,0 +1,14 @@
+<div id="login-credenciais" class="panel panel-primary">
+  <div class="panel-heading">Esqueci minha senha</div>
+  <%= form_tag(controller: "login", action: "forgot", method: "post") do %>
+  <div class="panel-body">
+    <div>Para gerar uma nova senha você deve informar o e-mail cadastrado no campo abaixo. Você irá receber um e-mail contendo os próximos passos.</div><br><br>
+    <div class="form-group">
+      <input type="text" name="email" placeholder="E-mail cadastrado" class="form-control">
+    </div>
+    <div id="login-botoes" class="btn-group btn-group-lg" role="group">
+      <input type="submit" class="btn btn-default" value="Confirmar">
+    </div>
+    <% end %>
+  </div>
+</div>

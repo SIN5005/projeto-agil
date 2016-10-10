@@ -12,7 +12,7 @@ class UsersController < ApplicationController
        INSERT INTO USERS (
            NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT)
        VALUES(
-          %s, %s, crypt(%s, gen_salt('md5')), now(), now());
+          %s, %s, crypt(%s, gen_salt('bf')), now(), now());
     SQL
 
     userParameters = params[:user]
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       respond_to do |format|
         if User.find_by_sql(query % [User.connection.quote(user_params[:name]),User.connection.quote(user_params[:email]), User.connection.quote(user_params[:password])])
           #'Salvo com sucesso.'          
-          format.html { redirect_to @user, notice: 'Salvo com sucesso' }
+          format.html { render :show, notice: 'Salvo com sucesso' }
           format.json { render :show, status: :created, location: @user }
         else
           format.html { render :new }
