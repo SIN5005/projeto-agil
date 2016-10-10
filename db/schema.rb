@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 20161009234624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pgcrypto"
 
   create_table "accounts", force: :cascade do |t|
     t.string   "name"
@@ -38,6 +39,15 @@ ActiveRecord::Schema.define(version: 20161009234624) do
     t.index ["users_id"], name: "index_logins_on_users_id", using: :btree
   end
 
+  create_table "recover_passwords", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "token"
+    t.boolean  "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_recover_passwords_on_user_id", using: :btree
+  end
+
   create_table "transactions", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "category_id"
@@ -50,15 +60,6 @@ ActiveRecord::Schema.define(version: 20161009234624) do
     t.index ["user_id"], name: "index_transactions_on_user_id", using: :btree
   end
 
-  create_table "recover_passwords", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "token"
-    t.boolean  "active"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_recover_passwords_on_user_id", using: :btree
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -69,8 +70,7 @@ ActiveRecord::Schema.define(version: 20161009234624) do
   end
 
   add_foreign_key "accounts", "users"
+  add_foreign_key "recover_passwords", "users"
   add_foreign_key "transactions", "categories"
   add_foreign_key "transactions", "users"
-  add_foreign_key "recover_passwords", "users"
-
 end
