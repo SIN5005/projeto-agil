@@ -21,19 +21,18 @@ class LoginController < ApplicationController
     result = User.find_by_sql(query % [User.connection.quote(@passwd), User.connection.quote(@email)])
     unless result.empty?
       result.each do |r|
-        count_attempts(r.id)
         if r.id && (!r.match)
           flash[:alert] = "Combinação de e-mail e senha inválida."
         elsif r.id && r.match
-          @success = true
+          if register_session(id=r.id)
+            @success = true
+          else
+            flash[:alert] = "Erro ao registrar sessão"
+          end
         end
-        if register_session(id=r.id)
-          login_params = { users_id: r.id, success: @success}
-          Login.new(login_params).save
-        else
-          @success = false
-          flash[:alert] = "Erro ao registrar sessão"
-        end
+        login_params = { users_id: r.id, success: @success}
+        Login.new(login_params).save
+        login_guard(r.id)
       end
     else
       flash[:alert] = "Usuário não cadastrado."
@@ -141,13 +140,18 @@ class LoginController < ApplicationController
     return @status
   end
 
-  def count_attempts(users_id, format=:int)
-    @logins = Login.where(users_id: users_id, success: false, created_at: (Time.now - 5.minutes)..Time.now).count
-    print "\n\n!!!"
-    print @logins
-    print "\n\n"
-    if @logins > 4
+  def login_guard(users_id)
+    @wait_time = 10.minutes
+    @logins = Login.where(users_id: users_id, success: false, created_at: (Time.now - @wait_time)..Time.now).count
+    if @logins > 3
       User.update(locked: true)
+      reset_session
+      flash[:alert] = "Sua conta foi temporariamente bloqueada por excesso de tentativas. Tente novamente mais tarde."
+    else
+      @user = User.find(users_id)
+      if @user.locked
+        User.update(locked: false)
+      end
     end
   end
 end
