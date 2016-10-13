@@ -7,7 +7,8 @@
     <tr>
       <th>Usuário</th>
       <th>Tipo</th>
-      <th>Categoria</th>
+      <th>Conta</th>
+      <th>Categoria</th>      
       <th>Valor</th>
       <th>Data</th>      
       <th colspan="3"></th>
@@ -19,7 +20,8 @@
       <tr>
         <td><%= transaction.user.name %></td>
         <td><%= transaction.transaction_type %></td>
-        <td><%= transaction.category.title %></td>
+        <td><%= transaction.account.name %></td>
+        <td><%= transaction.category.title %></td>        
         <td><%= transaction.value %></td>
         <td><%= transaction.transaction_date %></td>        
         <td><%= link_to 'Show', transaction %></td>

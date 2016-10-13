@@ -13,16 +13,14 @@ class TransactionsController < ApplicationController
   end
 
   # GET /transactions/new
-  def new    
+  def new
     @transaction = Transaction.new
-    @users = User.all
-    @categories = Category.all    
+    configure
   end
 
   # GET /transactions/1/edit
   def edit
-    @users = User.all
-    @categories = Category.all    
+    configure
   end
 
   # POST /transactions
@@ -73,6 +71,12 @@ class TransactionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def transaction_params
-      params.require(:transaction).permit(:user_id, :category_id, :value, :transaction_date, :transaction_type)
+      params.require(:transaction).permit(:user_id, :category_id, :account_id, :transaction_type, :value, :transaction_date)
+    end
+
+    def configure
+      @users = User.all
+      @accounts = Account.all
+      @categories = Category.all
     end
 end

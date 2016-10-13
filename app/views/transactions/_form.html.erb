@@ -24,6 +24,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :conta %>
+    <%= f.collection_select :account_id, @accounts, :id, :name, include_blank: false %>
+  </div>
+
+  <div class="field">
     <%= f.label :categoria %>
     <%= f.collection_select :category_id, @categories, :id, :title, include_blank: false %>
   </div>

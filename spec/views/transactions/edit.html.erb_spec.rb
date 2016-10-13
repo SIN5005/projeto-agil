@@ -5,8 +5,9 @@ RSpec.describe "transactions/edit", type: :view do
     @transaction = assign(:transaction, Transaction.create!(
       :user => nil,
       :category => nil,
-      :value => 1.5,
-      :transaction_type => "MyString"
+      :account => nil,
+      :transaction_type => "MyString",
+      :value => 1.5
     ))
   end
 
@@ -19,9 +20,11 @@ RSpec.describe "transactions/edit", type: :view do
 
       assert_select "input#transaction_category_id[name=?]", "transaction[category_id]"
 
-      assert_select "input#transaction_value[name=?]", "transaction[value]"
+      assert_select "input#transaction_account_id[name=?]", "transaction[account_id]"
 
       assert_select "input#transaction_transaction_type[name=?]", "transaction[transaction_type]"
+
+      assert_select "input#transaction_value[name=?]", "transaction[value]"
     end
   end
 end

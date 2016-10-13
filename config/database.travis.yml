@@ -11,7 +11,7 @@
 postgresql: &postgresql
   adapter: postgresql
   username: postgres
-  password:
+#  password: SIN5005
   database: invoicer_<%= ENV['RAILS_ENV'] %>
   min_messages: ERROR
 
