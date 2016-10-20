@@ -1,7 +1,0 @@
-<%= form_tag(controller: "login", action: "recover", method: "update") do %>
-<input type="hidden" name="token" value="<%= token %>">
-<div class="form-group">
-  <input type="text" name="password" placeholder="Nova senha" class="form-control">
-  <input type="text" name="password2" placeholder="Repita a senha" class="form-control">
-</div>
-<% end %>
