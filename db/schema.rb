@@ -10,69 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013173251) do
+ActiveRecord::Schema.define(version: 20161020014841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "accounts", force: :cascade do |t|
-    t.string   "name"
-    t.float    "balance"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
-    t.index ["user_id"], name: "index_accounts_on_user_id", using: :btree
-  end
-
-  create_table "categories", force: :cascade do |t|
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "logins", force: :cascade do |t|
-    t.boolean  "success"
-    t.integer  "users_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_logins_on_users_id", using: :btree
-  end
-
-  create_table "recover_passwords", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "token"
-    t.boolean  "active"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_recover_passwords_on_user_id", using: :btree
-  end
-
-  create_table "transactions", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "category_id"
-    t.integer  "account_id"
-    t.string   "transaction_type", limit: 1
-    t.float    "value"
-    t.date     "transaction_date"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.index ["account_id"], name: "index_transactions_on_account_id", using: :btree
-    t.index ["category_id"], name: "index_transactions_on_category_id", using: :btree
-    t.index ["user_id"], name: "index_transactions_on_user_id", using: :btree
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.boolean  "locked",     default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "accounts", "users"
-  add_foreign_key "recover_passwords", "users"
-  add_foreign_key "transactions", "accounts"
-  add_foreign_key "transactions", "categories"
-  add_foreign_key "transactions", "users"
 end
