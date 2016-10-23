@@ -10,7 +10,7 @@ gem 'selenium-webdriver'
 gem 'watir-webdriver'
 gem 'capybara', '~> 2.7', '>= 2.7.1'
 gem 'factory_girl_rspec'
-
+gem 'factory_girl_rails'
 gem 'codeclimate-test-reporter', group: :test, require: nil
 gem 'rails-controller-testing'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

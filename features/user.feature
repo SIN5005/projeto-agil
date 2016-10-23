@@ -10,3 +10,13 @@ Feature: User page
 	When click Cadastro
 
 	Then Users page shoud appears
+
+	
+
+	Scenario: Create a account
+
+	Given I am on the Cadastro page
+
+	When I fill name, email, password and password confirmation and click on create user
+
+	Then save with shoud appears
