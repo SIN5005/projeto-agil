@@ -17291,3 +17291,39 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/users" for 127.0.0.1 at 2016-10-23 18:19:00 -0200
+  
+SyntaxError (/home/herik/projeto-agil/app/controllers/users_controller.rb:43: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/users_controller.rb:43: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /home/herik/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/herik/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/herik/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /home/herik/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/herik/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/herik/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/herik/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/herik/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.1ms)
+Started GET "/users" for 127.0.0.1 at 2016-10-23 18:23:28 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (5.7ms)
+  Rendered users/index.html.erb (7.9ms)
+Completed 200 OK in 41ms (Views: 12.1ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-23 18:23:31 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eJthcc/YhmFB3BBmZy1ovSqOKUSpvoS09eHf0SXBcVLsZXkVCUbYaxnUYB2X4njWChJMP93o5ksjQoQi3cVzgw==", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/users
+Completed 302 Found in 18ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-23 18:23:31 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (3.5ms)
+  Rendered users/index.html.erb (5.2ms)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
