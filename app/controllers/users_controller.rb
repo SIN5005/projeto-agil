@@ -5,8 +5,11 @@ class UsersController < ApplicationController
     end  
 
     def create
-        @user = User.new  	
-        userParameters = params[:user]
+        userParameters  = params[:user]
+        @user           = User.new 	        
+        @user.name      = userParameters[:name]
+        @user.email     = userParameters[:email]
+        @user.password  = userParameters[:password ]
 
         if userParameters[:name].empty?
             flash[:notice] = "O campo nome deve ser preenchido."
@@ -20,25 +23,17 @@ class UsersController < ApplicationController
         elsif userParameters[:password_confirmation] != userParameters[:password]
             flash[:notice] = "Senha e confirmação não conferem."
             redirect_to index
-        elsif userParameters[:password_confirmation] == userParameters[:password]
-            query = "SELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER(%s);"               
-            usersList = User.find_by_sql(query % [User.connection.quote(userParameters[:email])])
-
-            if not usersList.empty?
-                flash[:notice] = "E-mail já cadastrado."
+        elsif @user.email_already_registered
+            flash[:notice] = "E-mail já cadastrado."
+            redirect_to index
+        elsif 
+            if @user.save
+                flash[:notice] = "Salvo com sucesso."
                 redirect_to index
             else
-                query = "INSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES(%s, %s, md5(%s), now(), now());"
-                if User.find_by_sql(query % [User.connection.quote(userParameters[:name]),
-                                             User.connection.quote(userParameters[:email]), 
-                                             User.connection.quote(userParameters[:password])])
-                    flash[:notice] = "Salvo com sucesso."
-                    redirect_to index
-                else
-                    flash[:notice] = "Erro ao salvar."
-                    redirect_to index
-                end
+                flash[:notice] = "Erro ao salvar."
+                redirect_to index
             end
         end  
-    end
+    end    
 end
