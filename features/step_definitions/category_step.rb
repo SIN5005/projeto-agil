@@ -1,7 +1,3 @@
-Given(/^I am logged in Pluto$/) do
-  visit(root_path)
-end
-
 When(/^I click on Categoria$/) do
   click_on('Categorias')
 end

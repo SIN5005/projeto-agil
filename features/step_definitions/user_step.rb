@@ -7,9 +7,8 @@ When(/^click Cadastro$/) do
 end
 
 Then(/^Users page shoud appears$/) do
-	expect(page).to have_current_path(users_path+'/')
+	expect(page).to have_current_path(users_path)
 end
-
 
 Given(/^I am on the Cadastro page$/) do
 	visit(users_path)
@@ -25,5 +24,5 @@ When(/^I fill name, email, password and password confirmation and click on creat
 end
 
 Then(/^save with shoud appears$/) do
-	expect(page).to have_content('Dalvo com sucesso.')
+	expect(page).to have_content('Salvo com sucesso.')
 end
