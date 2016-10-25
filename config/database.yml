@@ -11,7 +11,7 @@ default: &default
   pool: 5
   template: template0
 #  host: localhost
-  username: postgres
+#  username: postgres
 #  password: SIN5005
 
 development:

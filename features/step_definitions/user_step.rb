@@ -25,5 +25,5 @@ When(/^I fill name, email, password and password confirmation and click on creat
 end
 
 Then(/^save with shoud appears$/) do
-	expect(page).to have_content('Salvo com sucesso.')
+	expect(page).to have_content('Dalvo com sucesso.')
 end
