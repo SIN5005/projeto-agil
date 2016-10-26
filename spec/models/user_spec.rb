@@ -28,8 +28,6 @@ RSpec.describe User, type: :model do
           it "E-mail existe" do
                result = @user.save
 
-               expect(result[0]).to be_truthy
-               expect(result[1]).to include("Salvo com sucesso.")
                expect(@user.email_already_registered).to be_truthy
           end
           it "E-mail não existe" do               
@@ -41,9 +39,6 @@ RSpec.describe User, type: :model do
      context "Login" do
           it "Login com sucesso" do
                result = @user.save
-
-               expect(result[0]).to be_truthy
-               expect(result[1]).to include("Salvo com sucesso.")
 
                expect(@user.login).to be_truthy
           end
