@@ -2,7 +2,7 @@ require 'watir-webdriver'
 
 browser = nil
 
-Given(/^I am on the Pluto homepage$/) do  
+Given(/^I am on the Pluto homepage$/) do  	
 	browser = Watir::Browser.new :firefox
 	browser.goto('http://localhost:3000')
 end
@@ -37,3 +37,5 @@ Then(/^save with shoud appears$/) do
 	sleep(5)
 	browser.close
 end
+
+

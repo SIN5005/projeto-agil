@@ -15,7 +15,7 @@ describe UsersController do
   describe "POST #create" do 
     it "shoud return O campo nome deve ser preenchido." do
       post :create, user: {name: ''}
-      expect( subject.request.flash[:notice] ).to include("O campo nome deve ser preenchido.")      
+      expect( subject.request.flash[:notice] ).to include("O campo nome deve ser preenchido.")
     end
 
     it "shoud return O campo e-mail é obrigatório." do
