@@ -40,12 +40,13 @@ RSpec.describe User, type: :model do
           it "Login com sucesso" do
                result = @user.save
 
-               expect(@user.login).to be_truthy
+               expect(@user.login[0]).to be_truthy               
           end
           it "Login falha" do                        
                @user.email    = "Herik@lima.com"
                @user.password = "123456"
-               expect(@user.login).to be_falsey
+               expect(@user.login[0]).to be_falsey
+               expect(@user.login[1]).to eq(-1)
           end
      end
 end

@@ -8,8 +8,7 @@ Given(/^I am on the Pluto homepage$/) do
 end
 
 When(/^click Cadastro$/) do  
-	browser.link(:text => "Cadastro").when_present.click
-	browser.windows.last.use
+	browser.link(:text => "Cadastro").when_present.click	
 end
 
 Then(/^Users page shoud appears$/) do

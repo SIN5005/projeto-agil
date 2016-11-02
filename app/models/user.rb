@@ -27,7 +27,11 @@ class User < ApplicationRecord
 
     def login
         query = "SELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER(%s) AND PASSWORD = MD5(%s);"
-        not User.find_by_sql(query % [User.connection.quote(email),
-                                      User.connection.quote(password)]).empty?
+        @list = User.find_by_sql(query % [User.connection.quote(email), User.connection.quote(password)])
+        if @list.empty?
+            [false, -1]
+        else
+            [true, @list[0].id]
+        end
     end
 end
