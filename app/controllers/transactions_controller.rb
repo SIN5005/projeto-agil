@@ -1,5 +1,5 @@
 class TransactionsController < ApplicationController
   def new
-    @accounts = Account.all
+    @acc_list = Account.all.order(:name).collect{|p| [p.name, p.id]}
   end
 end
