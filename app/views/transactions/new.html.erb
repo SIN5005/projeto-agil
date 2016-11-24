@@ -1,0 +1,8 @@
+<h1>Cadastro de Transação</h1>
+<%= form_tag("/transactions", method: "post") do %>
+  <%= label_tag(:account, "Conta: ") %>
+  <%= select_tag(:account_id) %>
+  <%= label_tag(:amount, "Quantia: ") %>
+  <%= text_field_tag(:name) %>
+  <%= submit_tag("Incluir") %>
+<% end %>
