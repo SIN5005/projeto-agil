@@ -17,9 +17,11 @@ ActiveRecord::Schema.define(version: 20161129004544) do
 
   create_table "accounts", force: :cascade do |t|
     t.string   "name"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal  "balance"
+    t.index ["user_id"], name: "index_accounts_on_user_id", using: :btree
   end
 
   create_table "transactions", force: :cascade do |t|
