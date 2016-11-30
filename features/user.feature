@@ -19,4 +19,4 @@ Feature: User page
 
 	When I fill name, email, password and password confirmation and click on create user
 
-	Then save with shoud appears
+	Then save with success shoud appears

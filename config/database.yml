@@ -9,10 +9,10 @@ default: &default
   encode: unicode
   timeout: 5000
   pool: 5
-  template: template0
+#  template: template0
 #  host: localhost
 #  username: postgres
-# password: SIN5005
+#  password: SIN5005
 
 development:
   <<: *default

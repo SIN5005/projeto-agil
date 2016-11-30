@@ -1,32 +1,32 @@
-Feature: Account page
-	In order to manage the accounts
-	As an explicit system actor
-	I want to see the account page
+#Feature: Account page
+#	In order to manage the accounts
+#	As an explicit system actor
+#	I want to see the account page
 
-	Scenario: See Account page
+#	Scenario: See Account page
 
-	Given I am loged in Pluto Homepage
+#	Given I am loged in Pluto Homepage
 
-	When click account link
+#	When click account link
 
-	Then account page shoud appears
+#	Then account page shoud appears
 	
 	
 	
-	Scenario: Create an account
+#	Scenario: Create an account
 
-	Given I am on the Account page
+#	Given I am on the Account page
 
-	When I fill name and balance and click on create account
+#	When I fill name and balance and click on create account
 
-	Then save with shoud appears
+#	Then save with shoud appears
 	
 	
 	
-	Scenario: Delete an account
+#	Scenario: Delete an account
 
-	Given I am on the Account page
+#	Given I am on the Account page
 
-	When I fill name click on delete account
+#	When I fill name click on delete account
 
-	Then save with shoud appears
+#	Then save with shoud appears
