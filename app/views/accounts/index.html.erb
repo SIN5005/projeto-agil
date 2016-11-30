@@ -1,5 +1,22 @@
 <html>
     <body>
-        Teste
+        <table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Saldo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% todos = Account.order :name %>
+        <% todos.each do |account| %>
+        <tr>
+            <td><%= account.name %></%></td>
+            <td><%= account.balance %></%></td>
+            <td><a href="/accounts/<%= account.id %>/remove"</a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
     </body>
 </html>

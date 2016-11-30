@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <h1>Cadastro de Contas</h1>
+        
+        <%= form_for Account.new do |f| %>
+            Nome <input type="text" name="account[name]"/>
+            Saldo <input type="number" step="0.01" name="account[balance]"/>
+            <%= f.hidden_field :user_id, :value => session[:user_id] %>
+            
+            <button type="submit">Criar Conta</button>
+        <% end %>
+    </body>
+</html>
