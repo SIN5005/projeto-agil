@@ -10,3 +10,21 @@ Feature: Pluto login
 	When click login link
 
 	Then login page shoud appears
+
+
+	Scenario: Login
+
+	Given I am on the Login pages
+
+	When I fill email with a correct password
+
+	Then I Should be redirected to main page
+
+
+	Scenario: Temporary block
+
+	Given I am on the Login page
+
+	When I fill email with an incorrect password three times
+
+	Then temporary block appears

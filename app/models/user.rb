@@ -8,7 +8,7 @@ class User < ApplicationRecord
         begin
             status = User.find_by_sql(query % [User.connection.quote(name),
                                                User.connection.quote(email), 
-                                               User.connection.quote(password)])          
+                                               User.connection.quote(password)])
         rescue
             status = false
         end
@@ -18,20 +18,65 @@ class User < ApplicationRecord
         else
             [status, "Erro ao salvar."]
         end
-    end    
+    end
+
+    def get_by_email
+        query = "SELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER(%s);"
+        User.find_by_sql(query % [User.connection.quote(email)])
+    end
 
     def email_already_registered
-        query = "SELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER(%s);"               
-        not User.find_by_sql(query % [User.connection.quote(email)]).empty?
+        not get_by_email.empty?
     end
 
     def login
-        query = "SELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER(%s) AND PASSWORD = MD5(%s);"
-        @list = User.find_by_sql(query % [User.connection.quote(email), User.connection.quote(password)])
-        if @list.empty?
-            [false, -1]
+        list = get_by_email
+        usrRetries = User.new;
+        if not list.empty?
+            usrRetries = list[0];
+        end
+        if usrRetries.retries == 3 and usrRetries.release_at > Time.now
+            [false, -2]
         else
-            [true, @list[0].id]
+            query = "SELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER(%s) AND PASSWORD = MD5(%s);"
+            list = User.find_by_sql(query % [User.connection.quote(email), User.connection.quote(password)])
+            if list.empty?
+                ret = 1
+                if usrRetries.retries > 3
+                    ret = -2
+                end
+                puts "retries"
+                puts usrRetries.retries
+
+                query = "UPDATE USERS SET RETRIES = RETRIES + #{ret}, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = %s"
+                User.find_by_sql(query % [User.connection.quote(email)])               
+                [false, -1]
+            else
+                query = "UPDATE USERS SET RETRIES = 0 WHERE EMAIL = %s"
+                User.find_by_sql(query % [User.connection.quote(email)])
+                [true, list[0].id]
+            end
+        end
+    end
+
+    def update
+        query = "UPDATE USERS NAME = %s, EMAIL = %s, PASSWORD = %s, RETRIES = %s, RELEASE_AT = %s, UPDATED_AT = now() WHERE EMAIL = %s"
+
+        begin
+            status = User.find_by_sql(query % [User.connection.quote(name),
+                                               User.connection.quote(email), 
+                                               User.connection.quote(password),
+                                               User.connection.quote(retries),
+                                               User.connection.quote(release_at),
+                                               User.connection.quote(email)])
+        rescue
+            status = false
+        end
+
+        if status            
+            [status, "Salvo com sucesso."]
+        else
+            [status, "Erro ao salvar."]
         end
     end
 end
