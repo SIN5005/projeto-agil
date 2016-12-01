@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 	get 'transactions/new' => 'transactions#new'
 	get 'accounts' => 'accounts#index'
 	get 'accounts/new' => 'accounts#new'
-	post '/accounts' => 'accounts#create'
-	get 'accounts/:id/remove' => 'accounts#destroy'
+	post 'accounts' => 'accounts#create'
+	delete 'accounts/:id' => 'accounts#destroy', as: :account
 end
 
