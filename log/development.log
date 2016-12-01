@@ -24829,3 +24829,1014 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 70ms (Views: 32.0ms | ActiveRecord: 11.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2016-12-01 18:39:10 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (434.9ms)
+Completed 200 OK in 464ms (Views: 454.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 18:39:11 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (3.0ms)
+Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 18:39:41 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.7ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 18:39:42 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X7agjGrPHQVEoWRrc6IMQ3Zx0W8Rqmw738LSGD3EPl95azfK8ii3Din7ZKZEM6j7hs75MKfQXZdTrBlQ/N/VUw==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (6.0ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 92ms (ActiveRecord: 32.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 18:39:43 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (2.2ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 18:39:47 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (2.1ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 18:39:49 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q5+xgdxKAOmky6bPS0rJcHFbYva2a0RcayiNrXrAT1axr72sGA5x5cZyHdNSvczFcrZkz2mWOk51IvVzbfNcyw==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (9.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('12345');[0m
+  [1m[36mUser Load (2.8ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 32ms (ActiveRecord: 14.8ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-01 18:39:49 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (0.8ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-01 18:39:56 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (4.6ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2016-12-01 18:39:57 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (84.4ms)
+  Rendered users/index.html.erb (90.6ms)
+Completed 200 OK in 103ms (Views: 98.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-01 18:40:27 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (8.1ms)
+  Rendered users/index.html.erb (89.2ms)
+Completed 200 OK in 93ms (Views: 91.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-12-01 18:40:29 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RHZ+GCBQTTADN6cDIL7Nbda5gO4XE0WXAGEcDyGp/1Py8niXu6aTpIw0MgdcvErQ6JJvG6uUNo2zXIIvXtsmfw==", "user"=>{"name"=>"Herik Lima", "email"=>"heriklyma271@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma271@hotmail.com');[0m
+  [1m[36mUser Load (6.8ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma271@hotmail.com', md5('1234'), now(), now());[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 15ms (ActiveRecord: 10.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-01 18:40:29 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (11.7ms)
+  Rendered users/index.html.erb (16.6ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-01 18:40:59 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (3.1ms)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-01 18:42:35 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (2.5ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2016-12-01 18:42:35 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (5.4ms)
+  Rendered users/index.html.erb (9.2ms)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-01 18:43:06 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (5.0ms)
+  Rendered users/index.html.erb (21.2ms)
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-12-01 18:43:07 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wrVzW5BnVy7TZObVA3cSSGetatgqV01soi0DXQsVt/SM1biJuQYzvaXrzdw0W9v/a5q/fkrU3hW8u968w38gyg==", "user"=>{"name"=>"Herik Lima", "email"=>"heriklyma2354@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma2354@hotmail.com');[0m
+  [1m[36mUser Load (2.7ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma2354@hotmail.com', md5('1234'), now(), now());[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 19ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-01 18:43:07 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (4.8ms)
+  Rendered users/index.html.erb (6.3ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 18:43:38 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.9ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-01 18:47:26 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (2.7ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2016-12-01 18:47:26 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (20.1ms)
+  Rendered users/index.html.erb (23.2ms)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-01 18:47:57 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (9.6ms)
+  Rendered users/index.html.erb (12.3ms)
+Completed 200 OK in 20ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-12-01 18:47:59 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UC+KYUm+dYKg4CP6JkFWUtrtHqm+lwKR6oYdeRpiwcGrWzueH08Ni6JSe+qKSSHSCOFAF15XbgjxgDP5xLOTRA==", "user"=>{"name"=>"Herik Lima", "email"=>"heriklyma7092@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma7092@hotmail.com');[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma7092@hotmail.com', md5('1234'), now(), now());[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 21ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-01 18:47:59 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (13.4ms)
+  Rendered users/index.html.erb (14.8ms)
+Completed 200 OK in 22ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 18:48:29 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.8ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 18:48:30 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1IT/rTn8AozBmHt+npp40y7m/piBn+74lIKI+n4I8UCG/k5+z8iB8JMtJyDymJQk2Wg4IoENgTascdFOpfMDGQ==", "email"=>"heriklyma7092@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma7092@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma7092@hotmail.com');[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma7092@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (2.2ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma7092@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 15ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-01 18:48:30 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (1.5ms)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password" for 127.0.0.1 at 2016-12-01 18:48:32 -0200
+Processing by UsersController#password as HTML
+  Rendering users/password.html.erb
+  Rendered users/password.html.erb (2.1ms)
+Completed 200 OK in 14ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-01 18:49:41 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (6.8ms)
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2016-12-01 18:49:42 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (5.2ms)
+  Rendered users/index.html.erb (7.5ms)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-01 18:50:12 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (10.0ms)
+  Rendered users/index.html.erb (11.8ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-12-01 18:50:14 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KrUgNgBtM6B6uNQ24SiBNBZXP2ETtWjyn14I/JK79BpjI2DhMz0wIgNqiS7baNTe0bOY6ppVpkqEQU61/zuGSA==", "user"=>{"name"=>"Herik Lima", "email"=>"heriklyma497@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma497@hotmail.com');[0m
+  [1m[36mUser Load (2.1ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma497@hotmail.com', md5('1234'), now(), now());[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 19ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-01 18:50:14 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (11.0ms)
+  Rendered users/index.html.erb (14.7ms)
+Completed 200 OK in 26ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 18:50:45 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (2.6ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 18:50:46 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dMd3OM8ggaqiQZm2uo73O34ISWIXSwcQQ0PD4jtvscjTmxYQV+cD9kjbRIzAa+VzLyMyhlN2tBaeawPzbYLD1w==", "email"=>"heriklyma497@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma497@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma497@hotmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma497@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (4.2ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma497@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 11ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-01 18:50:46 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (1.0ms)
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password" for 127.0.0.1 at 2016-12-01 18:50:48 -0200
+Processing by UsersController#password as HTML
+  Rendering users/password.html.erb
+  Rendered users/password.html.erb (1.5ms)
+Completed 200 OK in 20ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-01 18:51:35 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (3.3ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 18:51:36 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (2.4ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 18:52:06 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (2.2ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 18:52:07 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KOE6SINHK9EG7ToSzivll4We5ot4GBgYvg91Ln5VMCzXUQxoeWudR7eREAAjKpblujmHTvot3yM99Q+0eItlIA==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (2.8ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 20ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 18:52:07 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (2.4ms)
+Completed 200 OK in 13ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 18:52:13 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (2.0ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 18:52:14 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z81ACqOg5Kig0dS2p6SaoV/dKdtEkSwo1xX16OalOD79oTpj/ge8fTYvaZHTK3if00FIVDdUUPZGoaSKNJOIoA==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('12345');[0m
+  [1m[36mUser Load (2.8ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 22ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-01 18:52:14 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (0.8ms)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-01 18:52:21 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (4.1ms)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2016-12-01 18:52:22 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (8.0ms)
+  Rendered users/index.html.erb (10.3ms)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-01 18:52:52 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (4.9ms)
+  Rendered users/index.html.erb (6.7ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-12-01 18:52:54 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/ezJlwpTXcgMEgU92w8xh3EMDwnU2sqxUz0cS0eijt6j0MH4RZH6OnsBYdFwUbAWTt4xBPsIe6wKTRz6Tt97CA==", "user"=>{"name"=>"Herik Lima", "email"=>"heriklyma60@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma60@hotmail.com');[0m
+  [1m[36mUser Load (7.8ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma60@hotmail.com', md5('1234'), now(), now());[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 15ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-01 18:52:54 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (8.6ms)
+  Rendered users/index.html.erb (11.3ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 18:53:25 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (10.0ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 18:53:26 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o5UQYPkCwmxiYw8fX0OvNJdMoSJY+OE6zvzpYXbJzo8xLSvsvCofkhGy4v4gzm5bDh/WJ3exDZNB8GaYzWTWvw==", "email"=>"heriklyma60@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma60@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma60@hotmail.com');[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma60@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (2.4ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma60@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 18ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-01 18:53:26 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (0.9ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password" for 127.0.0.1 at 2016-12-01 18:53:28 -0200
+Processing by UsersController#password as HTML
+  Rendering users/password.html.erb
+  Rendered users/password.html.erb (1.5ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-01 18:53:58 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (2.7ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-01 18:56:27 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (2.4ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 18:56:27 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (2.3ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 18:56:58 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.9ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 18:56:59 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pBzpslNDjGkBOqUu1EU+4HSwjrhly9wTDwyUJRvKhviS3+aj8u0y7bYUNVf/4TuDCBCjkTHOrmAUC7DgUkMSdA==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (20.6ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 28ms (ActiveRecord: 22.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 18:56:59 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (2.1ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 18:57:04 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.5ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 18:57:06 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t8NSdeQDOYRcapRV0PnPFri9YhirQKFSjBsXNy6NzqmZbRqdFeXJYUrjcIOfHImPW/ZE3DsdcUuNRPvHLLS4CQ==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('12345');[0m
+  [1m[36mUser Load (2.1ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 9ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-01 18:57:06 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (0.8ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-01 18:58:50 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (2.3ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 18:58:52 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (3.2ms)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 18:58:58 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pnxoB8h0vSIfPocdbzKKQ3lw+NWRjGHeEIfHKPtCWI0Ji7cP0ERA4/GOTIK8LGVKlP09LTDB/GSE64gpumIqwA==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('12345');[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 9ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-01 18:58:58 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (5.6ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 18:59:07 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pnxoB8h0vSIfPocdbzKKQ3lw+NWRjGHeEIfHKPtCWI0Ji7cP0ERA4/GOTIK8LGVKlP09LTDB/GSE64gpumIqwA==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (5.0ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 14ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 18:59:07 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.6ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 18:59:14 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"joXaPtgXd0KjLlu4MRotvgr0hSgdW5mtA4DYeDw1pushcgU2wCeKg02ekCfiBMK353lA0LwWBBeX7Jd5fRXUpg==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('12345');[0m
+  [1m[36mUser Load (3.3ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 14ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-01 18:59:14 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (0.9ms)
+Completed 200 OK in 8ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password" for 127.0.0.1 at 2016-12-01 18:59:16 -0200
+Processing by UsersController#password as HTML
+  Rendering users/password.html.erb
+  Rendered users/password.html.erb (1.8ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/password?method=post" for 127.0.0.1 at 2016-12-01 18:59:21 -0200
+Processing by UsersController#change_password as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bSeEW9gqBxoD4UdI2It56YgLyZ+B6AsOq6okDn53Cy3C0FtTwBr62+1RjNcLlZbgZYYMZyCllrQ/xmsPP1d5YA==", "newpass"=>"1234", "confirmation"=>"1234", "alterar"=>"Alterar", "method"=>"post"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[33mUPDATE USERS SET PASSWORD = md5('1234'), UPDATED_AT = now() WHERE ID = 1[0m
+Redirected to http://localhost:3000/password
+Completed 302 Found in 9ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/password" for 127.0.0.1 at 2016-12-01 18:59:21 -0200
+Processing by UsersController#password as HTML
+  Rendering users/password.html.erb
+  Rendered users/password.html.erb (2.8ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-01 18:59:43 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (2.1ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 18:59:44 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (2.5ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:00:14 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.8ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 19:00:15 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WhSOhhYl5MFIeSreLzkO8Pni6oN/KIYoJOmAK2a9Z9aYpUAQ1noKscYpshI+FUNr4egc9MPfk+HYGJyMfAIm7w==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (14.7ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 21ms (ActiveRecord: 16.7ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-01 19:00:15 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (9.9ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:00:46 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.4ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 19:00:47 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QIJFTniBn5itPrW3Ld1FpYEuym0RCZ3bBSDLlKzwXI0A12XVLB9YEht9Bf2PEVrK/DS3eBjxKch89EP2nFH1Dg==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('12345');[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 22ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:00:47 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (4.5ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 19:00:50 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GYNIzJJEkR6CL1rC2+MrKpfPSuASq1EIzAuO+nHLmPNZ1mhXxtpWlDRs6oh5LzRF6tU39RtT5Ru13waYQWoxcA==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (12.1ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('12345');[0m
+  [1m[36mUser Load (2.1ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 26ms (ActiveRecord: 15.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:00:50 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.5ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 19:00:53 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ehwzBELQQTMWl8ypdR96NLsIHh3aMYxv6PdslcQRwnU6SROfFk6GuaDUfOPX02VbxhJjCNPJOHyRI+T39LBr9g==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('12345');[0m
+  [1m[36mUser Load (7.1ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 13ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:00:53 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.4ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 19:00:56 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WIYiT4hcw46frub4I0IA9F6jIOkcDUWSo1nCJfcCKfEY0wLU3MIEBCntVrKBjh+bI7ld/BX18YHajUpHx6OAcg==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:00:56 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.3ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-01 19:01:41 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (4.5ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:01:42 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.6ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:02:12 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.3ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 19:02:13 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3E76MgDEaTUTJffy3rC+yophBf0ybN0bh+4KNzka4fnmmllM/2dtnimULqJ3tcaOazoMhZrafYqfMZems+lnVw==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 7ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:02:13 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.3ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:02:18 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.3ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 19:02:20 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DGu3FM378HyyaWaXEXbxFKRrhflbWG6KyfWQiDHMvLdNVGFdMr6VyC2L0q3QJIUs52ZJ1KSTiiTGbNrn7wjwaA==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:02:20 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.4ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 19:02:22 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XqlDhx683Mq0mMiZmXF39xVump0UH+RlsORftOPon0oflpXO4fm5fit6fKNYIwPPVmNWsOvUAMu/fRXbPSzTlQ==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:02:23 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.5ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 19:02:26 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"krKlwSkymsr8Wt3xk0eJKi9t1REhKPtNHI66F15B5WnTjXOI1nf/fmO4actSFf0SbGAZPN7jH+MTF/B4gIWptg==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:02:26 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.3ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 19:02:29 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2KUeFKgToI6tbXRyLApdG0bpjF3Tl08pxNavipfOW2OZmshdV1bFOjKPwEjtWCkjBeRAcCxcq4fLT+XlSQoXvA==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 11ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:02:29 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.4ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-01 19:03:01 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (2.1ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2016-12-01 19:03:01 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (3.5ms)
+  Rendered users/index.html.erb (5.0ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-01 19:03:32 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (6.0ms)
+  Rendered users/index.html.erb (9.1ms)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-12-01 19:03:33 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vtHZetJqChgyRGDWr53ybKqAtEmNDVF0IcIiW3mchvI9U5vPSNYkv+ha7z9HcFd+K+3QMM6S6WgOHXZtwy5Z3Q==", "user"=>{"name"=>"Herik Lima", "email"=>"heriklyma6407@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma6407@hotmail.com');[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma6407@hotmail.com', md5('1234'), now(), now());[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 6ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-01 19:03:33 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (8.9ms)
+  Rendered users/index.html.erb (12.1ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:04:04 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.4ms)
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 19:04:05 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YiGjhFWrEB+MSLreaVSnEv4RR+PvbHuPo0IHRWksY1EInGJiCZp1skaxIUbdm3toLJ7U1rL70wtscmiUdXRERg==", "email"=>"heriklyma6407@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma6407@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma6407@hotmail.com');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma6407@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma6407@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 8ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-01 19:04:05 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (0.8ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password" for 127.0.0.1 at 2016-12-01 19:04:07 -0200
+Processing by UsersController#password as HTML
+  Rendering users/password.html.erb
+  Rendered users/password.html.erb (1.4ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-01 19:04:37 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (2.1ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-01 19:06:38 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (2.2ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:06:39 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.4ms)
+Completed 200 OK in 11ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:07:10 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (2.7ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 19:07:11 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vfyBbBVnmgGMseR6PST689SnkTNxsAOyzuCYFiiN3vcoM9QspHsgArkSvrq68hldaZSlWqa5UW4Ofe0OT8tkuQ==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:07:11 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.4ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:07:16 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.3ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 19:07:18 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ejb6hbUnfTeknn1Rh6ddv8DGuKFLMLff9QWYwSxWNPeZVIFnT2WmF7ekY4y6itdwEJK54D2StRcuoGI1Lxb9Gg==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:07:18 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.6ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 19:07:21 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dGHlUDNx6zlRPKHJUrhsXnb2dsBUqCvLO329YMzpGeKXA56yyTMwGUIGvxRvleaRpqJ3gSIKKQPg2EeUz6nQDw==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:07:21 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (2.0ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 19:07:24 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"voNHlyuyOP+aV/VXxDx0uMl/Y8rUyVScSQZVQadbcdxd4Tx10fDj34lt64r5Ef53GStii6JrVlSSo6+1pBu4MQ==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:07:24 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.4ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-01 19:07:27 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2AY74HxVd8EF9428bGD9hSm5BJQYVA35sgRTJkJzpGA7ZEAChhes4RbNk2FRTXdK+e0F1W72DzFpoanSQTNtjQ==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-01 19:07:27 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (1.3ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
