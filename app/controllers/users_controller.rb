@@ -5,10 +5,13 @@ class UsersController < ApplicationController
     end  
 
     def password
-      puts session[:user_id]
-      unless session[:user_id]
-        false
-      end    
+        puts "user_id"
+        puts session[:user_id]
+    end
+
+    def logout
+        session[:user_id] = nil
+        redirect_to root_path
     end
 
     def change_password        

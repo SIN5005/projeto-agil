@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 	post 'password' => 'users#change_password'
 	post 'users' => 'users#create'	
 	get 'login' => 'login#index'
+	get 'logout' => 'users#logout'
+	get 'menu' => 'layouts#menu'
 	post 'login' => 'login#login'
 	get 'transactions/new' => 'transactions#new'
 	get 'accounts' => 'accounts#index'
