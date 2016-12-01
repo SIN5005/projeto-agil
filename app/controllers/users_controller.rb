@@ -4,9 +4,34 @@ class UsersController < ApplicationController
         @user = User.new
     end  
 
+    def password
+      puts session[:user_id]
+      unless session[:user_id]
+        false
+      end    
+    end
+
+    def change_password        
+        passwd       = params[:newpass]
+        confirmation = params[:confirmation]
+        if not passwd.eql?(confirmation)
+            flash[:notice] = "A senha esta diferente da confirmação de senha."
+            redirect_to :password
+        elsif passwd.length < 4
+            flash[:notice] = "A senha deve conter 4 caracteres ou mais."
+            redirect_to :password
+        else
+            @user           = User.new
+            @user.id        = session[:user_id]
+            @user.password  = passwd            
+            flash[:notice]  = @user.update_password[1]
+            redirect_to :password
+        end        
+    end
+
     def create
         userParameters  = params[:user]
-        @user           = User.new          
+        @user           = User.new
         @user.name      = userParameters[:name]
         @user.email     = userParameters[:email]
         @user.password  = userParameters[:password]
@@ -30,5 +55,5 @@ class UsersController < ApplicationController
             flash[:notice] = @user.save[1]
             redirect_to index
         end  
-    end    
+    end 
 end

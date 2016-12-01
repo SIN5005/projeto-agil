@@ -59,21 +59,17 @@ class User < ApplicationRecord
         end
     end
 
-    def update
-        query = "UPDATE USERS NAME = %s, EMAIL = %s, PASSWORD = %s, RETRIES = %s, RELEASE_AT = %s, UPDATED_AT = now() WHERE EMAIL = %s"
+    def update_password
+        query = "UPDATE USERS SET PASSWORD = md5(%s), UPDATED_AT = now() WHERE ID = %d"
 
         begin
-            status = User.find_by_sql(query % [User.connection.quote(name),
-                                               User.connection.quote(email), 
-                                               User.connection.quote(password),
-                                               User.connection.quote(retries),
-                                               User.connection.quote(release_at),
-                                               User.connection.quote(email)])
+            status = User.find_by_sql(query % [User.connection.quote(password),
+                                               User.connection.quote(id)])
         rescue
             status = false
         end
 
-        if status            
+        if status
             [status, "Salvo com sucesso."]
         else
             [status, "Erro ao salvar."]

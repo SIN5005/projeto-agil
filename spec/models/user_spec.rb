@@ -50,13 +50,29 @@ RSpec.describe User, type: :model do
           end
      end
 
+
+     context "Alterar Senha" do
+          it "Salvo com sucesso" do
+               result = @user.save
+               @user.id = 1
+               @user.password = "abcde"
+               expect(@user.update_password[0]).to be_truthy
+          end
+          it "Erro ao salvar." do
+               usr = User.new
+               usr.id = nil
+               usr.password = nil 
+               expect(@user.update_password[0]).to be_falsey
+          end          
+     end     
+
      context "Bloqueio" do
           it "Conta bloqueada" do
                result         = @user.save               
                @user.password = "xyz";
 
                for i in 1..3
-                    expect(@user.login[1]).to eq(-1)                    
+                    expect(@user.login[1]).to eq(-1)
                end
 
                expect(@user.login[1]).to eq(-2)

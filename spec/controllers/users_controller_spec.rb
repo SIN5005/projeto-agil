@@ -43,4 +43,12 @@ describe UsersController do
             puts subject.request.flash[:notice]
         end
     end
+
+    describe "GET #password" do
+        it "renders the :password view" do
+            get :password            
+            expect(response.body).to include("Confirmação")
+            expect(response.body).to include("Nova Senha");            
+        end
+    end    
 end

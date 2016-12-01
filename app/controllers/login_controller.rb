@@ -28,7 +28,7 @@ class LoginController < ApplicationController
             else
                 session[:user_id] = result[1]
                 flash[:notice] = "Sucesso."
-                redirect_to root_path
+                redirect_to :home
             end
         end    
     end
