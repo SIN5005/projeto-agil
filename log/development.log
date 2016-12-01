@@ -20361,3 +20361,698 @@ Processing by AccountsController#index as HTML
 Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:02:33 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (2.0ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:02:36 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (1.9ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:03:01 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (1.7ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:03:20 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (1.6ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/accounts/%7B" for 201.68.131.227 at 2016-12-01 00:03:24 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/accounts/%7B"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered collection of /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [11 times] (4.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.9ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (41.4ms)
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:09:14 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (10.4ms)
+Completed 200 OK in 18ms (Views: 9.6ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:09:17 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (56.6ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `account_path' for #<#<Class:0x000000068fa538>:0x0000000680b960>
+Did you mean?  accounts_path):
+    12:         <tr>
+    13:             <td><%= account.name %></%></td>
+    14:             <td><%= account.balance %></%></td>
+    15:             <td><%= link_to "Excluir", account, method: :delete %></td>
+    16:         </tr>
+    17:         <% end %>
+    18:     </tbody>
+  
+app/views/accounts/index.html.erb:15:in `block in _app_views_accounts_index_html_erb__1370293613772452271_54551260'
+app/views/accounts/index.html.erb:11:in `_app_views_accounts_index_html_erb__1370293613772452271_54551260'
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.3ms)
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:11:47 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (9.7ms)
+Completed 200 OK in 16ms (Views: 8.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/accounts/2" for 201.68.131.227 at 2016-12-01 00:12:32 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/accounts/2"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered collection of /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [11 times] (3.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (34.7ms)
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:15:22 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (2.5ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/accounts/2" for 201.68.131.227 at 2016-12-01 00:15:26 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/accounts/2"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered collection of /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [11 times] (3.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.3ms)
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:16:00 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (10.0ms)
+Completed 200 OK in 17ms (Views: 9.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/accounts/2" for 201.68.131.227 at 2016-12-01 00:16:02 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/accounts/2"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered collection of /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [11 times] (5.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (38.6ms)
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:19:25 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (3.0ms)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/accounts/1" for 201.68.131.227 at 2016-12-01 00:19:28 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"A6wnUFy0vMH7llHOZBObWMknfotu5eByNgKBZ1aq8kJNAAY4uOZJ4rYzQnu4YXIswejue6jvHEU1doctrzWhNA==", "id"=>"1"}
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = $1[0m  [["id", 1]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 8ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:19:28 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (3.1ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/accounts/2" for 201.68.131.227 at 2016-12-01 00:20:02 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"weAF0wrP3zJo7PmZKzox9XfX5G7cAXAvWrZmgwTuItyPTCS77p0qESVJ6iz3SNiBfxh0nhoLjBhZwmDJ/XFxqg==", "id"=>"2"}
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = $1[0m  [["id", 2]]
+  [1m[35m (187.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 192ms (ActiveRecord: 188.2ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:20:02 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (1.5ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:21:33 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (1.7ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/accounts/new" for 201.68.131.227 at 2016-12-01 00:21:50 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (1.4ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 201.68.131.227 at 2016-12-01 00:21:59 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KwFpiuXJO8h4RU8FVoB7UeO3p5GtUTITRYMzMSfiGh5lrUjiAZvO6zXgXLCK8pIl63g3YWtbziRG9zV73n1JaA==", "account"=>{"name"=>"Visa", "balance"=>"10", "user_id"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = $1 LIMIT $2[0m  [["name", "Visa"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "created_at", "updated_at", "balance") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Visa"], ["created_at", 2016-12-01 00:21:59 UTC], ["updated_at", 2016-12-01 00:21:59 UTC], ["balance", #<BigDecimal:682cf98,'0.1E2',9(18)>]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 14ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:21:59 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (2.8ms)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 201.68.131.227 at 2016-12-01 00:25:57 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (223.2ms)
+Completed 200 OK in 227ms (Views: 225.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:26:03 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (2.6ms)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/accounts/4" for 201.68.131.227 at 2016-12-01 00:26:05 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wKUQ4xHNUTP7n699jKoDODHFIkl7yrUlHZVVukUl5ZCOCTGL9Z+kELY6vMhQ2OpMOQqyub3ASRIe4VPwvLq25g==", "id"=>"4"}
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = $1[0m  [["id", 4]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 7ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:26:06 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (1.6ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/accounts/new" for 201.68.131.227 at 2016-12-01 00:27:06 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (1.2ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 201.68.131.227 at 2016-12-01 00:27:15 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"14PhD9eSY0ypRDhG9nOov+WWtLlT9PMc0b67CtOYMRWZL8BnM8CWb+ThK/MqAUHL7VkkSZX+DyvSyr1AKgdiYw==", "account"=>{"name"=>"Visa", "balance"=>"10", "user_id"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = $1 LIMIT $2[0m  [["name", "Visa"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "created_at", "updated_at", "balance") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Visa"], ["created_at", 2016-12-01 00:27:15 UTC], ["updated_at", 2016-12-01 00:27:15 UTC], ["balance", #<BigDecimal:7feee8122ff8,'0.1E2',9(18)>]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 7ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:27:15 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  Rendered accounts/index.html.erb (0.8ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/projeto-agil/app/views/accounts/index.html.erb:15: syntax error, unexpected ')'
+... remover?"}, method: :delete, );@output_buffer.safe_append='...
+...                               ^
+/home/ubuntu/workspace/projeto-agil/app/views/accounts/index.html.erb:17: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;         end 
+                     ^
+/home/ubuntu/workspace/projeto-agil/app/views/accounts/index.html.erb:23: syntax error, unexpected keyword_ensure, expecting ')'
+/home/ubuntu/workspace/projeto-agil/app/views/accounts/index.html.erb:25: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/accounts/index.html.erb:15: syntax error, unexpected ')'
+app/views/accounts/index.html.erb:17: syntax error, unexpected keyword_end, expecting ')'
+app/views/accounts/index.html.erb:23: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/accounts/index.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.9ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.8ms)
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:27:28 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  Rendered accounts/index.html.erb (1.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/projeto-agil/app/views/accounts/index.html.erb:15: syntax error, unexpected ')'
+... remover?"}, method: :delete, );@output_buffer.safe_append='...
+...                               ^
+/home/ubuntu/workspace/projeto-agil/app/views/accounts/index.html.erb:17: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;         end 
+                     ^
+/home/ubuntu/workspace/projeto-agil/app/views/accounts/index.html.erb:23: syntax error, unexpected keyword_ensure, expecting ')'
+/home/ubuntu/workspace/projeto-agil/app/views/accounts/index.html.erb:25: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/accounts/index.html.erb:15: syntax error, unexpected ')'
+app/views/accounts/index.html.erb:17: syntax error, unexpected keyword_end, expecting ')'
+app/views/accounts/index.html.erb:23: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/accounts/index.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.6ms)
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:27:49 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (2.5ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:30:12 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (2.3ms)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:30:14 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (2.6ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/accounts/5" for 201.68.131.227 at 2016-12-01 00:30:17 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HvCLsMVPpev/Q5MNtCkIZWo6yhUS4p7erBXfufesGeRQXKrYIR1QyLLmgLhoW+ERYvVa5dToYumvYdnzDjNKkg==", "id"=>"5"}
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = $1[0m  [["id", 5]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 93ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:30:18 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (1.7ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:32:22 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (1.6ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:34:57 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (119.5ms)
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `accounts_new' for #<#<Class:0x00000004e6b5f0>:0x007feef0d360f8>
+Did you mean?  accounts_new_url
+               accounts_new_path
+               accounts_url):
+    17:         <% end %>
+    18:     </tbody>
+    19: </table>
+    20: <%= link_to "Criar nova conta", accounts_new %>
+    21:     </body>
+    22: </html>
+  
+app/views/accounts/index.html.erb:20:in `_app_views_accounts_index_html_erb__1370293613772452271_70332109665640'
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (25.0ms)
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:35:13 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (2.0ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/accounts/new" for 201.68.131.227 at 2016-12-01 00:35:17 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (1.4ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 201.68.131.227 at 2016-12-01 00:35:49 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (1.1ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:42:25 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (2.1ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/accounts/new" for 201.68.131.227 at 2016-12-01 00:42:27 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (1.2ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 201.68.131.227 at 2016-12-01 00:42:31 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mrc5R+zF0GnnXbMd8/N+5ePQF2ei584swVQlXveWmd98GxgvCJclSqr4oKgvgZeR6x+Hl2TtMhvCICMUDgnKqQ==", "account"=>{"name"=>"teste", "balance"=>"0", "user_id"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = $1 LIMIT $2[0m  [["name", "teste"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "created_at", "updated_at", "balance") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "teste"], ["created_at", 2016-12-01 00:42:31 UTC], ["updated_at", 2016-12-01 00:42:31 UTC], ["balance", #<BigDecimal:7feedc2e35b0,'0.0',9(18)>]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 7ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:42:32 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (2.2ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/accounts/6" for 201.68.131.227 at 2016-12-01 00:42:35 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LpmeBeCjEJb1c78Jks4MXGP1mfXYnwmHfGCsGRO2oelgNb9tBPHltbjWrLxOvOUoazoJBR6V9bB/FKpT6inynw==", "id"=>"6"}
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = $1[0m  [["id", 6]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 6ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:42:35 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (1.7ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:47:02 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (4.1ms)
+Completed 200 OK in 155ms (Views: 6.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/accounts/new" for 201.68.131.227 at 2016-12-01 00:47:07 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (11.5ms)
+Completed 200 OK in 14ms (Views: 10.6ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/accounts" for 201.68.131.227 at 2016-12-01 00:47:11 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NYXPcVzcjwdhwJHisK3ByCqT5TL+LAO8B5XDcQbQfuZ7Ke4ZuI56JCxlglds3yi8Ilx1wjgm/4sE4cU7/08tkA==", "account"=>{"name"=>"teste", "balance"=>"1", "user_id"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = $1 LIMIT $2[0m  [["name", "teste"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "created_at", "updated_at", "balance") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "teste"], ["created_at", 2016-12-01 00:47:11 UTC], ["updated_at", 2016-12-01 00:47:11 UTC], ["balance", #<BigDecimal:7feee0261f20,'0.1E1',9(18)>]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 14ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:47:11 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (2.7ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/accounts/7" for 201.68.131.227 at 2016-12-01 00:47:13 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VR0jB2vErpXoPaa6aD4yltFRvIscrUyt7AZrL8rat1wbsQJvj5ZbtqWYtQ+0TNvi2Z4se9qnsJrvcm1lM0XkKg==", "id"=>"7"}
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = $1[0m  [["id", 7]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 192ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/accounts" for 201.68.131.227 at 2016-12-01 00:47:14 +0000
+Cannot render console from 201.68.131.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (1.8ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+

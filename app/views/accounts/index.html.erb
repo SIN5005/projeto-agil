@@ -12,10 +12,11 @@
         <tr>
             <td><%= account.name %></%></td>
             <td><%= account.balance %></%></td>
-            <td><a href="/accounts/<%= account.id %>/remove"</a>Excluir</td>
+            <td><%= button_to "Excluir", account, method: :delete %></td>
         </tr>
         <% end %>
     </tbody>
-</table>
+        </table>
+        <%= link_to "Criar nova conta", :accounts_new %>
     </body>
 </html>
