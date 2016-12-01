@@ -50,5 +50,39 @@ describe UsersController do
             expect(response.body).to include("Confirmação")
             expect(response.body).to include("Nova Senha");            
         end
+    end
+
+    describe "POST #change_password" do 
+        it "shoud return A senha esta diferente da confirmação de senha." do
+            post :change_password, {newpass: '1234', confirmation: '12345'}
+            expect( subject.request.flash[:notice] ).to include("A senha esta diferente da confirmação de senha")
+        end
+    end
+
+    describe "POST #change_password" do 
+        it "shoud return A senha deve conter 4 caracteres ou mais." do
+            post :change_password, {newpass: '123', confirmation: '123'}
+            expect( subject.request.flash[:notice] ).to include("A senha deve conter 4 caracteres ou mais")
+        end
+    end    
+
+    describe "POST #change_password" do 
+        it "shoud return Salvo com sucesso." do
+            user = User.new
+            user.name = "Test"
+            user.password = "1234"
+            user.email = "test@test.com"
+            user.save            
+            @request.session[:user_id] = 1
+            post :change_password, {newpass: '123456', confirmation: '123456'}
+            expect( subject.request.flash[:notice] ).to include("Salvo com sucesso")
+        end
+    end
+
+    describe "POST #change_password" do 
+        it "shoud return Erro ao salvar." do
+            post :change_password, {newpass: '123456', confirmation: '123456'}
+            expect( subject.request.flash[:notice] ).to include("Erro ao salvar")
+        end
     end    
 end
