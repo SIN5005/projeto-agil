@@ -6,7 +6,7 @@ class AccountsController < ApplicationController
     
     def create
         valores = params.require(:account).permit!
-        account = Account.create valores
+        Account.create valores
         redirect_to accounts_url
     end
     
