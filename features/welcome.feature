@@ -10,3 +10,13 @@ Feature: Pluto homepage
 	When type Pluto site link
 
 	Then Pluto homepage shoud appears
+
+
+
+	Scenario: Logout
+
+	Given I am logged into the system
+
+	When I click on logout
+
+	Then Plutos homepage shoud appears

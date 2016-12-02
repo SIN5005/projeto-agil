@@ -22,6 +22,7 @@ Feature: User page
 	Then save with success shoud appears
 
 
+
 	Scenario: Change password error different passwords
 
 	Given I log into the system

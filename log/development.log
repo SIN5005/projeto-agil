@@ -32644,3 +32644,1741 @@ app/controllers/users_controller.rb:22:in `forgot'
   Rendering /home/herik/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /home/herik/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
   Rendered /home/herik/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.1ms)
+Started GET "/" for 127.0.0.1 at 2016-12-02 13:44:03 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/herik/projeto-agil/app/controllers/application_controller.rb:3)
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (371.7ms)
+Completed 200 OK in 397ms (Views: 383.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-02 13:44:04 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (6.7ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 13:44:06 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (20.1ms)
+Completed 200 OK in 33ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 13:44:14 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b7hjEkR8CWzSxABWZrEoLDM81AYPQAHNrq8BqiWiI5YXeOyQ1Im1NSKQ5gymBD8aFe+VI3+iZxGUaannXYL2CQ==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('1234]');[0m
+  [1m[36mUser Load (4.0ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 61ms (ActiveRecord: 13.9ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 13:44:14 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (7.6ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/forgot_password" for 127.0.0.1 at 2016-12-02 13:44:25 -0200
+Processing by UsersController#forgot_password as HTML
+  Rendering users/forgot_password.html.erb
+  Rendered users/forgot_password.html.erb (12.5ms)
+Completed 200 OK in 21ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/forgot?method=post" for 127.0.0.1 at 2016-12-02 13:44:30 -0200
+Processing by UsersController#forgot as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L48F1zOzHN1uSZJLCgRN+CaWBWhv2GU0tnFP6XGNyVpXT4pVo0aghJ4ddBHKsVrOAEVETR86A+iMt+ekCa0cxQ==", "email"=>"heriklyma@hotmail.com", "Enviar"=>"Enviar", "method"=>"post"}
+  [1m[36mUser Load (4.6ms)[0m  [1m[33mUPDATE USERS SET PASSWORD = md5('3163'), UPDATED_AT = now() WHERE ID = -1[0m
+  Rendering password_mailer/sample_email.html.erb within layouts/mailer
+  Rendered password_mailer/sample_email.html.erb within layouts/mailer (1.5ms)
+PasswordMailer#sample_email: processed outbound mail in 338.5ms
+Sent mail to heriklyma@hotmail.com (2683.9ms)
+Date: Fri, 02 Dec 2016 13:44:30 -0200
+From: plutofinancialapp@gmail.com
+To: heriklyma@hotmail.com
+Message-ID: <584196dea3d58_71f42acea53f4b54198c9@herik.mail>
+Subject: =?UTF-8?Q?Recupera=C3=A7=C3=A3o_de_senha_-_Pluto?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Conten=
+t-Type' />
+    </head>
+    <body>
+        <h1>Recupera=C3=A7=C3=A3o de senha</h1>
+        <br><br><br>
+        <p>
+            Sua nova senha =C3=A9: 3163
+        </p>
+    </body>
+</html>=
+
+Redirected to http://localhost:3000/forgot_password
+Completed 302 Found in 3328ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/forgot_password" for 127.0.0.1 at 2016-12-02 13:44:33 -0200
+Processing by UsersController#forgot_password as HTML
+  Rendering users/forgot_password.html.erb
+  Rendered users/forgot_password.html.erb (11.0ms)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 13:44:50 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (8.2ms)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 13:44:57 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kT5bqLGiKJAzIdW+982o9TD1qDkhLjZRrXS9Bga6eMDp/tQqIVeUycN1M+Q3eL/DFibpHFHMUI2XshVLfpqtXw==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('3163');[0m
+  [1m[36mUser Load (2.4ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 9ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 13:44:57 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (4.7ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 13:45:05 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SalWMgwEpWZ2F+oCUc07X7pozFv19J7n85ceGAaITV0xadmwnPEZP4ZDDFiReCxpnLuNfoUW+DvJUbZVfqiYwg==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('3163');[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 14ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 13:45:05 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (5.7ms)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (128.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pluto_development"[0m
+  [1m[35m (111.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pluto_test"[0m
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1967684034406897800);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20161020014841)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "password" character varying NOT NULL, "retries" integer DEFAULT 0, "release_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161020014841"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAccounts (20161120203512)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" serial primary key, "name" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE  INDEX  "index_accounts_on_user_id" ON "accounts"  ("user_id")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161120203512"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTransactions (20161120204226)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" serial primary key, "account_id" integer, "user_id" integer, "amount" float NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE  INDEX  "index_transactions_on_account_id" ON "transactions"  ("account_id")[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_transactions_on_user_id" ON "transactions"  ("user_id")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161120204226"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnBalanceToAccount (20161129004544)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "accounts" ADD "balance" decimal[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161129004544"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategories (20161202111603)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.5ms)[0m  [1m[35mCREATE TABLE "categories" ("id" serial primary key, "description" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b8e2f7adfc"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_categories_on_user_id" ON "categories"  ("user_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161202111603"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (2.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-12-02 15:45:38 UTC], ["updated_at", 2016-12-02 15:45:38 UTC]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(1967684034406897800)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'accounts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'transactions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+Started GET "/" for 127.0.0.1 at 2016-12-02 13:45:51 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/herik/projeto-agil/app/controllers/application_controller.rb:3)
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (485.3ms)
+Completed 200 OK in 514ms (Views: 494.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-02 13:45:52 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (17.0ms)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2016-12-02 13:45:54 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (37.6ms)
+  Rendered users/index.html.erb (39.7ms)
+Completed 200 OK in 98ms (Views: 45.7ms | ActiveRecord: 7.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-12-02 13:46:02 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lakQHUJ2Vl8A1XkVwVu59v1+81qwFIcUmcGl874tJG/xDW/QvxqRj/l/OGrpLCvDvjuE3hrvmxreEnHWWkM9VQ==", "user"=>{"name"=>"Herik Lima", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (3.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('1234'), now(), now());[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 14ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 13:46:02 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (21.3ms)
+  Rendered users/index.html.erb (24.0ms)
+Completed 200 OK in 32ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 13:46:05 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (13.5ms)
+Completed 200 OK in 27ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 13:46:09 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xq2ykTEStFHDqnuKyMYtWoIECgY/UcgEnR0+GcldZYyiCc1czH5zgToAOvXgsb9vwUF9gpWq1Arazuo8LTN8tg==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (3.1ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 14ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-02 13:46:09 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (5.5ms)
+Completed 200 OK in 13ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 13:46:18 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (9.9ms)
+  Rendered categories/index.html.erb (12.2ms)
+Completed 200 OK in 44ms (Views: 15.3ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 13:50:09 -0200
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/herik/projeto-agil/app/controllers/application_controller.rb:3)
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (13.2ms)
+  Rendered categories/index.html.erb (15.3ms)
+Completed 200 OK in 35ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2016-12-02 13:50:22 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KKLeyJuf9KUC3ghdL7YFkBSXQq53U2VDHa/IXHIbBUNMBqEFZvMzdft0SSIHwZelV9I1Kt2oeU1afBx5lnUceQ==", "category"=>{"description"=>"Alimentação"}, "commit"=>"Salvar"}
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id=' for nil:NilClass):
+  
+app/controllers/categories_controller.rb:16:in `create'
+  Rendering /home/herik/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/herik/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/herik/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.8ms)
+  Rendering /home/herik/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/herik/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.3ms)
+  Rendering /home/herik/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/herik/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.1ms)
+  Rendered /home/herik/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.4ms)
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 13:50:38 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (32.8ms)
+  Rendered categories/index.html.erb (37.5ms)
+Completed 200 OK in 47ms (Views: 45.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 13:50:46 -0200
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/herik/projeto-agil/app/controllers/application_controller.rb:3)
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (5.1ms)
+  Rendered categories/index.html.erb (6.7ms)
+Completed 200 OK in 34ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2016-12-02 13:50:49 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6Ptl7hd6oyzR05aVOgVvAuD+0yuKJ+aSw69jvInrw2aMXxoj6hZk/Ch51+oScv03o7ukryDc+pyEfLeZbYXaXA==", "category"=>{"description"=>"Alimentação"}, "commit"=>"Salvar"}
+  [1m[36mCategory Load (2.3ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, CREATED_AT, UPDATED_AT) VALUES('Alimentação', now(), now());[0m
+Redirected to http://localhost:3000/categories
+Completed 302 Found in 13ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 13:50:49 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (4.9ms)
+  Rendered categories/index.html.erb (7.2ms)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 13:53:46 -0200
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/herik/projeto-agil/app/controllers/application_controller.rb:3)
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (4.9ms)
+  Rendered categories/index.html.erb (6.4ms)
+Completed 200 OK in 20ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2016-12-02 13:53:51 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fXsnpJCdoR3dp1jGYuQp+67cFBviORRNkhrFOngnv7cZ31hpbfFmzSQNGblKk7vO7Zljn0jCCEPVyREfnEmmjQ==", "category"=>{"description"=>"Alimentação"}, "commit"=>"Salvar"}
+  [1m[36mCategory Load (1.7ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, CREATED_AT, UPDATED_AT) VALUES('Alimentação', now(), now());[0m
+Redirected to http://localhost:3000/categories
+Completed 302 Found in 5ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 13:53:51 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (6.7ms)
+  Rendered categories/index.html.erb (8.3ms)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 13:55:38 -0200
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/herik/projeto-agil/app/controllers/application_controller.rb:3)
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (7.4ms)
+  Rendered categories/index.html.erb (11.1ms)
+Completed 200 OK in 32ms (Views: 20.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2016-12-02 13:55:42 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wHkww+CRAYVALRg7EC6iL+1NOWbtZU/AXOH/Cuw49FWk3U8OHf3GVbmHWUQ4WTAarghO4keeU84bMisvCFbtbw==", "category"=>{"description"=>"Moradia"}, "commit"=>"Salvar"}
+  [1m[36mCategory Load (1.9ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, CREATED_AT, UPDATED_AT) VALUES('Moradia', now(), now());[0m
+Redirected to http://localhost:3000/categories
+Completed 302 Found in 6ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 13:55:42 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (7.4ms)
+  Rendered categories/index.html.erb (11.4ms)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 13:57:54 -0200
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/herik/projeto-agil/app/controllers/application_controller.rb:3)
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (9.0ms)
+  Rendered categories/index.html.erb (11.7ms)
+Completed 200 OK in 34ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2016-12-02 13:58:05 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gPll1+x0MQYd9slAk5APGLQ4bcYnKzgQ0V+VAbJ+eBbkXRoaERj21uRciD+7550t930aQo3QJB6WjEEkVhBhLA==", "category"=>{"description"=>"Condominio"}, "commit"=>"Salvar"}
+  [1m[36mCategory Load (4.7ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Condominio', 1, now(), now());[0m
+Redirected to http://localhost:3000/categories
+Completed 302 Found in 12ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 13:58:05 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (5.1ms)
+  Rendered categories/index.html.erb (6.7ms)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (5043.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pluto_development"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (121.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pluto_development"[0m
+  [1m[35m (119.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pluto_test"[0m
+  [1m[35m (16.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (14.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1967684034406897800);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20161020014841)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "password" character varying NOT NULL, "retries" integer DEFAULT 0, "release_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161020014841"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAccounts (20161120203512)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" serial primary key, "name" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE  INDEX  "index_accounts_on_user_id" ON "accounts"  ("user_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161120203512"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTransactions (20161120204226)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" serial primary key, "account_id" integer, "user_id" integer, "amount" float NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE  INDEX  "index_transactions_on_account_id" ON "transactions"  ("account_id")[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE  INDEX  "index_transactions_on_user_id" ON "transactions"  ("user_id")[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161120204226"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnBalanceToAccount (20161129004544)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "accounts" ADD "balance" decimal[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161129004544"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategories (20161202111603)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.7ms)[0m  [1m[35mCREATE TABLE "categories" ("id" serial primary key, "description" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b8e2f7adfc"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_categories_on_user_id" ON "categories"  ("user_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161202111603"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-12-02 16:35:36 UTC], ["updated_at", 2016-12-02 16:35:36 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(1967684034406897800)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'accounts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'transactions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 14:36:59 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/herik/projeto-agil/app/controllers/application_controller.rb:3)
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (314.4ms)
+  Rendered categories/index.html.erb (318.1ms)
+Completed 200 OK in 369ms (Views: 325.1ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 14:37:00 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (9.4ms)
+  Rendered categories/index.html.erb (11.7ms)
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 14:37:01 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (7.5ms)
+  Rendered categories/index.html.erb (9.9ms)
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 14:37:02 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (10.8ms)
+  Rendered categories/index.html.erb (26.9ms)
+Completed 200 OK in 39ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 14:37:03 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (15.0ms)
+  Rendered categories/index.html.erb (16.5ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 14:37:05 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (12.5ms)
+  Rendered categories/index.html.erb (15.5ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-02 14:37:07 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (65.5ms)
+Completed 200 OK in 70ms (Views: 68.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-02 14:37:08 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (105.5ms)
+Completed 200 OK in 112ms (Views: 109.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2016-12-02 14:37:09 -0200
+Processing by UsersController#logout as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-02 14:37:09 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (7.8ms)
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 14:37:13 -0200
+Processing by CategoriesController#index as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-02 14:37:13 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (6.7ms)
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2016-12-02 14:37:15 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (20.4ms)
+  Rendered users/index.html.erb (24.5ms)
+Completed 200 OK in 81ms (Views: 32.3ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-12-02 14:37:31 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nz+ApmM7q1IqFPyRjAV+967oyJ3NZP7enIXtbd0UVh37m/9rnldsgtO+ve6kcuzC7a2/GWef4tDbVjlIOXpPJw==", "user"=>{"name"=>"Herik Lima", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (3.4ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('1234'), now(), now());[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 12ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 14:37:31 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (14.0ms)
+  Rendered users/index.html.erb (15.7ms)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 14:37:37 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (15.0ms)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 14:37:45 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V7iKHVJdaBFTFUBEGwKC4n5DJW8UmfyyZb28ZACoWdozHPXQrzGvwaq/ATszdRDXPQZS675i4LwibmhB5MZA4A==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (3.1ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 24ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-02 14:37:45 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (26.9ms)
+Completed 200 OK in 34ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 14:37:47 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (9.7ms)
+  Rendered categories/index.html.erb (14.0ms)
+Completed 200 OK in 25ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2016-12-02 14:38:52 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XOWttWgvwSFevweuhBmb9sHl1XkaNRWSp6vhPeZn/tQ4QdJ4lUMG8acVRtGsbgnDgqCi/bDOCZzgeDUYAgnn7g==", "category"=>{"description"=>"Moradia"}, "commit"=>"Salvar"}
+  [1m[36mCategory Load (6.3ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Moradia', 1, now(), now());[0m
+Redirected to http://localhost:3000/categories
+Completed 302 Found in 18ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 14:38:52 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (8.2ms)
+  Rendered categories/index.html.erb (10.8ms)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 14:41:33 -0200
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/herik/projeto-agil/app/controllers/application_controller.rb:3)
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (10.1ms)
+  Rendered categories/index.html.erb (23.8ms)
+Completed 200 OK in 72ms (Views: 28.0ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 14:41:34 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (8.6ms)
+  Rendered categories/index.html.erb (11.1ms)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 14:41:34 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (9.9ms)
+  Rendered categories/index.html.erb (14.5ms)
+Completed 200 OK in 21ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2016-12-02 14:41:37 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ovy4QHJ13TNbheKHDOsqNJUbkYITmDVHeE39DRi23OxeWMeNjxka46Ivo/gknLgB1l7mBrljKUk/niko/NjF1g==", "category"=>{"description"=>"Alimentação"}, "commit"=>"Salvar"}
+  [1m[36mCategory Load (2.7ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Alimentação', 1, now(), now());[0m
+Redirected to http://localhost:3000/categories
+Completed 302 Found in 8ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 14:41:37 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (9.9ms)
+  Rendered categories/index.html.erb (12.7ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-02 14:43:51 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (13.0ms)
+Completed 200 OK in 24ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2016-12-02 14:43:52 -0200
+Processing by UsersController#logout as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-02 14:43:52 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (22.8ms)
+Completed 200 OK in 30ms (Views: 26.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2016-12-02 14:43:55 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (34.9ms)
+  Rendered users/index.html.erb (43.2ms)
+Completed 200 OK in 105ms (Views: 48.0ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-12-02 14:44:09 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/gGVWBHuBe8gUWURJfHdQIarKp+wv4G2nE5lSEpECSqapeqV7ILCP9n7JG4Nhk91xe5dGxpEnbjbnbFtrioQEA==", "user"=>{"name"=>"Camila", "email"=>"camila_c15@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('camila_c15@hotmail.com');[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Camila', 'camila_c15@hotmail.com', md5('1234'), now(), now());[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 14:44:09 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (17.5ms)
+  Rendered users/index.html.erb (19.1ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 14:44:15 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (5.9ms)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 14:44:33 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L+f1BtEM7DBI7EOBrMEh1IlkvIdu4eP7HAvX75tPhLtLQ4rLLGAr4LFGAv6EtrPhyiHLA8Qa//Vb2APKfyGdgQ==", "email"=>"camila_c15@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('camila_c15@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('camila_c15@hotmail.com');[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('camila_c15@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'camila_c15@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 12ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-02 14:44:33 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (4.9ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 14:44:38 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (13.2ms)
+  Rendered categories/index.html.erb (15.7ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2016-12-02 14:44:50 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vdc1T/+SMU2vGOZBr394oJFTCfcO/N4hFT5CS0GYqjHZc0qCAv72nVaypz6HCOqV0hZ+c6QHwi9S7ZZupfazCw==", "category"=>{"description"=>"Moradia"}, "commit"=>"Salvar"}
+  [1m[36mCategory Load (2.3ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Moradia', 2, now(), now());[0m
+Redirected to http://localhost:3000/categories
+Completed 302 Found in 6ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 14:44:50 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (4.6ms)
+  Rendered categories/index.html.erb (7.7ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-02 15:42:59 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/herik/projeto-agil/app/controllers/application_controller.rb:3)
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (306.6ms)
+Completed 200 OK in 325ms (Views: 313.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 15:43:09 -0200
+Processing by CategoriesController#index as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-02 15:43:09 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (13.6ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (114.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pluto_development"[0m
+  [1m[35m (119.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pluto_test"[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1967684034406897800);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20161020014841)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "password" character varying NOT NULL, "retries" integer DEFAULT 0, "release_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (11.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161020014841"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAccounts (20161120203512)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" serial primary key, "name" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_accounts_on_user_id" ON "accounts"  ("user_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161120203512"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTransactions (20161120204226)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" serial primary key, "account_id" integer, "user_id" integer, "amount" float NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE  INDEX  "index_transactions_on_account_id" ON "transactions"  ("account_id")[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE  INDEX  "index_transactions_on_user_id" ON "transactions"  ("user_id")[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161120204226"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnBalanceToAccount (20161129004544)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "accounts" ADD "balance" decimal[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161129004544"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategories (20161202111603)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "categories" ("id" serial primary key, "description" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b8e2f7adfc"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE  INDEX  "index_categories_on_user_id" ON "categories"  ("user_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161202111603"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-12-02 17:43:41 UTC], ["updated_at", 2016-12-02 17:43:41 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1967684034406897800)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'accounts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'transactions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+Started GET "/users/" for 127.0.0.1 at 2016-12-02 15:44:08 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/herik/projeto-agil/app/controllers/application_controller.rb:3)
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (369.5ms)
+  Rendered users/index.html.erb (373.4ms)
+Completed 200 OK in 447ms (Views: 383.2ms | ActiveRecord: 8.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-12-02 15:44:22 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IxlFs1nEjySrtJbxcO70yleEuVaXQqsbwp41j3EvJzsZloX8f4f1/WpLQIqddgTr2hHhJ5G4aR9M4Nb9zf0RMw==", "user"=>{"name"=>"Herik Lima", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (3.2ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('1234'), now(), now());[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 13ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 15:44:22 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (17.8ms)
+  Rendered users/index.html.erb (19.7ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 15:44:24 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (60.5ms)
+Completed 200 OK in 71ms (Views: 68.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 15:44:28 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EvDk4UN9M8wXLCJ7VMrVWAgxi0pVRIAoEdcdclNJ+9IofySuZT5JFdbT9AC5UiV5haTTO1O+Qiyfqf4A75vN2g==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (3.2ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 22ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-02 15:44:28 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (6.5ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 15:44:32 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (101.2ms)
+  Rendered categories/index.html.erb (104.0ms)
+Completed 200 OK in 151ms (Views: 108.9ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2016-12-02 15:45:44 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2LGfHb1vadma81Ak/N/APf8xfY9P0Te4OMBiR71FFGziPl9SmywTAFsMhl8RRzAccqQl/kkr9by2voE1AZciZA==", "category"=>{"description"=>"Moradia"}, "commit"=>"Salvar"}
+  [1m[36mCategory Load (5.1ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Moradia', 1, now(), now());[0m
+Redirected to http://localhost:3000/categories
+Completed 302 Found in 16ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 15:45:44 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (5.5ms)
+  Rendered categories/index.html.erb (7.8ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-02 15:46:43 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (6.9ms)
+Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2016-12-02 15:47:00 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (1.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (12.3ms)
+Completed 200 OK in 23ms (Views: 11.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 15:47:02 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (13.5ms)
+  Rendered categories/index.html.erb (22.4ms)
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2016-12-02 15:47:04 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (9.6ms)
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 15:47:09 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (9.6ms)
+  Rendered categories/index.html.erb (12.0ms)
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2016-12-02 15:47:12 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (8.0ms)
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 15:47:14 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (5.9ms)
+  Rendered categories/index.html.erb (8.7ms)
+Completed 200 OK in 20ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-02 15:47:15 -0200
+Processing by TransactionsController#new as HTML
+  [1m[36mAccount Load (2.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  Rendering transactions/new.html.erb
+  Rendered transactions/new.html.erb (2.3ms)
+Completed 200 OK in 13ms (Views: 6.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/password" for 127.0.0.1 at 2016-12-02 15:47:19 -0200
+Processing by UsersController#password as HTML
+  Rendering users/password.html.erb
+  Rendered users/password.html.erb (15.2ms)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-02 15:47:21 -0200
+Processing by TransactionsController#new as HTML
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  Rendering transactions/new.html.erb
+  Rendered transactions/new.html.erb (11.4ms)
+Completed 200 OK in 18ms (Views: 14.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 15:47:25 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (13.8ms)
+  Rendered categories/index.html.erb (15.6ms)
+Completed 200 OK in 32ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2016-12-02 15:47:27 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (8.3ms)
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2016-12-02 15:47:29 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (19.5ms)
+  Rendered categories/index.html.erb (23.6ms)
+Completed 200 OK in 39ms (Views: 33.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-02 15:47:32 -0200
+Processing by TransactionsController#new as HTML
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  Rendering transactions/new.html.erb
+  Rendered transactions/new.html.erb (10.1ms)
+Completed 200 OK in 39ms (Views: 33.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-02 15:47:58 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (12.9ms)
+Completed 200 OK in 20ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-02 16:00:34 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/herik/projeto-agil/app/controllers/application_controller.rb:3)
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (336.1ms)
+Completed 200 OK in 359ms (Views: 344.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 16:00:49 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (9.9ms)
+Completed 200 OK in 22ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 16:00:57 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4I574LKeyK3b0QjIkgt57fW1IzZKnkSig6EtYoqgcCTaAbuvlN2ydBou3rN/k4nMeCB7R0xkhqYN384QNnJGLA==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (3.6ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 58ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-02 16:00:57 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (6.8ms)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-02 16:02:35 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (18.0ms)
+Completed 200 OK in 31ms (Views: 29.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 16:02:35 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (9.4ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 16:03:06 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (10.5ms)
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 16:03:07 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b+udYKk/u18HpwaU/+Zm7+rZ/FY/28vyoM5iQeO6OqV71Sf6daTJiwwO3ed7mDC9oqLk/727jIoT9g+jrwc3Pg==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 13ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-02 16:03:07 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (96.1ms)
+Completed 200 OK in 145ms (Views: 143.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 16:03:38 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (7.1ms)
+Completed 200 OK in 31ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 16:03:40 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cfxGF2MNvonzrnhhn26LRrstjf0jbl2GPBi6k0dpht0wkUDmHcBMojzl+jesCttaSvmaezdOrHWNFQZqo3wRnQ==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('12345');[0m
+  [1m[36mUser Load (5.1ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 16ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 16:03:40 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (6.1ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 16:03:43 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Mk7mbcaDXbqAGQ7GN6AliISffQga+o603biYircZeC1pD1oydf/XSVL5m0rutCK08ZqcjRLG8lie16bzsnyoA==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (1.2ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('12345');[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 11ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 16:03:43 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (10.1ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 16:03:46 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xi+sp4BO5wiz5mRuCT7skeC2B03WTp5PNw/K+q5xzkqHQqpW/oMVI3yt5jg6WryNEWIQy8Jub7yGAnYDSmRZCg==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('12345');[0m
+  [1m[36mUser Load (2.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 9ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 16:03:46 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (16.5ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 16:03:49 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3ylQPJ372NtxuD8gCgaude82VeR3VWMoHeBE+xuMRAaeRFbN4zYq8L7zvXY5Yv5pHuJCYmN1ktus7fgC/5nTRg==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 16:03:49 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (6.0ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-02 16:09:46 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (9.5ms)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 16:09:50 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (15.2ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/forgot_password" for 127.0.0.1 at 2016-12-02 16:10:35 -0200
+Processing by UsersController#forgot_password as HTML
+  Rendering users/forgot_password.html.erb
+  Rendered users/forgot_password.html.erb (6.7ms)
+Completed 200 OK in 24ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-02 16:12:16 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (9.6ms)
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 16:12:16 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (9.6ms)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 16:12:47 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (12.5ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 16:12:48 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XkOsPGqwQcgV+tu/tYXkfmKTKluya80SiNRoylMgZ3DIrh64Lm3uWVzzgEP4XgR/IsibygM7zlSyH3GSa8hu4w==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (7.3ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 16ms (ActiveRecord: 9.6ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-02 16:12:49 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (10.8ms)
+Completed 200 OK in 17ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 16:13:19 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (13.8ms)
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 16:13:21 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4ThHXDnSuKSYeSFVSpsFjO6qlHqT9cfeOys5DJHNU9Pmi/w/wspkfoLtdfBDhY1ftyWdDqirtRZD/3FrrctLEQ==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('12345');[0m
+  [1m[36mUser Load (10.7ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 21ms (ActiveRecord: 15.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 16:13:21 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (14.5ms)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 16:13:24 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W6RLvXx+OFGfVOQQp5C/yiieJhVgHkEFNmWP5y8PQHZcF/Deh2bki4XAsLWujjcZcREvYVtAM81OsceAEwlYtA==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('12345');[0m
+  [1m[36mUser Load (2.2ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 11ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 16:13:24 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (13.7ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 16:13:27 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yeCiY9tYSMnT1XQxIHD2KquzFPEtyj7vKXk7WqD8z0POUxkAIECUE8lBIJQpbn758jwdhRaUTCdRrXM9nPrXgQ==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('12345');[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 19ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 16:13:27 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (18.2ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 16:13:30 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QNshbO5HsSpRrZ5i7zRZKr4nmOVARITTHIWq0rH5HbJHaJoPFV9t8Es5ysfmKtH556iRkXsa9htkUeK1jf8FcA==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 12ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 16:13:30 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (15.3ms)
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 17:30:32 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (11.6ms)
+Completed 200 OK in 26ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/forgot_password" for 127.0.0.1 at 2016-12-02 17:30:33 -0200
+Processing by UsersController#forgot_password as HTML
+  Rendering users/forgot_password.html.erb
+  Rendered users/forgot_password.html.erb (11.2ms)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-02 17:39:03 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (5.2ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 17:39:33 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (29.5ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 17:39:35 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y7yaTANtSYjra4b1DROchLOrVIuebB9UoqiR9bgvbiFhuOvZBZ99yaoCfV1opeyn4CRl8UuvX5nyjSCjqnIhXg==", "email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (2.8ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 9ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-02 17:39:35 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (4.9ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2016-12-02 17:39:35 -0200
+Processing by UsersController#logout as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-02 17:39:35 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (4.0ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-02 17:40:59 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (4.2ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2016-12-02 17:41:00 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (38.6ms)
+  Rendered users/index.html.erb (40.0ms)
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 17:41:05 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (19.2ms)
+  Rendered users/index.html.erb (20.6ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-12-02 17:41:08 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NlteRRvsqmj0wxJ+TsE6dg4AP84OihLhVefZRqcJaMvgCdzfY3ZZWRGORfOGaCd46zqAFFUJS4jBs6fKScPALA==", "user"=>{"name"=>"Herik Lima", "email"=>"heriklyma8908@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma8908@hotmail.com');[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma8908@hotmail.com', md5('1234'), now(), now());[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 12ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 17:41:08 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (11.4ms)
+  Rendered users/index.html.erb (13.3ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 17:41:39 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (5.8ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 17:41:40 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KVmhMcOpo3UPPr8qWtOPCRokZHZef2KfryehMHtOf/jcAdhKMtPcZHw5JB07FtyPjUxd7EPn8hhYCKaIgODzfA==", "email"=>"heriklyma8908@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma8908@hotmail.com');[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma8908@hotmail.com');[0m
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma8908@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (4.0ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma8908@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 19ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-02 17:41:40 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (14.0ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password" for 127.0.0.1 at 2016-12-02 17:41:42 -0200
+Processing by UsersController#password as HTML
+  Rendering users/password.html.erb
+  Rendered users/password.html.erb (4.9ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-02 17:43:54 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (5.1ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2016-12-02 17:43:54 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (10.8ms)
+  Rendered users/index.html.erb (12.5ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 17:44:01 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (17.5ms)
+  Rendered users/index.html.erb (20.3ms)
+Completed 200 OK in 36ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-12-02 17:44:03 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LjuBJvZi3JYOamtGdXYNsJRMKFaynWV5UQ4EaT6Uk29/Y57ZS+Gm6AhEX1piTPlzbJY16xNBvaqInwUWLnGEXg==", "user"=>{"name"=>"Herik Lima", "email"=>"heriklyma9648@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma9648@hotmail.com');[0m
+  [1m[36mUser Load (10.8ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma9648@hotmail.com', md5('1234'), now(), now());[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 20ms (ActiveRecord: 13.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 17:44:03 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (7.1ms)
+  Rendered users/index.html.erb (8.3ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 17:44:34 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (5.1ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 17:44:35 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AkOyWMpxDeFytV0ldBxIh7G4VeDcRYgAJPpMjQyUj/aktogzo9dZyMtssKK2FyrwpJnPkKD/kvQt+00oTCG9eg==", "email"=>"heriklyma9648@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma9648@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma9648@hotmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma9648@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (1.4ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma9648@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 6ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-02 17:44:35 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (12.1ms)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password" for 127.0.0.1 at 2016-12-02 17:44:37 -0200
+Processing by UsersController#password as HTML
+  Rendering users/password.html.erb
+  Rendered users/password.html.erb (6.0ms)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 17:45:04 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (7.4ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2016-12-02 17:45:05 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (13.7ms)
+  Rendered users/index.html.erb (17.2ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-02 17:45:58 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (7.1ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2016-12-02 17:45:58 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (13.2ms)
+  Rendered users/index.html.erb (15.6ms)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 17:46:29 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (7.6ms)
+  Rendered users/index.html.erb (9.5ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-12-02 17:46:31 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rwd71euSEG5T3An+8a1OKF2iAv/04FwiPDn77Z+cejXObLOcEDxd3AF4k3b8mm+UMcc1z3K4JUYzFKYnRByCeg==", "user"=>{"name"=>"Herik Lima", "email"=>"heriklyma5489@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma5489@hotmail.com');[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma5489@hotmail.com', md5('1234'), now(), now());[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 5ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 17:46:31 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (6.1ms)
+  Rendered users/index.html.erb (7.7ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-12-02 17:47:02 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (13.9ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-02 17:47:03 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VzKR7pJ9doyAoEYcJ8CW3oc32IhlZyEnxMCrKQYQmrND1wplQXelWQNtbp5GA7mJobIfPv4K7c3eIQ1h0csI4A==", "email"=>"heriklyma5489@hotmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma5489@hotmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma5489@hotmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma5489@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (15.1ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma5489@hotmail.com'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 21ms (ActiveRecord: 16.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2016-12-02 17:47:03 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (4.5ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password" for 127.0.0.1 at 2016-12-02 17:47:06 -0200
+Processing by UsersController#password as HTML
+  Rendering users/password.html.erb
+  Rendered users/password.html.erb (4.2ms)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+

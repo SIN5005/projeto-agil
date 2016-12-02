@@ -13,7 +13,7 @@ When(/^click Cadastro$/) do
 end
 
 Then(/^Users page shoud appears$/) do	
-	expect(browser.text.include?("Cadastro de Usuário")).to be_truthy
+	expect(browser.text.include?("Criar Conta de Usuário")).to be_truthy
 	sleep(5)
 	browser.close
 end

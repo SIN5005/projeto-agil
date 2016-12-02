@@ -28,3 +28,12 @@ Feature: Pluto login
 	When I fill email with an incorrect password three times
 
 	Then temporary block appears
+
+
+	Scenario: Forgot Password
+
+	Given I am on the Logins page
+
+	When I click on forgot password
+
+	Then forgot password appears

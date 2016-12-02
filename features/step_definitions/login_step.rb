@@ -58,4 +58,22 @@ Then(/^temporary block appears$/) do
 	browser.close
 end
 
+
+
+Given(/^I am on the Logins page$/) do
+	browser = Watir::Browser.new :firefox
+	browser.goto('http://localhost:3000/login')	
+end
+
+When(/^I click on forgot password$/) do
+	browser.link(:text => "Esqueceu sua senha? Clique aqui").when_present.click
+end
+
+Then(/^forgot password appears$/) do
+	expect(browser.text.include?("Esqueci minha Senha")).to be_truthy
+	sleep(5)
+	browser.close
+end
+
+
 #bundle exec cucumber features/login.feature
