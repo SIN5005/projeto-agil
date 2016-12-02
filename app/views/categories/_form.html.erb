@@ -1,0 +1,13 @@
+<%= form_for(category) do |f| %>
+  <p><%= f.label :value => category.description %></p>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description, :value => category.description %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <p id="notice"><%= notice %></p>
+  
+<% end %>
