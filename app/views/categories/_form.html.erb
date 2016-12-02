@@ -1,13 +1,20 @@
 <%= form_for(category) do |f| %>
-  <p><%= f.label :value => category.description %></p>
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description, :value => category.description %>
-  </div>
-  
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-  <p id="notice"><%= notice %></p>
-  
+
+  <%= stylesheet_link_tag "style.css" %>
+  <h1>Criar Categoria</h1>
+    
+    <div class="field">
+      <%= f.label "Categoria" %><br>
+      <%= f.text_field :description, :value => category.description %>
+    </div>
+      
+    <br>
+      
+    <div class="actions">
+      <%= f.submit "Salvar" %>
+    </div>
+    <p id="notice"><%= notice %></p>
+    
+    <%=link_to "Voltar", "/home"%>
+    
 <% end %>
