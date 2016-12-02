@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 	post 'users' => 'users#create'	
 	get 'login' => 'login#index'
 	get 'logout' => 'users#logout'
+	get 'forgot_password' => 'users#forgot_password'
+	post 'forgot' => 'users#forgot'
 	get 'menu' => 'layouts#menu'
 	post 'login' => 'login#login'
 	get 'transactions/new' => 'transactions#new'

@@ -26,8 +26,7 @@ class LoginController < ApplicationController
                 flash[:notice] = "Conta temporariamente bloqueada."
                 redirect_to :login                
             else
-                session[:user_id] = result[1]
-                flash[:notice] = "Sucesso."
+                session[:user_id] = result[1]                
                 redirect_to :home
             end
         end    

@@ -4,11 +4,14 @@ class ApplicationController < ActionController::Base
 
 	def authenticate
 		path = request.path
-		puts "url"
-		puts path
+		#puts "url"
+		#puts "path#{path}"
 		if (not path.eql?("/")) and 
            (not path.eql?("/login")) and 
-           (not path.eql?("/users"))           
+           (not path.eql?("/users")) and
+		   (not path.eql?("/forgot_password")) and
+		   (not path.eql?("/forgot")) and
+		   (not path.eql?("/sample_email"))		   
 			if session[:user_id] == nil
 		        redirect_to root_path
 		    end

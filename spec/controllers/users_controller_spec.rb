@@ -36,11 +36,11 @@ describe UsersController do
         it "shoud return Salvo com sucesso. e E-mail já cadastrado." do
             post :create, user: {name: 'Herik Lima', email: 'heriklyma@hotmail.com', password: '1234', password_confirmation: '1234'}
             expect( subject.request.flash[:notice] ).to include("Salvo com sucesso.")
-            puts subject.request.flash[:notice]
+            #puts subject.request.flash[:notice]
 
             post :create, user: {name: 'Herik Lima', email: 'heriklyma@hotmail.com', password: '1234', password_confirmation: '1234'}
             expect( subject.request.flash[:notice] ).to include("E-mail já cadastrado.")
-            puts subject.request.flash[:notice]
+            #puts subject.request.flash[:notice]
         end
     end
 
@@ -83,4 +83,27 @@ describe UsersController do
             expect( subject.request.flash[:notice] ).to include("Salvo com sucesso")
         end        
     end    
+
+
+    describe "GET #logout" do
+        it "should be redirect to the :index view" do
+            @request.session[:user_id] = 1
+            get :logout
+            expect(response).to redirect_to("/")
+        end
+    end
+
+    describe "GET #forgot_password" do
+        it "should render :forgot_password view" do            
+            get :forgot_password            
+            expect(response.body).to include("Esqueci minha Senha")
+        end
+    end
+
+    #describe "POST #forgot" do
+        #it "should return E-mail enviado com sucesso" do            
+            #post :forgot, {email: 'heriklyma@hotmail.com'}
+            #expect( request.flash[:notice] ).to include("E-mail enviado com sucesso")
+        #end
+    #end    
 end
