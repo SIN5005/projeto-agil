@@ -9,11 +9,13 @@ class CategoriesController < ApplicationController
         @category = Category.new          
         @category.description = categoryParameters[:description]
         
+        @category.user_id = session[:user_id]
+
+        
         if categoryParameters[:description].empty?
             flash[:notice] = "O campo Descrição deve ser preenchido."
             redirect_to index
-        else 
-            #Category.user_id = session[:user_id]
+        else             
             flash[:notice] = @category.save[1]
             #session[:user_id]=result[1]
             redirect_to index
