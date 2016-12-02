@@ -4,9 +4,7 @@ class UsersController < ApplicationController
         @user = User.new
     end  
 
-    def password
-        puts "user_id"
-        puts session[:user_id]
+    def password        
     end
 
     def logout
