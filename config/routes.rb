@@ -19,4 +19,4 @@ Rails.application.routes.draw do
 	delete 'accounts/:id' => 'accounts#destroy', as: :account
 	get 'categories' => 'categories#index'
 	post 'categories' => 'categories#create'
-
+end
