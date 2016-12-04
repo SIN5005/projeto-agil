@@ -1,0 +1,21 @@
+<html> 
+    <head>
+        <title>index</title>
+        <%= stylesheet_link_tag "style.css" %>
+    </head>      
+    <body>
+        <ul>
+            <li><%=link_to "Home", "/home"%></li>
+            <li><%=link_to "Contas", "/accounts"%></li>
+            <li><%=link_to "Categorias", "/categories"%></li>
+            <li><%=link_to "Transações", "/transactions/new"%></li>
+            <li><%=link_to "Alterar Senha", "/password"%></li>            
+            <li><%=link_to "Sair", "/logout"%></li>
+        </ul>      
+        <center>
+            <h1><b>Bem vindo ao PLUTO - Financial App</b></h1>
+            <h5><b>Seu sistema de Organização de Finanças Pessoais</b></h5>
+            <img src="<%= asset_path('clippluto22.gif') %>">
+        </center>
+    </body>
+</html>

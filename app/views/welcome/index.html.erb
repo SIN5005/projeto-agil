@@ -1,14 +1,16 @@
-<html>
- 
+<html> 
     <head>
-      <title>index</title>
+      <title>Home</title>
+      <%= stylesheet_link_tag "style.css" %>
     </head>
-
     <body>
-      
+      <ul>
+        <li><%=link_to "Home", "/"%></li>
+        <li><%=link_to "Login", "/login"%></li>
+        <li><%=link_to "Cadastro", "/users/"%></li>
+      </ul>
       <h1 style="text-align:center;"><b>PLUTO - Financial App</b></h1>
-      <h5 style="text-align:center;"><b>Sistema de Organização de Finanças Pessoais</b></h5>
-      
+      <h5 style="text-align:center;"><b>Sistema de Organização de Finanças Pessoais</b></h5>                
       <center><p style="font-size: 12px; width: 650px; margin-top: 0px"; align="center">
         O PLUTO - Financial App é um sistema de organização de finanças pessoais  
         desenvolvido especialmente para quem almeja um controle financeiro.<br>Essa ferramenta vai te ajudar 
@@ -19,11 +21,11 @@
       
       <div class="jumbotron text-center">
         <div class="container">
-          <a href="/" class="lang-logo" ="logo">
-            <img src="<%= asset_path('clippluto22.gif') %>">
-          </a>
-          <p> <%=link_to "Login", "/login"%> </p>
-          <p> <%=link_to "Cadastro", "/users/"%> </p>
+          <center>
+            <a href="/" class="lang-logo" ="logo">
+              <img src="<%= asset_path('clippluto22.gif') %>">
+            </a>
+          </center>          
         </div>
       </div>
       

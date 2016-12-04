@@ -19,4 +19,14 @@ Feature: User page
 
 	When I fill name, email, password and password confirmation and click on create user
 
-	Then save with shoud appears
+	Then save with success shoud appears
+
+
+
+	Scenario: Change password error different passwords
+
+	Given I log into the system
+
+	When I click on Change Password
+
+	Then change password should appears

@@ -1,10 +1,22 @@
 Rails.application.routes.draw do  
 	root 'welcome#index'
+	get 'home' => 'welcome#home'
 	get 'users' => 'users#index'
-	post 'users' => 'users#create'
+	get 'password' => 'users#password'
+	post 'password' => 'users#change_password'
+	post 'users' => 'users#create'	
 	get 'login' => 'login#index'
+	get 'logout' => 'users#logout'
+	get 'forgot_password' => 'users#forgot_password'
+	post 'forgot' => 'users#forgot'
+	get 'menu' => 'layouts#menu'
 	post 'login' => 'login#login'
 	get 'transactions/new' => 'transactions#new'
         post 'transactions/' => 'transactions#create'
-end
+	get 'accounts' => 'accounts#index'
+	get 'accounts/new' => 'accounts#new'
+	post 'accounts' => 'accounts#create'
+	delete 'accounts/:id' => 'accounts#destroy', as: :account
+	get 'categories' => 'categories#index'
+	post 'categories' => 'categories#create'
 

@@ -1,3 +1,4 @@
+=begin
 require 'watir-webdriver'
 
 browser = nil
@@ -20,7 +21,7 @@ end
 
 Given(/^I am on the Account page$/) do
 	browser = Watir::Browser.new :firefox
-	browser.goto('http://localhost:3000/account')
+	browser.goto('http://localhost:3000/accounts')
 end
 
 When(/^I fill name and balance and click on create account$/) do
@@ -34,3 +35,4 @@ Then(/^save with shoud appears$/) do
 	sleep(5)
 	browser.close
 end
+=end

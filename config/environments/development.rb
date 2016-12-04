@@ -31,13 +31,12 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  :user_name => ENV['GMAIL_USERNAME'],
-  :password => ENV['GMAIL_PASSWORD'],
-  :domain => 'plutofin.com',
-  :address => 'smtp.gmail.com',
-  :port => 587,
-  :authentication => :plain,
-  :enable_starttls_auto => true
+    :address        => "smtp.gmail.com",
+    :port           => 587,
+    :authentication => :plain,
+    :user_name => 'plutofinancialapp@gmail.com',
+    :password => 'pluto1234',
+    :openssl_verify_mode  => 'none'
   }
   config.action_mailer.perform_caching = false
 
