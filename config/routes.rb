@@ -5,5 +5,6 @@ Rails.application.routes.draw do
 	get 'login' => 'login#index'
 	post 'login' => 'login#login'
 	get 'transactions/new' => 'transactions#new'
+        post 'transactions/' => 'transactions#create'
 end
 

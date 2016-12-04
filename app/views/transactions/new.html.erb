@@ -1,8 +1,18 @@
 <h1>Cadastro de Transação</h1>
-<%= form_tag("/transactions", method: "post") do %>
-  <%= label_tag(:account, "Conta: ") %>
-  <%= select_tag(:account, options_for_select(@acc_list)) %>
-  <%= label_tag(:amount, "Quantia: ") %>
-  <%= text_field_tag(:value) %>
-  <%= submit_tag("Incluir") %>
+<% if flash[:success] %>
+   <%= flash[:success] %>
+<% end %>
+<%= form_for @transaction do |t| %>
+  <%= t.hidden_field :user_id, :value => @user_id %>
+  <%= t.label "Conta: " %>
+  <%= t.select :account_id, Account.all.order(:name).collect{|p| [p.name, p.id]}, include_blank: true %>
+  <%= t.label :amount, "Quantia: " %>
+  <%= t.text_field :amount %>
+  <%= t.submit "Incluir" %>
+  <% if flash[:error] %>
+    <br>
+    <% flash[:error].each do |m| %>
+      <br><%= t.label m %>
+    <% end %>
+  <% end %>
 <% end %>
