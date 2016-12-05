@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    has_many :categories, :class_name => "Category"
     validates :name, presence: true
     validates :email, uniqueness: true
 

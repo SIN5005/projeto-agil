@@ -4,9 +4,24 @@ class UsersController < ApplicationController
         @user = User.new
     end  
 
-    def password
-        puts "user_id"
-        puts session[:user_id]
+    def password        
+    end
+
+    def forgot_password
+    end
+
+    def forgot
+        @user           = User.new        
+        @user.id        = -1
+        @user.email     = params[:email]
+        @user.password  = "#{rand(1...9)}#{rand(1...9)}#{rand(1...9)}#{rand(1...9)}"
+        @user.update_password
+        puts "E-mail: #{@user.email}"
+        puts "password: #{@user.password}"
+
+        PasswordMailer.sample_email(@user).deliver 
+        flash[:notice] = "E-mail enviado com sucesso."
+        redirect_to :forgot_password
     end
 
     def logout
@@ -24,7 +39,7 @@ class UsersController < ApplicationController
             flash[:notice] = "A senha deve conter 4 caracteres ou mais."
             redirect_to :password
         else
-            @user           = User.new
+            @user           = User.new            
             @user.id        = session[:user_id]
             @user.password  = passwd            
             flash[:notice]  = @user.update_password[1]

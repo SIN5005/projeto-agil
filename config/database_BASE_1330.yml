@@ -6,19 +6,13 @@
 #
 default: &default
   adapter: postgresql
-  encode: utf8
+  encode: unicode
   timeout: 5000
   pool: 5
-  template: template0
-<<<<<<< HEAD
-#  host: localhost
-#  username: postgres
-#  password: SIN5005
-=======
-  #host: localhost
-  #username: postgres
-  #password: SIN5005
->>>>>>> a652fb9ecb670556f7dc1d2816173d19feab4142
+#  template: template0
+  host: localhost
+  username: postgres
+  password: SIN5005
 
 development:
   <<: *default

@@ -1,4 +1,14 @@
 <%= form_for(user) do |f| %>
+
+  <%= stylesheet_link_tag "style.css" %>    
+  <ul>          
+    <li><%=link_to "Home", "/"%></li>
+    <li><%=link_to "Login", "/login"%></li>
+    <li><%=link_to "Cadastro", "/users/"%></li>
+  </ul>
+
+  <h1>Criar Conta de Usuário</h1>
+
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -12,26 +22,29 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label :Nome %> <br>
     <%= f.text_field :name, :value => @user.name %>
   </div>
 
   <div class="field">
-    <%= f.label :email %>
+    <%= f.label "E-Mail" %><br>
     <%= f.text_field :email %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :Senha %><br>
     <%= f.password_field :password %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %>
+    <%= f.label "Confirmação de Senha" %><br>
     <%= f.password_field :password_confirmation %>
   </div>
+
+  <br><br>
+
   <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.submit "Criar conta" %>
+  </div>  
   <p id="notice"><%= notice %></p>
 <% end %>

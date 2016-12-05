@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 	post 'users' => 'users#create'	
 	get 'login' => 'login#index'
 	get 'logout' => 'users#logout'
+	get 'forgot_password' => 'users#forgot_password'
+	post 'forgot' => 'users#forgot'
 	get 'menu' => 'layouts#menu'
 	post 'login' => 'login#login'
 	get 'transactions/new' => 'transactions#new'
@@ -14,5 +16,6 @@ Rails.application.routes.draw do
 	get 'accounts/new' => 'accounts#new'
 	post 'accounts' => 'accounts#create'
 	delete 'accounts/:id' => 'accounts#destroy', as: :account
+	get 'categories' => 'categories#index'
+	post 'categories' => 'categories#create'
 end
-

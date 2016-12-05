@@ -34,9 +34,9 @@ describe LoginController do
             post :login, email: 'heriklyma@hotmail.com', password: '123'
             expect( subject.request.flash[:notice] ).to include("Senha incorreta.")
         end
-        it "shoud return Sucesso." do
+        it "shoud return Home." do
             post :login, email: 'heriklyma@hotmail.com', password: '123456'
-            expect( subject.request.flash[:notice] ).to include("Sucesso.")
+            expect(response).to redirect_to(:home)
         end
     end
 end
