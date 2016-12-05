@@ -1,18 +1,10 @@
 <html>
     <head>
         <title>Contas</title>
-        <%= stylesheet_link_tag "style.css" %>
     </head>
     <body>
-        <ul>
-            <li><%=link_to "Home", "/home"%></li>
-            <li><%=link_to "Contas", "/accounts"%></li>
-            <li><%=link_to "Categorias", "/categories"%></li>
-            <li><%=link_to "Transações", "/transactions/new"%></li>
-            <li><%=link_to "Alterar Senha", "/password"%></li>            
-            <li><%=link_to "Sair", "/logout"%></li>
-        </ul>
-        <table border="3">
+      <%= render "layouts/menu" %>
+        <table border="1">
             <thead>
                 <tr>
                     <th width="300">Nome</th>
