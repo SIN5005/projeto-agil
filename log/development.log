@@ -33162,3 +33162,851 @@ Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms)
 >>>>>>> a652fb9ecb670556f7dc1d2816173d19feab4142
 =======
 >>>>>>> criacao_contas
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1967684034406897800);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCategories (20161202111603)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (51.0ms)[0m  [1m[35mCREATE TABLE "categories" ("id" serial primary key, "description" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b8e2f7adfc"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE  INDEX  "index_categories_on_user_id" ON "categories"  ("user_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161202111603"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1967684034406897800)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'accounts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'transactions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+Started GET "/" for 187.10.179.141 at 2016-12-05 22:13:09 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/ubuntu/workspace/projeto-agil/app/controllers/application_controller.rb:3)
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (248.4ms)
+Completed 200 OK in 264ms (Views: 255.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 187.10.179.141 at 2016-12-05 22:13:12 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (4.3ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 187.10.179.141 at 2016-12-05 22:13:19 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (5.5ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 187.10.179.141 at 2016-12-05 22:13:21 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"54E1UttfuMM9do3L0iOgQi8U4J4UHKrarI8dVs9x3Q8awom8uOnaMga0t/mxgVlVHWA7mFAeTd5hYhlqMj1xIw==", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+Redirected to https://pluto-brunocasado.c9users.io/login
+Completed 302 Found in 23ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/login" for 187.10.179.141 at 2016-12-05 22:13:22 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (5.8ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 187.10.179.141 at 2016-12-05 22:13:27 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#home as HTML
+Redirected to https://pluto-brunocasado.c9users.io/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 187.10.179.141 at 2016-12-05 22:13:28 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (50.6ms)
+Completed 200 OK in 55ms (Views: 53.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 187.10.179.141 at 2016-12-05 22:13:46 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (5.1ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 187.10.179.141 at 2016-12-05 22:13:47 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l/OAs0xKAcbN+QnkRcAgAUenoxl3RwjKmNxHMFCGfHxqsDxdL/xjN/Y7M9YmYtkWddN4HzNF785VMUMMrcrQUA==", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+Redirected to https://pluto-brunocasado.c9users.io/login
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 187.10.179.141 at 2016-12-05 22:13:48 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (4.2ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 187.10.179.141 at 2016-12-05 22:13:59 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m72y/PYrY3v7dUfmqKoEkuco/qIw8zp3DVhS4v9Exotm/g4SlZ0BisC3fdTLCP2F1VwlpHTx3XPAtVbeAghqpw==", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+Redirected to https://pluto-brunocasado.c9users.io/login
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 187.10.179.141 at 2016-12-05 22:14:00 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (5.0ms)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for 187.10.179.141 at 2016-12-05 22:14:06 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (98.7ms)
+  Rendered users/index.html.erb (100.3ms)
+Completed 200 OK in 105ms (Views: 103.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 187.10.179.141 at 2016-12-05 22:14:14 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cgUgKM+wjeEzdsj5j+pvL3ywvRaNf39IiAyTrLwVmrWPRpzGrAbvEAi08svsSJY4TsRmEMl9mExF4ZeQQVk2mQ==", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (3.7ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to https://pluto-brunocasado.c9users.io/users
+Completed 302 Found in 8ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/users" for 187.10.179.141 at 2016-12-05 22:14:14 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/_form.html.erb (21.7ms)
+  Rendered users/index.html.erb (23.5ms)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 187.10.179.141 at 2016-12-05 22:14:22 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (8.1ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 187.10.179.141 at 2016-12-05 22:14:24 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iHZyNzgMY3KL043b/7BkU7HNqztpRngtT6FnYiuC3k11Nc7ZW7oBg7ARt+mcEp1Eg7lwPS1EnymCTGNe1s5yYQ==", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (3.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to https://pluto-brunocasado.c9users.io/home
+Completed 302 Found in 189ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/home" for 187.10.179.141 at 2016-12-05 22:14:24 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (5.1ms)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 22:14:28 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (4.8ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (11.1ms)
+Completed 200 OK in 31ms (Views: 17.4ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/categories" for 187.10.179.141 at 2016-12-05 22:14:35 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb
+  Rendered categories/_form.html.erb (8.2ms)
+  Rendered categories/index.html.erb (12.0ms)
+Completed 200 OK in 138ms (Views: 123.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/home" for 187.10.179.141 at 2016-12-05 22:14:37 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (8.8ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/transactions/new" for 187.10.179.141 at 2016-12-05 22:14:38 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TransactionsController#new as HTML
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  Rendering transactions/new.html.erb
+  Rendered transactions/new.html.erb (1.5ms)
+Completed 200 OK in 10ms (Views: 5.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/password" for 187.10.179.141 at 2016-12-05 22:14:44 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#password as HTML
+  Rendering users/password.html.erb
+  Rendered users/password.html.erb (6.4ms)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 22:14:46 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (5.8ms)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-05 22:14:48 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (18.6ms)
+Completed 200 OK in 23ms (Views: 20.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/accounts" for 187.10.179.141 at 2016-12-05 22:14:55 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a9TyBQHj+EUV8/c8/bF/atVkWUlUt/J/rSl5wXZrxbCWl07rYlWatC4xzQ6eE4Z95xCCTxC1FXtgxH39iydpnA==", "account"=>{"name"=>"Visa", "balance"=>"10", "user_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "user_id", "created_at", "updated_at", "balance") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Visa"], ["user_id", 1], ["created_at", 2016-12-05 22:14:55 UTC], ["updated_at", 2016-12-05 22:14:55 UTC], ["balance", #<BigDecimal:7fa37df550f0,'0.1E2',9(18)>]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 12ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 22:14:55 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (12.7ms)
+Completed 200 OK in 20ms (Views: 16.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/transactions/new" for 187.10.179.141 at 2016-12-05 22:14:57 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TransactionsController#new as HTML
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  Rendering transactions/new.html.erb
+  Rendered transactions/new.html.erb (1.5ms)
+Completed 200 OK in 9ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/transactions" for 187.10.179.141 at 2016-12-05 22:15:05 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [POST] "/transactions"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [19 times] (7.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.6ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (45.7ms)
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 22:16:41 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (2.9ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (8.6ms)
+Completed 200 OK in 14ms (Views: 8.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/home" for 187.10.179.141 at 2016-12-05 22:27:27 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (3.8ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 187.10.179.141 at 2016-12-05 22:50:26 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (3.8ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 187.10.179.141 at 2016-12-05 22:50:48 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (4.3ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 22:53:18 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (11.8ms)
+Completed 200 OK in 18ms (Views: 11.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-05 22:53:36 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (4.7ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 187.10.179.141 at 2016-12-05 22:53:43 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a9gAFkLFi/RRh7wmKmpy/mA+yBGQ8dQdQaJvBZFV2ZyWm7z4IXPpBWpFhhRJyIvpUkoTF9TzMxmMT2s5bBl1sA==", "account"=>{"name"=>"Visa", "balance"=>"10", "user_id"=>"1"}}
+  [1m[36mAccount Load (0.6ms)[0m  [1m[32mINSERT INSERT ACCOUNTS (NAME, BALANCE, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Visa', 10.000000, 1, now(), now());[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 22:53:43 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (4.2ms)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 22:53:53 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (5.2ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home" for 187.10.179.141 at 2016-12-05 22:56:38 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (4.4ms)
+Completed 200 OK in 102ms (Views: 100.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 22:56:40 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (5.2ms)
+Completed 200 OK in 170ms (Views: 7.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-05 22:56:49 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (3.1ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 187.10.179.141 at 2016-12-05 22:56:55 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9sY46TIUCvbFo16JSN4GM1/3t+Vthb7bI2XzmOvCJD0LhYQHUaJoB/5hZLsrfP8kbYNs4ymHWd/uiPekFo6IEQ==", "account"=>{"name"=>"Master", "balance"=>"1", "user_id"=>"1"}}
+  [1m[36mAccount Load (0.5ms)[0m  [1m[32mINSERT INSERT ACCOUNTS (NAME, BALANCE, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Master', 1.000000, 1, now(), now());[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 22:56:55 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (4.4ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/accounts/1" for 187.10.179.141 at 2016-12-05 22:57:43 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"drCC46sYkLJrFMJN02PbmB8mdAUxndxnfA4te/BqhAaL8z4NyK7yQ1DW+H+wwSKPLVKvA3WfO2Ox4ylHDSYoKg==", "id"=>"1"}
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = $1[0m  [["id", 1]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 12ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 22:57:43 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (12.8ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (22.6ms)
+Completed 200 OK in 36ms (Views: 21.3ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-05 22:58:35 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (4.7ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 187.10.179.141 at 2016-12-05 22:58:40 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UB0wmwMVZLLqVqH+z2WKaNCdHzeUJ425x1oeDSoYDuKtXox1YKMGQ9GUm8ysx3N/4unEMdAlar0Ktxox11Sizg==", "account"=>{"name"=>"teste", "balance"=>"1", "user_id"=>"1"}}
+  [1m[36mAccount Load (0.9ms)[0m  [1m[32mINSERT INSERT ACCOUNTS (NAME, BALANCE, USER_ID, CREATED_AT, UPDATED_AT) VALUES('teste', 1.000000, 1, now(), now());[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 22:58:40 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (3.5ms)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home" for 187.10.179.141 at 2016-12-05 23:20:10 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#home as HTML
+Redirected to https://pluto-brunocasado.c9users.io/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 187.10.179.141 at 2016-12-05 23:20:10 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (3.4ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 187.10.179.141 at 2016-12-05 23:20:12 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb
+  Rendered login/index.html.erb (4.0ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for 187.10.179.141 at 2016-12-05 23:20:14 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ot1iu+o/Pqal7OyUDYD3lBkGDRrqeKLl9MduStCp8TRK9ICZEPLs4RbqWKCQ11Am6D7T8GxtANOptk5/uNYzWw==", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (2.4ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to https://pluto-brunocasado.c9users.io/home
+Completed 302 Found in 101ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/home" for 187.10.179.141 at 2016-12-05 23:20:15 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (3.1ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 23:20:17 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (8.4ms)
+Completed 200 OK in 15ms (Views: 9.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-05 23:20:19 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (10.9ms)
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/accounts" for 187.10.179.141 at 2016-12-05 23:20:23 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HU5flDTK1ghDt+FK8HRHBLr/JM1WJ5mhKN4KGZSQGx/1Z722zgcET/CxVX5tI+C2S8f6J9AyO5d1ryos/O/ZcA==", "account"=>{"name"=>"Cartão Visa", "balance"=>"1", "user_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "user_id", "created_at", "updated_at", "balance") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cartão Visa"], ["user_id", 1], ["created_at", 2016-12-05 23:20:23 UTC], ["updated_at", 2016-12-05 23:20:23 UTC], ["balance", #<BigDecimal:7fa38c0514c8,'0.1E1',9(18)>]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 7ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 23:20:24 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (3.8ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-05 23:20:27 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (3.3ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 187.10.179.141 at 2016-12-05 23:20:31 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3DkeuPT6IpmJcItznMuYXdVgNfKjmZtvrUCKtQ71tm80EPyaDjfw3jp2P0cBnD/vJFjrGCWMOVnwMaqAZop0AA==", "account"=>{"name"=>"Master", "balance"=>"2", "user_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "user_id", "created_at", "updated_at", "balance") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Master"], ["user_id", 1], ["created_at", 2016-12-05 23:20:31 UTC], ["updated_at", 2016-12-05 23:20:31 UTC], ["balance", #<BigDecimal:7fa3882e9068,'0.2E1',9(18)>]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 6ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 23:20:31 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (4.2ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home" for 187.10.179.141 at 2016-12-05 23:35:59 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (3.2ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 23:36:01 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (12.1ms)
+Completed 200 OK in 21ms (Views: 13.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-05 23:36:04 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (3.0ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 187.10.179.141 at 2016-12-05 23:36:07 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8JDCv0pIlNIfFZjrjGir3p10uiZudHbb6zdXJgPknUEYuSCdsIVGlawTLN8RPwxsbExkzOhh1O22RncTa5tfLg==", "account"=>{"name"=>"teste", "balance"=>"1", "user_id"=>"1"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `name' for nil:NilClass):
+  
+app/models/account.rb:7:in `save'
+app/controllers/accounts_controller.rb:9:in `create'
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.0ms)
+Started GET "/home" for 187.10.179.141 at 2016-12-05 23:36:47 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (3.3ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 23:36:56 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (3.8ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-05 23:36:58 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (2.9ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 187.10.179.141 at 2016-12-05 23:37:03 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hLtuPQtxCreYeMmM6Fh4QviKwF2cobF/NqfDziWTshFskowf8bzY8Ct+fbh1D9/wCbIetxq0E0lr1uP7Texwfg==", "account"=>{"name"=>"Diners", "balance"=>"1", "user_id"=>"1"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `name' for nil:NilClass):
+  
+app/models/account.rb:7:in `save'
+app/controllers/accounts_controller.rb:9:in `create'
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.4ms)
+Started GET "/home" for 187.10.179.141 at 2016-12-05 23:40:13 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (7.5ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 23:40:15 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (182.0ms)
+Completed 200 OK in 195ms (Views: 182.9ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-05 23:40:17 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (5.1ms)
+Completed 200 OK in 80ms (Views: 78.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 187.10.179.141 at 2016-12-05 23:40:25 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rg12NySXishl7iUNEEc7/mj45V6KQhvBG4/K/X2tiXhGJJQV3lpYj9bokTmNEJxMmcA7tAxXufdG/urIFdJLFw==", "account"=>{"name"=>"Diners", "balance"=>"1", "user_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "user_id", "created_at", "updated_at", "balance") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Diners"], ["user_id", 1], ["created_at", 2016-12-05 23:40:25 UTC], ["updated_at", 2016-12-05 23:40:25 UTC], ["balance", #<BigDecimal:7fa380b3d398,'0.1E1',9(18)>]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 9ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 23:40:26 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (25.5ms)
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 187.10.179.141 at 2016-12-05 23:46:01 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (3.2ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 23:46:03 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (11.2ms)
+Completed 200 OK in 17ms (Views: 10.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-05 23:46:05 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (2.9ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 187.10.179.141 at 2016-12-05 23:46:09 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RbjWY3sK3Z5eEj0o7yNOtBQV/5UlyHN3tRmnSJuGVqGtkTRBgccP2e0UiRxydOkG5S0hf6Pd0UHoaId98/mUzg==", "account"=>{"name"=>"teste", "balance"=>"2", "user_id"=>"1"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `name' for nil:NilClass):
+  
+app/models/account.rb:7:in `save'
+app/controllers/accounts_controller.rb:9:in `create'
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.3ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.6ms)
+Started GET "/home" for 187.10.179.141 at 2016-12-05 23:47:30 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (3.7ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 23:47:31 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (11.2ms)
+Completed 200 OK in 18ms (Views: 10.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-05 23:47:33 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (3.8ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 187.10.179.141 at 2016-12-05 23:47:37 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i9e5ruB89Lla2/m4viddKyZxk+llK06GUDPevP90kWhj/luMGrEm/undTYwjcPqZ10lNA+M+7LANQv6JlwtTBw==", "account"=>{"name"=>"teste", "balance"=>"2", "user_id"=>"1"}}
+  [1m[36mAccount Load (3.4ms)[0m  [1m[32mINSERT INTO ACCOUNTS (NAME, USER_ID, CREATED_AT, UPDATED_AT, BALANCE) VALUES ('teste', 1, now(), now(), 2.000000);[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 5ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-05 23:47:37 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (5.0ms)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.4ms)
+
+
