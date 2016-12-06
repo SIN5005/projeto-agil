@@ -42,4 +42,5 @@ RSpec.describe Account, type: :model do
     end
     #https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     #https://github.com/rspec/rspec-expectations
+    #http://betterspecs.org/
 end
