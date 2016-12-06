@@ -1,10 +1,13 @@
 require 'watir-webdriver'
 
 browser = nil
+configureBdd = ConfigureBDD.new
+
+
 
 Given(/^I am on Pluto Homepage$/) do
 	browser = Watir::Browser.new :firefox
-	browser.goto('http://localhost:3000')	
+	browser.goto(configureBdd.getDefaultUrl)
 end
 
 When(/^click login link$/) do
@@ -19,13 +22,16 @@ end
 
 
 
+
+
+
 Given(/^I am on the Login pages$/) do
 	browser = Watir::Browser.new :firefox
-	browser.goto('http://localhost:3000/login')	
+	browser.goto(configureBdd.getDefaultUrl + '/login')	
 end
 
 When(/^I fill email with a correct password$/) do	
-	browser.text_field(:name => "email").set 'heriklyma@hotmail.com'
+	browser.text_field(:name => "email").set configureBdd.getGeneratedEmail
 	browser.text_field(:name => "password").set '1234'
 	browser.button(:name => 'entrar').click
 end
@@ -38,14 +44,17 @@ end
 
 
 
+
+
+
 Given(/^I am on the Login page$/) do
 	browser = Watir::Browser.new :firefox
-	browser.goto('http://localhost:3000/login')	
+	browser.goto(configureBdd.getDefaultUrl + '/login')	
 end
 
 When(/^I fill email with an incorrect password three times$/) do
 	for i in 1..4
-		browser.text_field(:name => "email").set 'heriklyma@hotmail.com'
+		browser.text_field(:name => "email").set configureBdd.getGeneratedEmail
 		browser.text_field(:name => "password").set '12345'
 		browser.button(:name => 'entrar').click						
 		sleep(2)
@@ -60,9 +69,12 @@ end
 
 
 
+
+
+
 Given(/^I am on the Logins page$/) do
 	browser = Watir::Browser.new :firefox
-	browser.goto('http://localhost:3000/login')	
+	browser.goto(configureBdd.getDefaultUrl + '/login')	
 end
 
 When(/^I click on forgot password$/) do

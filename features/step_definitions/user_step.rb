@@ -1,11 +1,12 @@
 require 'watir-webdriver'
 
 browser = nil
+configureBdd = ConfigureBDD.new
 generatedEmail = nil
 
 Given(/^I am on the Pluto homepage$/) do  	
 	browser = Watir::Browser.new :firefox
-	browser.goto('http://localhost:3000')
+	browser.goto(configureBdd.getDefaultUrl)
 end
 
 When(/^click Cadastro$/) do  
@@ -21,12 +22,13 @@ end
 
 Given(/^I am on the Cadastro page$/) do
 	browser = Watir::Browser.new :firefox
-	browser.goto('http://localhost:3000/users')
+	browser.goto(configureBdd.getDefaultUrl + '/users')
 end
 
 When(/^I fill name, email, password and password confirmation and click on create user$/) do
-	number = rand(1...10000)
+	number = rand(1...1000000)
 	generatedEmail = "heriklyma#{number}@hotmail.com"
+	File.open("features/configuration/email", 'w') {|f| f.write(generatedEmail) }	
 	browser.text_field(:name => "user[name]").set 'Herik Lima'
 	browser.text_field(:name => "user[email]").set generatedEmail
 	browser.text_field(:name => "user[password]").set '1234'
@@ -43,7 +45,7 @@ end
 
 Given(/^I log into the system$/) do
 	browser = Watir::Browser.new :firefox
-	browser.goto('http://localhost:3000/login')
+	browser.goto(configureBdd.getDefaultUrl + '/login')
 	browser.text_field(:name => "email").set generatedEmail
 	browser.text_field(:name => "password").set '1234'
 	browser.button(:name => 'entrar').click	
