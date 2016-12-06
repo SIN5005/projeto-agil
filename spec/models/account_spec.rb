@@ -9,37 +9,40 @@ RSpec.describe Account, type: :model do
     end
      
     context "Salvar conta" do
-         it "Salvo com sucesso!" do
+        it "Salvo com sucesso!" do
              result = @account.save
              
              expect(result[0]).to be_truthy
              expect(result[1]).to include("Salvo com sucesso!")
-         end
-         it "Erro ao salvar" do
-               @account.name = nil
-               result = @account.save
+        end
+        it "Erro ao salvar" do
+            @account.name = nil
+            @account.balance = nil
+            @account.user_id = nil
+            result = @account.save
 
-               expect(result[0]).to be_falsey
-               expect(result[1]).to include("Erro ao salvar")
-          end
+            expect(result[0]).to be_falsey
+            expect(result[1]).to include("Erro ao salvar")
+        end
     end
      
     context "Validade de uma Conta" do
         it "Conta válida?" do
             account = Account.new
             account.name = "Visa"
+            account.balance != nil
             expect(account.valid?).to be_truthy
          end
     end
     
-    context "Titulos válidos" do
-        it "Titulo completo" do
-            account = Account.new
-            account.name = "Mastercard"
-            
-            expect(account.titulo_completo).to eql("Titulo completo com o nome do cartao")
-        end
-    end
+#    context "Titulos válidos" do
+#        it "Titulo completo" do
+#            account = Account.new
+#            account.name = "Mastercard"
+#            
+#            expect(account.titulo_completo).to eql("Titulo completo com o nome do cartao")
+#        end
+#    end
     #https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     #https://github.com/rspec/rspec-expectations
     #http://betterspecs.org/

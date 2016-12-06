@@ -26,9 +26,13 @@ class Account < ApplicationRecord
     end
     
     def get_by_name
+        query = "SELECT * FROM ACCOUNTS WHERE NAME = %s AND USER_ID = %d"
+        Account.find_by_sql(query % [Account.connection.quote(name),
+                                     Account.connection.quote(user_id)])
     end
     
-    def account_already_registered
+    def name_already_registered
+        not get_by_name.empty?
     end
     
     def titulo_completo
