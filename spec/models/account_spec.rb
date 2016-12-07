@@ -28,10 +28,7 @@ RSpec.describe Account, type: :model do
      
     context "Validade de uma Conta" do
         it "Conta válida?" do
-            account = Account.new
-            account.name = "Visa"
-            account.balance != nil
-            expect(account.valid?).to be_truthy
+            expect(@account.valid?).to be_truthy
          end
     end
     

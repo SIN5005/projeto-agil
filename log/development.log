@@ -35157,3 +35157,163 @@ Processing by AccountsController#index as HTML
 Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-06 23:59:19 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (3.5ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 187.10.179.141 at 2016-12-06 23:59:28 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zx2vJnj1K4kDQ77sN3dn/w48POnW6AekjDxzQIN8nBjo5m23lrM2ZtE3vHVAeBmHXCaA6Vk2wjjSYuytjIUbqg==", "account"=>{"name"=>"negativo", "balance"=>"-10", "user_id"=>"1"}}
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT * FROM ACCOUNTS WHERE NAME = 'negativo' AND USER_ID = 1[0m
+  [1m[36mAccount Load (3.1ms)[0m  [1m[32mINSERT INTO ACCOUNTS (NAME, USER_ID, CREATED_AT, UPDATED_AT, BALANCE) VALUES ('negativo', 1, now(), now(), -10.000000);[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 6ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-06 23:59:28 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (4.8ms)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-06 23:59:47 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (4.9ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 187.10.179.141 at 2016-12-07 00:00:48 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb
+  Rendered welcome/home.html.erb (5.3ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-07 00:00:49 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (4.7ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/accounts/5" for 187.10.179.141 at 2016-12-07 00:00:53 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cPG7ZyeMYHK58VzaaylaqdRojz+Me7EyOpswzdK7oJ1XCnn2ycp9nWuFXkMcJiTRhnIzPwOldK5kxa8g3UInLw==", "id"=>"5"}
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = $1[0m  [["id", 5]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 6ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-07 00:00:53 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (5.8ms)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-07 00:00:55 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (4.7ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 187.10.179.141 at 2016-12-07 00:01:00 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aUAoZUvKLjMTyCF5sy5P49vwGYf8aFfurBtb6jVI+2FOu+r0pYwz3MG8I+DEITGbieqlh3O2knLyRcQHOrF80w==", "account"=>{"name"=>"Poupança", "balance"=>"1", "user_id"=>"1"}}
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT * FROM ACCOUNTS WHERE NAME = 'Poupança' AND USER_ID = 1[0m
+  [1m[36mAccount Load (3.6ms)[0m  [1m[32mINSERT INTO ACCOUNTS (NAME, USER_ID, CREATED_AT, UPDATED_AT, BALANCE) VALUES ('Poupança', 1, now(), now(), 1.000000);[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 13ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-07 00:01:00 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (5.1ms)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-07 00:01:03 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (3.5ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 187.10.179.141 at 2016-12-07 00:01:06 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iLlT3qflyWZAUxl2TYQZJeufMcGciO8XgEEaJm8XOCCvQpFPSaPUiZInG+86i2dduYWNwRNWKoveH4XLYO6/kg==", "account"=>{"name"=>"teste", "balance"=>"", "user_id"=>"1"}}
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT * FROM ACCOUNTS WHERE NAME = 'teste' AND USER_ID = 1[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts/new
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-07 00:01:06 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (3.7ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 187.10.179.141 at 2016-12-07 00:01:09 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nwQ8RvID8wXzuMlsrh+4aVGUHGyy3XezR45xWHG1F7G4//7XHEXu6iHMy/XZEMYRA46gbD0Dsi8Z0O61fkyQAw==", "account"=>{"name"=>"", "balance"=>"1", "user_id"=>"1"}}
+Redirected to https://pluto-brunocasado.c9users.io/accounts/new
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-07 00:01:10 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (4.2ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 187.10.179.141 at 2016-12-07 00:01:13 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kR+5W6KVVE6k+yc2kaxNC7Met6PWpq873/YBY/7W9xC25HvKTNNJoXaPJa/mozNz4QQLo1l4aqeBqJ6O8S9wog==", "account"=>{"name"=>"teste", "balance"=>"1", "user_id"=>"1"}}
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT * FROM ACCOUNTS WHERE NAME = 'teste' AND USER_ID = 1[0m
+  [1m[36mAccount Load (7.6ms)[0m  [1m[32mINSERT INTO ACCOUNTS (NAME, USER_ID, CREATED_AT, UPDATED_AT, BALANCE) VALUES ('teste', 1, now(), now(), 1.000000);[0m
+Redirected to https://pluto-brunocasado.c9users.io/accounts
+Completed 302 Found in 10ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-07 00:01:13 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (7.5ms)
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.5ms)
+
+
