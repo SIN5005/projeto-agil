@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 	get 'menu' => 'layouts#menu'
 	post 'login' => 'login#login'
 	get 'transactions/new' => 'transactions#new'
+        post 'transactions/' => 'transactions#create'
 	get 'accounts' => 'accounts#index'
 	get 'accounts/new' => 'accounts#new'
 	post 'accounts' => 'accounts#create'

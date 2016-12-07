@@ -1,1 +1,46 @@
-<%= render 'form', category: @category %>
+<%- model_class = Category -%>
+
+<%= stylesheet_link_tag "style.css" %>
+
+  <ul>
+    <li><%=link_to "Home", "/home"%></li>
+    <li><%=link_to "Contas", "/accounts"%></li>
+    <li><%=link_to "Categorias", "/categories"%></li>
+    <li><%=link_to "Transações", "/transactions/new"%></li>
+    <li><%=link_to "Alterar Senha", "/password"%></li>            
+    <li><%=link_to "Sair", "/logout"%></li>
+  </ul>
+
+  <div class="page-header">
+    <h1>Categorias cadastradas</h1>
+  </div>
+  
+  <table border=2 style="width:50%" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Descrição</th>
+        <th>Criado em </th>
+        <th>Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @categories.find_each do |category| %>
+        <tr>
+          <td width=100><%= category.description %></td>
+          <td width=100><%= category.created_at %></td>
+          <td width=100><center>
+            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                        category_path(category),
+                        :method => :delete,
+                        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                        :class => 'btn btn-xs btn-danger' %></center>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <br><br>
+  
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+                        new_category_path(@categories), :class => 'btn btn-default btn-xs' %>

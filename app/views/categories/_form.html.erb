@@ -1,10 +1,17 @@
 <%= form_for(category) do |f| %>
-
   <%= stylesheet_link_tag "style.css" %>
+  <ul>
+    <li><%=link_to "Home", "/home"%></li>
+    <li><%=link_to "Contas", "/accounts"%></li>
+    <li><%=link_to "Categorias", "/categories"%></li>
+    <li><%=link_to "Transações", "/transactions/new"%></li>
+    <li><%=link_to "Alterar Senha", "/password"%></li>            
+    <li><%=link_to "Sair", "/logout"%></li>
+  </ul>
   <h1>Criar Categoria</h1>
     
     <div class="field">
-      <%= f.label "Categoria" %><br>
+      <%= f.label "Descrição" %><br>
       <%= f.text_field :description, :value => category.description %>
     </div>
       
@@ -14,7 +21,5 @@
       <%= f.submit "Salvar" %>
     </div>
     <p id="notice"><%= notice %></p>
-    
-    <%=link_to "Voltar", "/home"%>
     
 <% end %>

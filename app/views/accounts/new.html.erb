@@ -1,22 +1,14 @@
 <html>
     <head>
         <title>Contas</title>
-        <%= stylesheet_link_tag "style.css" %>
     </head>
     <body>
-        <ul>
-            <li><%=link_to "Home", "/home"%></li>
-            <li><%=link_to "Contas", "/accounts"%></li>
-            <li><%=link_to "Categorias", "/categories"%></li>
-            <li><%=link_to "Transações", "/transactions/new"%></li>
-            <li><%=link_to "Alterar Senha", "/password"%></li>            
-            <li><%=link_to "Sair", "/logout"%></li>
-        </ul>    
+      <%= render "layouts/menu" %>
         <h1>Cadastro de Contas</h1>
         
         <%= form_for Account.new do |f| %>
             Nome <br> <input type="text" name="account[name]"/><br>
-            Saldo <br> <input type="number" step="0.01" name="account[balance]"/>
+            Saldo <br> <input type="number" step="0.01" name="account[balance]" value="0.00"/>
             <%= f.hidden_field :user_id, :value => session[:user_id] %>
             <br><br>
             <button type="submit">Criar Conta</button>

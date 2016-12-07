@@ -15,23 +15,22 @@ RSpec.describe CategoriesController, type: :controller do
 		end	
 	end
 
-	#describe "POST #create" do
-	#	subject {post :create}
+	describe "POST #create" do
+		it "shoud return Salvo com sucesso." do
+			request.session[:user_id] = 1
+			
+			post :create, category: {description: 'Alimentação'}
+			
+			expect(request.flash[:notice]).to include("Salvo com sucesso.")
+		end
 		
-	#	it "shoud return Salvo com sucesso." do
-	#		category = Category.new
-	#		category.description = "teste"
-	#		@request.session[:user_id] = 1
-	#		category.save
-	#		expect( subject.request.flash[:notice] ).to include("Salvo com sucesso.")
-	#	end
-		
-	#	it "shoud return Preencha o campo descrição." do
-	#		category = Category.new
-	#		category.description = nil
-	#		@request.session[:user_id] = 1
-	#		expect( subject.request.flash[:notice] ).to include("Preencha o campo descrição.")
-	#	end
-	#end	
+		it "shoud return O campo Descrição deve ser preenchido." do
+			request.session[:user_id] = 1
+			
+			post :create, category: {description: ''}
+			
+			expect(request.flash[:notice]).to include("O campo Descrição deve ser preenchido.")
+		end	
+	end
 	
-end
+end	
