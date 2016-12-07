@@ -35317,3 +35317,29 @@ Processing by AccountsController#index as HTML
 Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/accounts" for 187.10.179.141 at 2016-12-07 00:45:03 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (16.2ms)
+Completed 200 OK in 29ms (Views: 15.6ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-07 00:45:05 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb
+  Rendered accounts/new.html.erb (5.4ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for 187.10.179.141 at 2016-12-07 00:45:21 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC[0m
+  Rendered accounts/index.html.erb (6.4ms)
+Completed 200 OK in 193ms (Views: 190.4ms | ActiveRecord: 0.4ms)
+
+

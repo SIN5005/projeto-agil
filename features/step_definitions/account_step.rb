@@ -13,7 +13,7 @@ When(/^click Account$/) do
 end
 
 Then(/^Accounts page shoud appears$/) do
-	puts 'Accounts page!'	
+	expect(browser.text.include?("Cadastro de Contas")).to be_truthy
 	sleep(5)
 	browser.close
 end
