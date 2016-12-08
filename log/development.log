@@ -46004,3 +46004,43 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 183ms (Views: 172.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-08 23:41:56 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+Redirected to https://pluto-brunocasado.c9users.io/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 187.10.179.141 at 2016-12-08 23:41:57 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (3.9ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-08 23:41:59 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+Redirected to https://pluto-brunocasado.c9users.io/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 187.10.179.141 at 2016-12-08 23:42:00 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AccountsController#new as HTML
+Redirected to https://pluto-brunocasado.c9users.io/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 187.10.179.141 at 2016-12-08 23:42:00 +0000
+Cannot render console from 187.10.179.141! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (3.3ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
