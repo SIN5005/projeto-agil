@@ -1,6 +1,13 @@
 require 'rails_helper.rb'
 
 describe UsersController do    
+    def change_pass(pass, confir, msg)
+        @request.session[:user_id] = 1
+        post :change_password, {newpass: pass, confirmation: confir}
+        expect( subject.request.flash[:notice] ).to include(msg)
+    end
+
+
     describe "GET #index" do
         it "renders the :index view" do
             get :index
@@ -55,15 +62,17 @@ describe UsersController do
 
     describe "POST #change_password" do 
         it "shoud return A senha esta diferente da confirmação de senha." do
-            @request.session[:user_id] = 1
-            post :change_password, {newpass: '1234', confirmation: '12345'}
-            expect( subject.request.flash[:notice] ).to include("A senha esta diferente da confirmação de senha")
+            change_pass('1234', '12345', 'A senha esta diferente da confirmação de senha')
+            #@request.session[:user_id] = 1
+            #post :change_password, {newpass: '1234', confirmation: '12345'}
+            #expect( subject.request.flash[:notice] ).to include("A senha esta diferente da confirmação de senha")
         end
     
         it "shoud return A senha deve conter 4 caracteres ou mais." do
-            @request.session[:user_id] = 1
-            post :change_password, {newpass: '123', confirmation: '123'}
-            expect( subject.request.flash[:notice] ).to include("A senha deve conter 4 caracteres ou mais")
+            change_pass('123', '123', 'A senha deve conter 4 caracteres ou mais')
+            #@request.session[:user_id] = 1
+            #post :change_password, {newpass: '123', confirmation: '123'}
+            #expect( subject.request.flash[:notice] ).to include("A senha deve conter 4 caracteres ou mais")
         end        
     
         #it "shoud return Erro ao salvar." do
