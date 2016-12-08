@@ -1,38 +1,60 @@
-=begin
 require 'watir-webdriver'
 
-browser = nil
-
-Given(/^I am loged in Pluto homepage$/) do  	
-	browser = Watir::Browser.new :firefox
-	browser.goto('http://localhost:3000/home')
+Given(/^I am at the home page$/) do
+  visit "/home"
 end
 
-When(/^click Account$/) do  
-	browser.link(:text => "Contas").when_present.click	
+When(/^I click at the account link$/) do
+  click_link('Contas')
 end
 
-Then(/^Accounts page shoud appears$/) do
-	expect(browser.text.include?("Cadastro de Contas")).to be_truthy
-	sleep(5)
-	browser.close
+Then(/^The account page should appears$/) do
+  page.should have_content("Nome")
+  page.should have_content("Saldo")
+  page.should have_content("Excluir")
+  page.should have_content("Criar nova conta")
 end
 
-
-Given(/^I am on the Account page$/) do
-	browser = Watir::Browser.new :firefox
-	browser.goto('http://localhost:3000/accounts')
+Given(/^I am on the account page$/) do
+  visit "/accounts"
 end
 
-When(/^I fill name and balance and click on create account$/) do
-	browser.text_field(:name => "account[name]").set 'Cartão de Crédito'
-	browser.text_field(:name => "account[balance]").set '0.00'
-	browser.button(:name => 'commit').click
+When(/^I click at create new account$/) do
+  click_link('Criar nova conta')
 end
 
-Then(/^save with shoud appears$/) do
-	puts 'Salvo com sucesso.'   	
-	sleep(5)
-	browser.close
+Then(/^The create new account page should appears$/) do
+  page.should have_content("Cadastro de Contas")
+  page.should have_content("Nome")
+  page.should have_content("Saldo")
+  page.should have_content("Criar Conta")
 end
-=end
+
+Given(/^I am on the create an account page$/) do
+  visit "/accounts/new"
+end
+
+When(/^I fill the name of an account and the balance$/) do
+  page.should have_content("Criar Conta")
+  fill_in('account[name]', with: 'Visa')
+  fill_in('account[balance]', with: 10.0)
+end
+
+When(/^I click on the create account button$/) do
+  click_button('Criar Conta')
+end
+
+Then(/^The account should be created$/) do
+  page.should have_content("Visa")
+  page.should have_content(10.0)
+end
+
+Then(/^I should see a message saying that the account was created$/) do
+  page.should have_content("Salvo com sucesso!")
+end
+
+Then(/^I should remove the account$/) do
+  click_button('Excluir')
+  page.should have_no_content('Visa')
+  page.should have_no_content(10.0)
+end
