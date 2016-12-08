@@ -14,8 +14,7 @@ describe UsersController do
             expect(response.body).to include("Nome")
             expect(response.body).to include("E-mail")
             expect(response.body).to include("Senha")
-            expect(response.body).to include("Confirmação de Senha")    
-            #expect(response).to render_template(:index)
+            expect(response.body).to include("Confirmação de Senha")
         end
     end
 
@@ -43,11 +42,9 @@ describe UsersController do
         it "shoud return Salvo com sucesso. e E-mail já cadastrado." do
             post :create, user: {name: 'Herik Lima', email: 'heriklyma@hotmail.com', password: '1234', password_confirmation: '1234'}
             expect( subject.request.flash[:notice] ).to include("Salvo com sucesso.")
-            #puts subject.request.flash[:notice]
 
             post :create, user: {name: 'Herik Lima', email: 'heriklyma@hotmail.com', password: '1234', password_confirmation: '1234'}
             expect( subject.request.flash[:notice] ).to include("E-mail já cadastrado.")
-            #puts subject.request.flash[:notice]
         end
     end
 
@@ -63,23 +60,12 @@ describe UsersController do
     describe "POST #change_password" do 
         it "shoud return A senha esta diferente da confirmação de senha." do
             change_pass('1234', '12345', 'A senha esta diferente da confirmação de senha')
-            #@request.session[:user_id] = 1
-            #post :change_password, {newpass: '1234', confirmation: '12345'}
-            #expect( subject.request.flash[:notice] ).to include("A senha esta diferente da confirmação de senha")
         end
     
         it "shoud return A senha deve conter 4 caracteres ou mais." do
             change_pass('123', '123', 'A senha deve conter 4 caracteres ou mais')
-            #@request.session[:user_id] = 1
-            #post :change_password, {newpass: '123', confirmation: '123'}
-            #expect( subject.request.flash[:notice] ).to include("A senha deve conter 4 caracteres ou mais")
         end        
     
-        #it "shoud return Erro ao salvar." do
-            #@request.session[:user_id] = 0
-            #post :change_password, {newpass: '123456', confirmation: '123456'}
-            #expect( subject.request.flash[:notice] ).to include("Erro ao salvar")
-        #end
 
         it "shoud return Salvo com sucesso." do
             user = User.new
@@ -108,11 +94,4 @@ describe UsersController do
             expect(response.body).to include("Esqueci minha Senha")
         end
     end
-
-    #describe "POST #forgot" do
-        #it "should return E-mail enviado com sucesso" do            
-            #post :forgot, {email: 'heriklyma@hotmail.com'}
-            #expect( request.flash[:notice] ).to include("E-mail enviado com sucesso")
-        #end
-    #end    
 end

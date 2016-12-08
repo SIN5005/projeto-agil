@@ -3360,3 +3360,1237 @@ Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms)
   [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@hotmail.com'[0m
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
   [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#password as HTML
+Redirected to http://test.host/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (273.6ms)
+Completed 200 OK in 489ms (Views: 473.0ms | ActiveRecord: 13.2ms)
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"description"=>"Alimentação"}}
+  [1m[36mCategory Load (1.3ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Alimentação', 1, now(), now());[0m
+Redirected to http://test.host/categories
+Completed 302 Found in 11ms (ActiveRecord: 1.3ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('123456'), now(), now());[0m
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('123456'), now(), now());[0m
+Processing by LoginController#login as HTML
+  Parameters: {"email"=>"", "password"=>"[FILTERED]"}
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('123456'), now(), now());[0m
+Processing by LoginController#login as HTML
+  Parameters: {"email"=>"heriklyma@hotmail.com.br", "password"=>"[FILTERED]"}
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('123456'), now(), now());[0m
+Processing by LoginController#login as HTML
+  Parameters: {"email"=>"heriklyma@hotmail.com.br", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com.br');[0m
+Redirected to http://test.host/login
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('123456'), now(), now());[0m
+Processing by LoginController#login as HTML
+  Parameters: {"email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('123');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://test.host/login
+Completed 302 Found in 7ms (ActiveRecord: 2.7ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('123456'), now(), now());[0m
+Processing by LoginController#login as HTML
+  Parameters: {"email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('123456');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://test.host/home
+Completed 302 Found in 7ms (ActiveRecord: 2.4ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (2.3ms)
+  [1m[36mAccount Load (1.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (95.8ms)
+Completed 200 OK in 118ms (Views: 96.1ms | ActiveRecord: 10.4ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.5ms)
+  [1m[36mAccount Load (2.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 15ms (Views: 10.5ms | ActiveRecord: 3.3ms)
+  [1m[35m (1.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#create as HTML
+  Parameters: {"transaction"=>{"account_id"=>"", "amount"=>"", "category_id"=>"", "user_id"=>"2"}}
+Redirected to http://test.host/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+  [1m[35m (7.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#create as HTML
+  Parameters: {"transaction"=>{"account_id"=>"", "amount"=>"-1,23", "category_id"=>"1", "user_id"=>"2"}}
+Redirected to http://test.host/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#create as HTML
+  Parameters: {"transaction"=>{"account_id"=>"1", "amount"=>"", "user_id"=>"2"}}
+Redirected to http://test.host/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#create as HTML
+  Parameters: {"transaction"=>{"account_id"=>"1", "amount"=>"3", "user_id"=>"2"}}
+Redirected to http://test.host/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (17.9ms)
+  Rendered users/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"name"=>""}}
+Redirected to http://test.host/users
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"", "name"=>"Herik Lima"}}
+Redirected to http://test.host/users
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"heriklyma@hotmail.com", "name"=>"Herik Lima", "password"=>"[FILTERED]"}}
+Redirected to http://test.host/users
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (2.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"heriklyma@hotmail.com", "name"=>"Herik Lima", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Redirected to http://test.host/users
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (4.6ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"heriklyma@hotmail.com", "name"=>"Herik Lima", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('1234'), now(), now());[0m
+Redirected to http://test.host/users
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"heriklyma@hotmail.com", "name"=>"Herik Lima", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+Redirected to http://test.host/users
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (3.8ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#password as HTML
+  Rendering users/password.html.erb within layouts/application
+  Rendered users/password.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#change_password as HTML
+  Parameters: {"confirmation"=>"12345", "newpass"=>"1234"}
+Redirected to http://test.host/password
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#change_password as HTML
+  Parameters: {"confirmation"=>"123", "newpass"=>"123"}
+Redirected to http://test.host/password
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Test', 'test@test.com', md5('1234'), now(), now());[0m
+Processing by UsersController#change_password as HTML
+  Parameters: {"confirmation"=>"123456", "newpass"=>"123456"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[33mUPDATE USERS SET PASSWORD = md5('123456'), UPDATED_AT = now() WHERE ID = 1[0m
+Redirected to http://test.host/password
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#logout as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#forgot_password as HTML
+  Rendering users/forgot_password.html.erb within layouts/application
+  Rendered users/forgot_password.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (1.0ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES(NULL, NULL, now(), now());[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (1.0ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('teste', NULL, now(), now());[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('teste', 1, now(), now());[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('lando', 'lando2@lando2.com', md5('123abc'), now(), now());[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('lando', 'lando2@lando2.com', md5('123abc'), now(), now());[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lando2@lando2.com"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "user_id", "created_at", "updated_at", "balance") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "primeira"], ["user_id", 281], ["created_at", 2016-12-08 04:45:45 UTC], ["updated_at", 2016-12-08 04:45:45 UTC], ["balance", #<BigDecimal:55b7df8a85f8,'0.0',9(18)>]]
+  [1m[35m (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('primeira', 281, now(), now());[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('primeira', 281, now(), now());[0m
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."name" = $1 LIMIT $2[0m  [["name", "primeira"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."description" = $1 LIMIT $2[0m  [["description", "primeira"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "account_id", "category_id", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 281], ["account_id", 18], ["category_id", 111], ["amount", 1.54]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik', 'Herik@hotmail.com', md5('1234'), now(), now());[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES(NULL, 'Herik@hotmail.com', md5('1234'), now(), now());[0m
+  [1m[35m (1.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik', 'Herik@hotmail.com', md5('1234'), now(), now());[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com.br');[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik', 'Herik@hotmail.com', md5('1234'), now(), now());[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'Herik@hotmail.com'[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@lima.com');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@lima.com') AND PASSWORD = MD5('123456');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@lima.com'[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@lima.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@lima.com') AND PASSWORD = MD5('123456');[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@lima.com'[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik', 'Herik@hotmail.com', md5('1234'), now(), now());[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[33mUPDATE USERS SET PASSWORD = md5('abcde'), UPDATED_AT = now() WHERE ID = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik', 'Herik@hotmail.com', md5('1234'), now(), now());[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com') AND PASSWORD = MD5('xyz');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@hotmail.com'[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com') AND PASSWORD = MD5('xyz');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@hotmail.com'[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com') AND PASSWORD = MD5('xyz');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@hotmail.com'[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#password as HTML
+Redirected to http://test.host/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+  [1m[35m (13.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (2.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (263.4ms)
+Completed 200 OK in 299ms (Views: 281.0ms | ActiveRecord: 14.3ms)
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"description"=>"Alimentação"}}
+  [1m[36mCategory Load (1.0ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Alimentação', 1, now(), now());[0m
+Redirected to http://test.host/categories
+Completed 302 Found in 10ms (ActiveRecord: 1.0ms)
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('123456'), now(), now());[0m
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('123456'), now(), now());[0m
+Processing by LoginController#login as HTML
+  Parameters: {"email"=>"", "password"=>"[FILTERED]"}
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('123456'), now(), now());[0m
+Processing by LoginController#login as HTML
+  Parameters: {"email"=>"heriklyma@hotmail.com.br", "password"=>"[FILTERED]"}
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('123456'), now(), now());[0m
+Processing by LoginController#login as HTML
+  Parameters: {"email"=>"heriklyma@hotmail.com.br", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com.br');[0m
+Redirected to http://test.host/login
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('123456'), now(), now());[0m
+Processing by LoginController#login as HTML
+  Parameters: {"email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('123');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://test.host/login
+Completed 302 Found in 7ms (ActiveRecord: 2.6ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('123456'), now(), now());[0m
+Processing by LoginController#login as HTML
+  Parameters: {"email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('123456');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://test.host/home
+Completed 302 Found in 6ms (ActiveRecord: 2.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (2.3ms)
+  [1m[36mAccount Load (1.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 55ms (Views: 37.0ms | ActiveRecord: 7.5ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (2.4ms)
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#create as HTML
+  Parameters: {"transaction"=>{"account_id"=>"", "amount"=>"", "category_id"=>"", "user_id"=>"2"}}
+Redirected to http://test.host/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#create as HTML
+  Parameters: {"transaction"=>{"account_id"=>"", "amount"=>"-1,23", "category_id"=>"1", "user_id"=>"2"}}
+Redirected to http://test.host/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#create as HTML
+  Parameters: {"transaction"=>{"account_id"=>"1", "amount"=>"", "user_id"=>"2"}}
+Redirected to http://test.host/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#create as HTML
+  Parameters: {"transaction"=>{"account_id"=>"1", "amount"=>"3", "user_id"=>"2"}}
+Redirected to http://test.host/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (69.7ms)
+  Rendered users/index.html.erb within layouts/application (71.5ms)
+Completed 200 OK in 78ms (Views: 75.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"name"=>""}}
+Redirected to http://test.host/users
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"", "name"=>"Herik Lima"}}
+Redirected to http://test.host/users
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"heriklyma@hotmail.com", "name"=>"Herik Lima", "password"=>"[FILTERED]"}}
+Redirected to http://test.host/users
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"heriklyma@hotmail.com", "name"=>"Herik Lima", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Redirected to http://test.host/users
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"heriklyma@hotmail.com", "name"=>"Herik Lima", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('1234'), now(), now());[0m
+Redirected to http://test.host/users
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"heriklyma@hotmail.com", "name"=>"Herik Lima", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+Redirected to http://test.host/users
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#password as HTML
+  Rendering users/password.html.erb within layouts/application
+  Rendered users/password.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#change_password as HTML
+  Parameters: {"confirmation"=>"12345", "newpass"=>"1234"}
+Redirected to http://test.host/password
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#change_password as HTML
+  Parameters: {"confirmation"=>"123", "newpass"=>"123"}
+Redirected to http://test.host/password
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Test', 'test@test.com', md5('1234'), now(), now());[0m
+Processing by UsersController#change_password as HTML
+  Parameters: {"confirmation"=>"123456", "newpass"=>"123456"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[33mUPDATE USERS SET PASSWORD = md5('123456'), UPDATED_AT = now() WHERE ID = 1[0m
+Redirected to http://test.host/password
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#logout as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#forgot_password as HTML
+  Rendering users/forgot_password.html.erb within layouts/application
+  Rendered users/forgot_password.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (1.1ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES(NULL, NULL, now(), now());[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.8ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('teste', NULL, now(), now());[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('teste', 1, now(), now());[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('lando', 'lando2@lando2.com', md5('123abc'), now(), now());[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('lando', 'lando2@lando2.com', md5('123abc'), now(), now());[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lando2@lando2.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "user_id", "created_at", "updated_at", "balance") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "primeira"], ["user_id", 297], ["created_at", 2016-12-08 04:48:11 UTC], ["updated_at", 2016-12-08 04:48:11 UTC], ["balance", #<BigDecimal:55becbb4f368,'0.0',9(18)>]]
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('primeira', 297, now(), now());[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('primeira', 297, now(), now());[0m
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."name" = $1 LIMIT $2[0m  [["name", "primeira"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."description" = $1 LIMIT $2[0m  [["description", "primeira"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "account_id", "category_id", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 297], ["account_id", 19], ["category_id", 117], ["amount", 1.54]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik', 'Herik@hotmail.com', md5('1234'), now(), now());[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (16.8ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES(NULL, 'Herik@hotmail.com', md5('1234'), now(), now());[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik', 'Herik@hotmail.com', md5('1234'), now(), now());[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com.br');[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik', 'Herik@hotmail.com', md5('1234'), now(), now());[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'Herik@hotmail.com'[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@lima.com');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@lima.com') AND PASSWORD = MD5('123456');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@lima.com'[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@lima.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@lima.com') AND PASSWORD = MD5('123456');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@lima.com'[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik', 'Herik@hotmail.com', md5('1234'), now(), now());[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[33mUPDATE USERS SET PASSWORD = md5('abcde'), UPDATED_AT = now() WHERE ID = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik', 'Herik@hotmail.com', md5('1234'), now(), now());[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com') AND PASSWORD = MD5('xyz');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@hotmail.com'[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com') AND PASSWORD = MD5('xyz');[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@hotmail.com'[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com') AND PASSWORD = MD5('xyz');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@hotmail.com'[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (6.9ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#password as HTML
+Redirected to http://test.host/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms)
+  [1m[35m (7.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (2.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (276.7ms)
+Completed 200 OK in 309ms (Views: 293.2ms | ActiveRecord: 13.6ms)
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"description"=>"Alimentação"}}
+  [1m[36mCategory Load (1.3ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Alimentação', 1, now(), now());[0m
+Redirected to http://test.host/categories
+Completed 302 Found in 13ms (ActiveRecord: 1.3ms)
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by LoginController#login as HTML
+  Parameters: {"email"=>"", "password"=>"[FILTERED]"}
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by LoginController#login as HTML
+  Parameters: {"email"=>"heriklyma@hotmail.com.br", "password"=>"[FILTERED]"}
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by LoginController#login as HTML
+  Parameters: {"email"=>"heriklyma@hotmail.com.br", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com.br');[0m
+Redirected to http://test.host/login
+Completed 302 Found in 5ms (ActiveRecord: 1.7ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by LoginController#login as HTML
+  Parameters: {"email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+Redirected to http://test.host/login
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+Processing by LoginController#login as HTML
+  Parameters: {"email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+Redirected to http://test.host/login
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (2.2ms)
+  [1m[36mAccount Load (1.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (36.4ms)
+Completed 200 OK in 56ms (Views: 40.1ms | ActiveRecord: 7.0ms)
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (56.8ms)
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (67.2ms)
+Completed 200 OK in 71ms (Views: 68.4ms | ActiveRecord: 1.7ms)
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#create as HTML
+  Parameters: {"transaction"=>{"account_id"=>"", "amount"=>"", "category_id"=>"", "user_id"=>"2"}}
+Redirected to http://test.host/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#create as HTML
+  Parameters: {"transaction"=>{"account_id"=>"", "amount"=>"-1,23", "category_id"=>"1", "user_id"=>"2"}}
+Redirected to http://test.host/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#create as HTML
+  Parameters: {"transaction"=>{"account_id"=>"1", "amount"=>"", "user_id"=>"2"}}
+Redirected to http://test.host/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#create as HTML
+  Parameters: {"transaction"=>{"account_id"=>"1", "amount"=>"3", "user_id"=>"2"}}
+Redirected to http://test.host/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (17.0ms)
+  Rendered users/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"name"=>""}}
+Redirected to http://test.host/users
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"", "name"=>"Herik Lima"}}
+Redirected to http://test.host/users
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"heriklyma@hotmail.com", "name"=>"Herik Lima", "password"=>"[FILTERED]"}}
+Redirected to http://test.host/users
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"heriklyma@hotmail.com", "name"=>"Herik Lima", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Redirected to http://test.host/users
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"heriklyma@hotmail.com", "name"=>"Herik Lima", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+Redirected to http://test.host/users
+Completed 302 Found in 7ms (ActiveRecord: 1.1ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#password as HTML
+  Rendering users/password.html.erb within layouts/application
+  Rendered users/password.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#change_password as HTML
+  Parameters: {"confirmation"=>"12345", "newpass"=>"1234"}
+Redirected to http://test.host/password
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#change_password as HTML
+  Parameters: {"confirmation"=>"123", "newpass"=>"123"}
+Redirected to http://test.host/password
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#change_password as HTML
+  Parameters: {"confirmation"=>"123456", "newpass"=>"123456"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[33mUPDATE USERS SET PASSWORD = md5('123456'), UPDATED_AT = now() WHERE ID = 1[0m
+Redirected to http://test.host/password
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#logout as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#forgot_password as HTML
+  Rendering users/forgot_password.html.erb within layouts/application
+  Rendered users/forgot_password.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (1.5ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES(NULL, NULL, now(), now());[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.9ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('teste', NULL, now(), now());[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('teste', 1, now(), now());[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lando2@lando2.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com.br');[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@hotmail.com'[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@lima.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@lima.com') AND PASSWORD = MD5('123456');[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@lima.com'[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@lima.com');[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@lima.com') AND PASSWORD = MD5('123456');[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@lima.com'[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[33mUPDATE USERS SET PASSWORD = md5('abcde'), UPDATED_AT = now() WHERE ID = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com') AND PASSWORD = MD5('xyz');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@hotmail.com'[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com') AND PASSWORD = MD5('xyz');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@hotmail.com'[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com') AND PASSWORD = MD5('xyz');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@hotmail.com'[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com') AND PASSWORD = MD5('xyz');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@hotmail.com'[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#password as HTML
+Redirected to http://test.host/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+  [1m[35m (2.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (278.2ms)
+Completed 200 OK in 312ms (Views: 302.7ms | ActiveRecord: 7.5ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"description"=>"Alimentação"}}
+  [1m[36mCategory Load (0.8ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Alimentação', 1, now(), now());[0m
+Redirected to http://test.host/categories
+Completed 302 Found in 11ms (ActiveRecord: 0.8ms)
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('123456'), now(), now());[0m
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('123456'), now(), now());[0m
+Processing by LoginController#login as HTML
+  Parameters: {"email"=>"", "password"=>"[FILTERED]"}
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('123456'), now(), now());[0m
+Processing by LoginController#login as HTML
+  Parameters: {"email"=>"heriklyma@hotmail.com.br", "password"=>"[FILTERED]"}
+Redirected to http://test.host/login
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('123456'), now(), now());[0m
+Processing by LoginController#login as HTML
+  Parameters: {"email"=>"heriklyma@hotmail.com.br", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com.br');[0m
+Redirected to http://test.host/login
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('123456'), now(), now());[0m
+Processing by LoginController#login as HTML
+  Parameters: {"email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('123');[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://test.host/login
+Completed 302 Found in 13ms (ActiveRecord: 4.3ms)
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('123456'), now(), now());[0m
+Processing by LoginController#login as HTML
+  Parameters: {"email"=>"heriklyma@hotmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com') AND PASSWORD = MD5('123456');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'heriklyma@hotmail.com'[0m
+Redirected to http://test.host/home
+Completed 302 Found in 8ms (ActiveRecord: 2.4ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (4.2ms)
+  [1m[36mAccount Load (1.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (39.7ms)
+Completed 200 OK in 57ms (Views: 39.4ms | ActiveRecord: 8.7ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.4ms)
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#create as HTML
+  Parameters: {"transaction"=>{"account_id"=>"", "amount"=>"", "category_id"=>"", "user_id"=>"2"}}
+Redirected to http://test.host/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#create as HTML
+  Parameters: {"transaction"=>{"account_id"=>"", "amount"=>"-1,23", "category_id"=>"1", "user_id"=>"2"}}
+Redirected to http://test.host/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#create as HTML
+  Parameters: {"transaction"=>{"account_id"=>"1", "amount"=>"", "user_id"=>"2"}}
+Redirected to http://test.host/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by TransactionsController#create as HTML
+  Parameters: {"transaction"=>{"account_id"=>"1", "amount"=>"3", "user_id"=>"2"}}
+Redirected to http://test.host/
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (74.0ms)
+  Rendered users/index.html.erb within layouts/application (76.3ms)
+Completed 200 OK in 82ms (Views: 80.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"name"=>""}}
+Redirected to http://test.host/users
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"", "name"=>"Herik Lima"}}
+Redirected to http://test.host/users
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"heriklyma@hotmail.com", "name"=>"Herik Lima", "password"=>"[FILTERED]"}}
+Redirected to http://test.host/users
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"heriklyma@hotmail.com", "name"=>"Herik Lima", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Redirected to http://test.host/users
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"heriklyma@hotmail.com", "name"=>"Herik Lima", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik Lima', 'heriklyma@hotmail.com', md5('1234'), now(), now());[0m
+Redirected to http://test.host/users
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"heriklyma@hotmail.com", "name"=>"Herik Lima", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('heriklyma@hotmail.com');[0m
+Redirected to http://test.host/users
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#password as HTML
+  Rendering users/password.html.erb within layouts/application
+  Rendered users/password.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#change_password as HTML
+  Parameters: {"confirmation"=>"12345", "newpass"=>"1234"}
+Redirected to http://test.host/password
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#change_password as HTML
+  Parameters: {"confirmation"=>"123", "newpass"=>"123"}
+Redirected to http://test.host/password
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Test', 'test@test.com', md5('1234'), now(), now());[0m
+Processing by UsersController#change_password as HTML
+  Parameters: {"confirmation"=>"123456", "newpass"=>"123456"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[33mUPDATE USERS SET PASSWORD = md5('123456'), UPDATED_AT = now() WHERE ID = 1[0m
+Redirected to http://test.host/password
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#logout as HTML
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#forgot_password as HTML
+  Rendering users/forgot_password.html.erb within layouts/application
+  Rendered users/forgot_password.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (1.0ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES(NULL, NULL, now(), now());[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (1.0ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('teste', NULL, now(), now());[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('teste', 1, now(), now());[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('lando', 'lando2@lando2.com', md5('123abc'), now(), now());[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('lando', 'lando2@lando2.com', md5('123abc'), now(), now());[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lando2@lando2.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "user_id", "created_at", "updated_at", "balance") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "primeira"], ["user_id", 313], ["created_at", 2016-12-08 04:54:12 UTC], ["updated_at", 2016-12-08 04:54:12 UTC], ["balance", #<BigDecimal:5570e17b3368,'0.0',9(18)>]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('primeira', 313, now(), now());[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('primeira', 313, now(), now());[0m
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."name" = $1 LIMIT $2[0m  [["name", "primeira"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."description" = $1 LIMIT $2[0m  [["description", "primeira"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "account_id", "category_id", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 313], ["account_id", 20], ["category_id", 127], ["amount", 1.54]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik', 'Herik@hotmail.com', md5('1234'), now(), now());[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (17.1ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES(NULL, 'Herik@hotmail.com', md5('1234'), now(), now());[0m
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik', 'Herik@hotmail.com', md5('1234'), now(), now());[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com.br');[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik', 'Herik@hotmail.com', md5('1234'), now(), now());[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'Herik@hotmail.com'[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@lima.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@lima.com') AND PASSWORD = MD5('123456');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@lima.com'[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@lima.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@lima.com') AND PASSWORD = MD5('123456');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@lima.com'[0m
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik', 'Herik@hotmail.com', md5('1234'), now(), now());[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[33mUPDATE USERS SET PASSWORD = md5('abcde'), UPDATED_AT = now() WHERE ID = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('Herik', 'Herik@hotmail.com', md5('1234'), now(), now());[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com') AND PASSWORD = MD5('xyz');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@hotmail.com'[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com') AND PASSWORD = MD5('xyz');[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@hotmail.com'[0m
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com') AND PASSWORD = MD5('xyz');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = RETRIES + 1, RELEASE_AT = (now() + interval '10' minute) WHERE EMAIL = 'Herik@hotmail.com'[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('Herik@hotmail.com');[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
