@@ -37,6 +37,7 @@ When(/^I fill name, email, password and password confirmation and click on creat
 end
 
 Then(/^save with success shoud appears$/) do
+	sleep(5)
 	expect(browser.text.include?("Salvo com sucesso.")).to be_truthy	
 	sleep(5)
 	browser.close

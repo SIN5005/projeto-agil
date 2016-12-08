@@ -13,7 +13,7 @@ RSpec.describe User, type: :model do
                result = @user.save
 
                expect(result[0]).to be_truthy
-               expect(result[1]).to include("Salvo com sucesso.")
+               expect(result[1]).to include("Sucesso.")
           end
           it "Erro ao salvar." do
                @user.name = nil

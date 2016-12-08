@@ -12,11 +12,15 @@ Rails.application.routes.draw do
 	get 'menu' => 'layouts#menu'
 	post 'login' => 'login#login'
 	get 'transactions/new' => 'transactions#new'
-        post 'transactions/' => 'transactions#create'
+	post 'transactions/' => 'transactions#create'
 	get 'accounts' => 'accounts#index'
 	get 'accounts/new' => 'accounts#new'
 	post 'accounts' => 'accounts#create'
 	delete 'accounts/:id' => 'accounts#destroy', as: :account
 	get 'categories' => 'categories#index'
-	post 'categories' => 'categories#create'
+	get 'categories/new' => 'categories#new', as: :new_category
+	post 'categories' => 'categories#create', as: :index_category
+	get 'categories/:id/edit' => 'categories#edit', as: :edit_category
+	get 'categories/:id/show' => 'categories#show', as: :category
+	delete 'categories/:id'   => 'categories#destroy'
 end
