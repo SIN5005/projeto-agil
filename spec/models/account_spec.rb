@@ -32,16 +32,7 @@ RSpec.describe Account, type: :model do
          end
     end
     
-#    context "Titulos válidos" do
-#        it "Titulo completo" do
-#            account = Account.new
-#            account.name = "Mastercard"
-#            
-#            expect(account.titulo_completo).to eql("Titulo completo com o nome do cartao")
-#        end
-#    end
     #https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     #https://github.com/rspec/rspec-expectations
     #http://betterspecs.org/
-    #teste
 end
