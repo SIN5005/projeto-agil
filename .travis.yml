@@ -19,4 +19,3 @@ script:
   - export CODECLIMATE_REPO_TOKEN=b38cccd7bf0953196140df84efaed5d3763d20aeb0eec0f4c368d16a8c643e37
   - bundle exec rake db:create db:migrate
   - bundle exec rake db:test:prepare  
-  - bundle exec rspec
