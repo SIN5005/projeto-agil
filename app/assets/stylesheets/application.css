@@ -5,7 +5,7 @@
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
  * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
  *
- * You're free to add application-wide styles to this file and they'll appear at the left of the
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
@@ -13,75 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-ul.bottom-nav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-ul.bottom-nav li {
-    float: left;
-}
-
-ul.bottom-nav li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 25px;
-    text-decoration: none;
-}
-
-ul.bottom-nav li a:hover {
-    background-color: #111;
-}
-
-ul.left-nav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color: #f1f1f1;
-    height: 100%; /* Full height */
-    position: fixed; /* Make it stick, even on scroll */
-    overflow: auto; /* Enable scrolling if the sidenav has too much content */
-}
-
-ul.left-nav li a {
-    display: block;
-    color: #000;
-    padding: 14px 25px;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-/* Change the link color on hover */
-ul.left-nav li a:hover {
-    background-color: #555;
-    color: white;
-}
-
-/*
-#nav-bar{
-    margin-left: 1.5%;
-}
-*/
-
-#flash-alert, #flash-notice{
-    text-align: center;
-    font-size: 140%;
-    width: 100%;
-    margin-left: 0;
-    margin-left: 1.5%;
-    margin-right: 0;
-    margin-top: 0;
-    padding: 0.5%;
-}

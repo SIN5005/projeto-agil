@@ -37,6 +37,7 @@ When(/^I fill email with a correct password$/) do
 end
 
 Then(/^I Should be redirected to main page$/) do
+	sleep(5)
 	expect(browser.text.include?("PLUTO - Financial App")).to be_truthy
 	sleep(5)
 	browser.close
