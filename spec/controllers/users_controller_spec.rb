@@ -39,12 +39,18 @@ describe UsersController do
             expect( subject.request.flash[:notice] ).to include("Senha e confirmação não conferem.")
         end
 
-        it "shoud return Salvo com sucesso. e E-mail já cadastrado." do
+        it "shoud return Salvo com sucesso e e-mail já cadastrado e recuperação de senha." do
             post :create, user: {name: 'Herik Lima', email: 'heriklyma@hotmail.com', password: '1234', password_confirmation: '1234'}
             expect( subject.request.flash[:notice] ).to include("Salvo com sucesso.")
 
             post :create, user: {name: 'Herik Lima', email: 'heriklyma@hotmail.com', password: '1234', password_confirmation: '1234'}
             expect( subject.request.flash[:notice] ).to include("E-mail já cadastrado.")
+
+            post :forgot, {email: 'herik@herik.com'}
+            expect( subject.request.flash[:notice] ).to include("E-mail não cadastrado")
+
+            post :forgot, {email: 'heriklyma@hotmail.com'}
+            expect( subject.request.flash[:notice] ).to include("E-mail enviado com sucesso")
         end
     end
 
@@ -75,7 +81,7 @@ describe UsersController do
             user.save            
             @request.session[:user_id] = 1
             post :change_password, {newpass: '123456', confirmation: '123456'}
-            expect( subject.request.flash[:notice] ).to include("Salvo com sucesso")
+            expect( subject.request.flash[:notice] ).to include("Sucesso")
         end        
     end    
 

@@ -15,13 +15,16 @@ class UsersController < ApplicationController
         @user.id        = -1
         @user.email     = params[:email]
         @user.password  = "#{rand(1...9)}#{rand(1...9)}#{rand(1...9)}#{rand(1...9)}"
-        @user.update_password
-        puts "E-mail: #{@user.email}"
-        puts "password: #{@user.password}"
 
-        PasswordMailer.sample_email(@user).deliver 
-        flash[:notice] = "E-mail enviado com sucesso."
-        redirect_to :forgot_password
+        if not @user.email_already_registered
+            flash[:notice] = "E-mail não cadastrado."
+            redirect_to :forgot_password
+        else   
+            @user.update_password
+            PasswordMailer.sample_email(@user).deliver 
+            flash[:notice] = "E-mail enviado com sucesso."
+            redirect_to :forgot_password
+        end
     end
 
     def logout

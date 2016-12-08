@@ -61,17 +61,18 @@ class User < ApplicationRecord
     end
 
     def update_password
-        query = "UPDATE USERS SET PASSWORD = md5(%s), UPDATED_AT = now() WHERE ID = %d"
+        query = "UPDATE USERS SET PASSWORD = md5(%s), UPDATED_AT = now() WHERE ID = %d OR LOWER(EMAIL) = LOWER(%s)"
 
         begin
             status = User.find_by_sql(query % [User.connection.quote(password),
-                                               User.connection.quote(id)])
+                                               User.connection.quote(id),
+                                               User.connection.quote(email)])
         rescue
             status = false
         end
 
         if status
-            [status, "Salvo com sucesso."]
+            [status, "Sucesso"]
         else
             [status, "Erro ao salvar."]
         end
