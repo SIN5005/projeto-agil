@@ -1,7 +1,7 @@
 [![Code Climate](https://codeclimate.com/repos/580829fcf3ccc3005800051c/badges/ace6e627eb838c0c7faa/gpa.svg)](https://codeclimate.com/repos/580829fcf3ccc3005800051c/feed)
 [![Test Coverage](https://codeclimate.com/repos/580829fcf3ccc3005800051c/badges/ace6e627eb838c0c7faa/coverage.svg)](https://codeclimate.com/repos/580829fcf3ccc3005800051c/coverage)
 [![Travis-CI](https://travis-ci.org/SIN5005/projeto-agil.svg?branch=master)](https://travis-ci.org/SIN5005/projeto-agil)
-[![Heroku](https://heroku-badge.herokuapp.com/?app=pluto-finapp)](https://pluto-finapp.herokuapp.com)
+[![Heroku](https://heroku-badge.herokuapp.com/?sin5005)](https://sin5005.herokuapp.com)
 
 # Pluto - Financial App 
 Sistema de Organização de Finanças Pessoais
