@@ -73,8 +73,7 @@
         1,
         null,
         null,
-        1,
-        null
+        1
       ],
       "/home/herik/projeto-agil/config/application.rb": [
         1,
@@ -89,9 +88,6 @@
         1,
         null,
         null,
-        null,
-        1,
-        1,
         null,
         null,
         null
@@ -270,7 +266,7 @@
         null,
         null
       ],
-      "/home/herik/projeto-agil/app/helpers/accounts_helper.rb": [
+      "/home/herik/projeto-agil/app/helpers/application_helper.rb": [
         1,
         null
       ],
@@ -279,10 +275,6 @@
         null
       ],
       "/home/herik/projeto-agil/app/helpers/login_helper.rb": [
-        1,
-        null
-      ],
-      "/home/herik/projeto-agil/app/helpers/transaction_helper.rb": [
         1,
         null
       ],
@@ -1183,6 +1175,6 @@
         null
       ]
     },
-    "timestamp": 1481165291
+    "timestamp": 1481168115
   }
 }
