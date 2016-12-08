@@ -870,6 +870,14 @@
       "/home/herik/projeto-agil/app/models/application_record.rb": [
         1,
         1,
+        null,
+        1,
+        25,
+        21,
+        null,
+        4,
+        null,
+        null,
         null
       ],
       "/home/herik/projeto-agil/spec/models/category_spec.rb": [
@@ -928,10 +936,6 @@
         null,
         null,
         6,
-        4,
-        null,
-        2,
-        null,
         null,
         null,
         1,
@@ -1109,10 +1113,6 @@
         null,
         null,
         16,
-        15,
-        null,
-        1,
-        null,
         null,
         null,
         1,
@@ -1166,14 +1166,10 @@
         null,
         null,
         3,
-        2,
-        null,
-        1,
-        null,
         null,
         null
       ]
     },
-    "timestamp": 1481175986
+    "timestamp": 1481198605
   }
 }

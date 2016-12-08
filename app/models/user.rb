@@ -14,11 +14,7 @@ class User < ApplicationRecord
             status = false
         end
 
-        if status            
-            [status, "Salvo com sucesso."]
-        else
-            [status, "Erro ao salvar."]
-        end
+        check_status(status)
     end
 
     def get_by_email
@@ -71,10 +67,6 @@ class User < ApplicationRecord
             status = false
         end
 
-        if status
-            [status, "Sucesso"]
-        else
-            [status, "Erro ao salvar."]
-        end
+        check_status(status)
     end
 end

@@ -41,7 +41,7 @@ describe UsersController do
 
         it "shoud return Salvo com sucesso e e-mail já cadastrado e recuperação de senha." do
             post :create, user: {name: 'Herik Lima', email: 'heriklyma@hotmail.com', password: '1234', password_confirmation: '1234'}
-            expect( subject.request.flash[:notice] ).to include("Salvo com sucesso.")
+            expect( subject.request.flash[:notice] ).to include("Sucesso.")
 
             post :create, user: {name: 'Herik Lima', email: 'heriklyma@hotmail.com', password: '1234', password_confirmation: '1234'}
             expect( subject.request.flash[:notice] ).to include("E-mail já cadastrado.")

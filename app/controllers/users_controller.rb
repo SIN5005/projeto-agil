@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     end
 
     def forgot
-        @user           = User.new        
+        @user           = User.new
         @user.id        = -1
         @user.email     = params[:email]
         @user.password  = "#{rand(1...9)}#{rand(1...9)}#{rand(1...9)}#{rand(1...9)}"
