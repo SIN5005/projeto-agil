@@ -10,10 +10,10 @@ class CategoriesController < ApplicationController
     end
     
     def destroy
-        #@category.destroy
-        Category.destroy params[:id]
-        redirect_to '/categories/new', :notice => "Your patient has been deleted"
-        #redirect_to action: :index
+        @category = Category.find (params[:id])
+        @category.destroy
+        redirect_to(action: 'index')
+        #redirect_to '/categories/new', :notice => "Sua categoria foi excluída."
     end
     
     def create
@@ -24,7 +24,7 @@ class CategoriesController < ApplicationController
 
         if categoryParameters[:description].empty?
             flash[:notice] = "O campo Descrição deve ser preenchido."
-            redirect_to index
+            redirect_to :new_category
         else             
             flash[:notice] = @category.save[1]
             redirect_to action: "index"

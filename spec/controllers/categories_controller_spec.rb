@@ -25,11 +25,11 @@ RSpec.describe CategoriesController, type: :controller do
 		end
 		
 		it "shoud return O campo Descrição deve ser preenchido." do
-			#request.session[:user_id] = 1
+			request.session[:user_id] = 1
 			
-			#post :create, category: {description: ''}
+			post :create, category: {description: ''}
 			
-			#expect(request.flash[:notice]).to include("O campo Descrição deve ser preenchido.")
+			expect(request.flash[:notice]).to include("O campo Descrição deve ser preenchido.")
 		end	
 	end
 	

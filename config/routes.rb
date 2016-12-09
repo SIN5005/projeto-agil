@@ -22,5 +22,5 @@ Rails.application.routes.draw do
 	post 'categories' => 'categories#create', as: :index_category
 	get 'categories/:id/edit' => 'categories#edit', as: :edit_category
 	get 'categories/:id/show' => 'categories#show', as: :category
-	delete 'categories/:id'   => 'categories#destroy'
+	delete 'categories/:id'   => 'categories#destroy', as: :destroy_category
 end

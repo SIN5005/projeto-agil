@@ -28,12 +28,11 @@
         <tr>
           <td width=100><%= category.description %></td>
           <td width=100><%= category.created_at %></td>
-          <td width=100><center>
-            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                        category_path(category),
-                        :method => :delete,
-                        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                        :class => 'btn btn-xs btn-danger' %></center>
+          <td width=100>
+              <center>
+                <%= link_to 'Deletar', {id: category, action: 'show'},
+                                       {method: "delete"}  %>
+                </center>
           </td>
         </tr>
       <% end %>
@@ -44,3 +43,4 @@
   
   <%= link_to t('.new', :default => t("helpers.links.new")),
                         new_category_path(@categories), :class => 'btn btn-default btn-xs' %>
+                        
