@@ -12,6 +12,7 @@
             <%= f.hidden_field :user_id, :value => session[:user_id] %>
             <br><br>
             <button type="submit">Criar Conta</button>
+            <p><%= flash_message %></p>
         <% end %>
     </body>
 </html>

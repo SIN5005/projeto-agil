@@ -6,11 +6,11 @@
 <%= form_for @transaction do |t| %>
   <%= t.hidden_field :user_id, :value => @user_id %>
   <%= t.label "Conta: " %>
-  <%= t.select :account_id, Account.all.order(:name).collect{|p| [p.name, p.id]}, include_blank: true %>
+  <%= t.select :account_id, Account.where(user_id: session[:user_id]).order(:name).collect{|p| [p.name, p.id]}, include_blank: true %>
   <%= t.label :amount, "Quantia: " %>
   <%= t.text_field :amount %>
   <%= t.label "Categoria: " %>
-  <%= t.select :category_id, Category.all.order(:description).collect{|p| [p.description, p.id]}, include_blank: true %>
+  <%= t.select :category_id, Category.where(user_id: session[:user_id]).order(:description).collect{|p| [p.description, p.id]}, include_blank: true %>
   <%= t.submit "Incluir" %>
   <% if flash[:error] %>
     <br>

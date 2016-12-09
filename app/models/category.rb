@@ -14,11 +14,7 @@ class Category < ApplicationRecord
             status = false
         end
 
-        if status            
-            [status, "Salvo com sucesso."]
-        else
-            [status, "Erro ao salvar."]
-        end
+        check_status(status)
     end 
     
 end

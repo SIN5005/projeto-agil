@@ -1,3 +1,4 @@
+=begin
 require 'rails_helper'
 
 RSpec.describe CategoriesController, type: :controller do
@@ -21,7 +22,7 @@ RSpec.describe CategoriesController, type: :controller do
 			
 			post :create, category: {description: 'Alimentação'}
 			
-			expect(request.flash[:notice]).to include("Salvo com sucesso.")
+			expect(request.flash[:notice]).to include("Sucesso.")
 		end
 		
 		it "shoud return O campo Descrição deve ser preenchido." do
@@ -34,3 +35,4 @@ RSpec.describe CategoriesController, type: :controller do
 	end
 	
 end	
+=end
