@@ -8,9 +8,9 @@ class TransactionsController < ApplicationController
   def create
     @transaction = Transaction.new(transaction_params)
     if @transaction.save
-      account = Account.find(@transaction.account_id)
-      account.balance += @transaction.amount
-      account.save
+      @account = Account.find(@transaction.account_id)
+      @account.balance += @transaction.amount
+      @account.save
       flash[:success] = "Transação registrada"
       flash.keep(:success)
     else

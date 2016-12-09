@@ -5718,3 +5718,1094 @@ Processing by AccountsController#new as HTML
 Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2016-12-09 00:12:25 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (35.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::StatementInvalid (PG::InsufficientPrivilege: ERROR:  permission denied for relation schema_migrations
+: SELECT "schema_migrations".* FROM "schema_migrations"):
+  
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:598:in `async_exec'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:598:in `block in exec_no_cache'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract_adapter.rb:566:in `block in log'
+activesupport (5.0.0.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract_adapter.rb:560:in `log'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:598:in `exec_no_cache'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:585:in `execute_and_clear'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:103:in `exec_query'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/database_statements.rb:377:in `select_prepared'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/database_statements.rb:39:in `select_all'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/query_cache.rb:70:in `select_all'
+activerecord (5.0.0.1) lib/active_record/querying.rb:39:in `find_by_sql'
+activerecord (5.0.0.1) lib/active_record/relation.rb:699:in `exec_queries'
+activerecord (5.0.0.1) lib/active_record/relation.rb:580:in `load'
+activerecord (5.0.0.1) lib/active_record/relation.rb:260:in `records'
+activerecord (5.0.0.1) lib/active_record/relation/delegation.rb:38:in `map'
+activerecord (5.0.0.1) lib/active_record/migration.rb:1030:in `block in get_all_versions'
+activesupport (5.0.0.1) lib/active_support/deprecation/reporting.rb:36:in `silence'
+activesupport (5.0.0.1) lib/active_support/deprecation/instance_delegator.rb:19:in `silence'
+activerecord (5.0.0.1) lib/active_record/migration.rb:1028:in `get_all_versions'
+activerecord (5.0.0.1) lib/active_record/migration.rb:1042:in `needs_migration?'
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (5024.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pluto_development"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (112.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pluto_development"[0m
+  [1m[35m (113.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pluto_test"[0m
+  [1m[35m (64.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (18.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1967684034406897800);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20161020014841)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "password" character varying NOT NULL, "retries" integer DEFAULT 0, "release_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161020014841"]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAccounts (20161120203512)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" serial primary key, "name" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE  INDEX  "index_accounts_on_user_id" ON "accounts"  ("user_id")[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161120203512"]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnBalanceToAccount (20161129004544)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "accounts" ADD "balance" decimal[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161129004544"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategories (20161202111603)
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "categories" ("id" serial primary key, "description" character varying, "user_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161202111603"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTransactions (20161206022640)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" serial primary key, "user_id" integer, "account_id" integer, "category_id" integer, "amount" float NOT NULL, CONSTRAINT "fk_rails_77364e6416"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_01f020e267"
+FOREIGN KEY ("account_id")
+  REFERENCES "accounts" ("id")
+, CONSTRAINT "fk_rails_0ea2ad3927"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE  INDEX  "index_transactions_on_user_id" ON "transactions"  ("user_id")[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE  INDEX  "index_transactions_on_account_id" ON "transactions"  ("account_id")[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE  INDEX  "index_transactions_on_category_id" ON "transactions"  ("category_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161206022640"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-12-09 02:14:34 UTC], ["updated_at", 2016-12-09 02:14:34 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1967684034406897800)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'accounts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'transactions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+Started GET "/" for ::1 at 2016-12-09 00:14:45 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (364.5ms)
+Completed 200 OK in 471ms (Views: 460.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-12-09 00:14:50 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for ::1 at 2016-12-09 00:14:52 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (30.9ms)
+  Rendered users/index.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 107ms (Views: 60.8ms | ActiveRecord: 9.9ms)
+
+
+Started POST "/users" for ::1 at 2016-12-09 00:15:07 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+wU7wI6dqpuWygWUm2ir6Lqqpy+DnZIRCdQlgJSV/ALXWNTNVgmqU7Q5FS21Tb0wMy4KaDd7jx/FGZXS1/RJfQ==", "user"=>{"name"=>"lando", "email"=>"lando@lando", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('lando@lando');[0m
+  [1m[36mUser Load (37.2ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('lando', 'lando@lando', md5('123lando'), now(), now());[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 48ms (ActiveRecord: 39.4ms)
+
+
+Started GET "/users" for ::1 at 2016-12-09 00:15:07 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.3ms)
+  Rendered users/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 34ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-12-09 00:15:09 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for ::1 at 2016-12-09 00:15:16 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+rpOPjtdx15+D01VFscxgeQLZ/5tCLh0NXqdjq7XSSjW56Ez48nHllz8Xew44idZbY/KudnupXr5ty3c7bb8Vw==", "email"=>"lando@lando", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('lando@lando');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('lando@lando');[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('lando@lando') AND PASSWORD = MD5('123lando');[0m
+  [1m[36mUser Load (61.7ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'lando@lando'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 76ms (ActiveRecord: 64.4ms)
+
+
+Started GET "/home" for ::1 at 2016-12-09 00:15:16 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 33ms (Views: 31.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:15:20 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (5.3ms)
+  [1m[36mAccount Load (1.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 54ms (Views: 36.2ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/categories" for ::1 at 2016-12-09 00:15:21 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (2.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (37.5ms)
+Completed 200 OK in 78ms (Views: 58.6ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/transactions/new" for ::1 at 2016-12-09 00:15:24 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (4.0ms)
+  [1m[36mAccount Load (1.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 85ms (Views: 55.8ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/categories" for ::1 at 2016-12-09 00:15:26 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (2.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 71ms (Views: 65.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:15:27 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (5.3ms)
+  [1m[36mAccount Load (1.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 56ms (Views: 51.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/accounts/new" for ::1 at 2016-12-09 00:15:28 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (3.8ms)
+  Rendered accounts/new.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 49ms (Views: 45.1ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/accounts" for ::1 at 2016-12-09 00:15:35 -0200
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pDGQr3NXZCD1cxJodfZyfOcSfPn9Z3vIyXAJ9diYorSIbH+iq8Nk6NeAAtFb02SkbpbRvkmBZsYFvbmnm/kXyw==", "account"=>{"name"=>"Teste", "balance"=>"0.00", "user_id"=>"1"}}
+  [1m[36mAccount Load (2.2ms)[0m  [1m[34mSELECT * FROM ACCOUNTS WHERE NAME = 'Teste' AND USER_ID = 1[0m
+  [1m[36mAccount Load (100.4ms)[0m  [1m[32mINSERT INTO ACCOUNTS (NAME, USER_ID, CREATED_AT, UPDATED_AT, BALANCE) VALUES ('Teste', 1, now(), now(), 0.000000);[0m
+Redirected to http://localhost:3000/accounts
+Completed 302 Found in 109ms (ActiveRecord: 102.6ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:15:35 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (2.7ms)
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/categories" for ::1 at 2016-12-09 00:15:40 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 49ms (Views: 45.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/categories/new.%23%3CCategory::ActiveRecord_Relation:0xc469298%3E" for ::1 at 2016-12-09 00:15:42 -0200
+Processing by CategoriesController#new as 
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (5.5ms)
+  Rendered categories/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 42ms (Views: 32.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for ::1 at 2016-12-09 00:15:47 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MGpSbIK8s6ZanX6hkVLwnGs301p786UZVCxeaiexdw4cN71hWiizbnhubhi/d+ZE4rN+Hc8VuBeY4e44ZNDCcQ==", "category"=>{"description"=>"Teste"}, "commit"=>"Salvar"}
+  [1m[36mCategory Load (41.4ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Teste', 1, now(), now());[0m
+Redirected to http://localhost:3000/categories
+Completed 302 Found in 45ms (ActiveRecord: 41.4ms)
+
+
+Started GET "/categories" for ::1 at 2016-12-09 00:15:47 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 38ms (Views: 35.4ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/categories/1/show" for ::1 at 2016-12-09 00:16:01 -0200
+  
+ActionController::RoutingError (No route matches [DELETE] "/categories/1/show"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered collection of /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [24 times] (70.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.8ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (112.7ms)
+Started GET "/transactions/new" for ::1 at 2016-12-09 00:16:16 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (4.7ms)
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 65ms (Views: 62.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/transactions" for ::1 at 2016-12-09 00:16:27 -0200
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4K3vWi+80zjJbmHwmw1Qqr6BcYYOR2vVKlAyZZbyEijM8ABX9yjT8OudcUm1KEZyNwXcwbqhdtvmnYI31ZOnVw==", "transaction"=>{"user_id"=>"1", "account_id"=>"1", "amount"=>"50", "category_id"=>"1"}, "commit"=>"Incluir"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "account_id", "category_id", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["account_id", 1], ["category_id", 1], ["amount", 50.0]]
+  [1m[35m (29.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAccount Load (3.3ms)[0m  [1m[32mINSERT INTO ACCOUNTS (NAME, USER_ID, CREATED_AT, UPDATED_AT, BALANCE) VALUES ('Teste', 1, now(), now(), 50.000000);[0m
+Redirected to http://localhost:3000/transactions/new
+Completed 302 Found in 61ms (ActiveRecord: 38.4ms)
+
+
+Started GET "/transactions/new" for ::1 at 2016-12-09 00:16:27 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (3.6ms)
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 45ms (Views: 40.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:16:30 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (4.8ms)
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 61ms (Views: 58.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/transactions/new" for ::1 at 2016-12-09 00:16:37 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (4.6ms)
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 45ms (Views: 42.6ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/transactions" for ::1 at 2016-12-09 00:16:49 -0200
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jrJ30IZwGki0PFdl20JZWGkXvt0+tlvcfMnBKqu1Z0Si75jdXuQagJbPR9z1Z0+A4JMTmopQRtKwBHF46NTSOw==", "transaction"=>{"user_id"=>"1", "account_id"=>"1", "amount"=>"50", "category_id"=>"1"}, "commit"=>"Incluir"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "account_id", "category_id", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["account_id", 1], ["category_id", 1], ["amount", 50.0]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAccount Load (2.2ms)[0m  [1m[32mINSERT INTO ACCOUNTS (NAME, USER_ID, CREATED_AT, UPDATED_AT, BALANCE) VALUES ('Teste', 1, now(), now(), 50.000000);[0m
+Redirected to http://localhost:3000/transactions/new
+Completed 302 Found in 12ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/transactions/new" for ::1 at 2016-12-09 00:16:49 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (2.5ms)
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 37ms (Views: 33.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:16:51 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (7.5ms)
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/accounts/1" for ::1 at 2016-12-09 00:18:41 -0200
+Processing by AccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WtPKx2MXIO62ALkz6gyIwGElLdLCToKEmj4/AZ/xEjt2jiXKu4MgJpTzqYrEKZ4Y6KGAlXaon4pW849T3JCnRA==", "id"=>"1"}
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 8.2ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (PG::ForeignKeyViolation: ERROR:  update or delete on table "accounts" violates foreign key constraint "fk_rails_01f020e267" on table "transactions"
+DETAIL:  Key (id)=(1) is still referenced from table "transactions".
+: DELETE FROM "accounts" WHERE "accounts"."id" = $1):
+  
+app/controllers/accounts_controller.rb:30:in `destroy'
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.4ms)
+Started DELETE "/accounts/1" for ::1 at 2016-12-09 00:23:52 -0200
+Processing by AccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WtPKx2MXIO62ALkz6gyIwGElLdLCToKEmj4/AZ/xEjt2jiXKu4MgJpTzqYrEKZ4Y6KGAlXaon4pW849T3JCnRA==", "id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant AccountsController::Transactions):
+  
+app/controllers/accounts_controller.rb:31:in `destroy'
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.3ms)
+Started DELETE "/accounts/1" for ::1 at 2016-12-09 00:24:18 -0200
+Processing by AccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WtPKx2MXIO62ALkz6gyIwGElLdLCToKEmj4/AZ/xEjt2jiXKu4MgJpTzqYrEKZ4Y6KGAlXaon4pW849T3JCnRA==", "id"=>"1"}
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" WHERE "transactions"."account_id" = $1 LIMIT $2[0m  [["account_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 1]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 6.5ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (PG::ForeignKeyViolation: ERROR:  update or delete on table "accounts" violates foreign key constraint "fk_rails_01f020e267" on table "transactions"
+DETAIL:  Key (id)=(1) is still referenced from table "transactions".
+: DELETE FROM "accounts" WHERE "accounts"."id" = $1):
+  
+app/controllers/accounts_controller.rb:33:in `destroy'
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.5ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.3ms)
+Started DELETE "/accounts/1" for ::1 at 2016-12-09 00:24:44 -0200
+Processing by AccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WtPKx2MXIO62ALkz6gyIwGElLdLCToKEmj4/AZ/xEjt2jiXKu4MgJpTzqYrEKZ4Y6KGAlXaon4pW849T3JCnRA==", "id"=>"1"}
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" WHERE "transactions"."account_id" = $1 LIMIT $2[0m  [["account_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 2]]
+  [1m[35m (58.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = $1[0m  [["id", 1]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/accounts
+Completed 302 Found in 106ms (ActiveRecord: 68.0ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:24:44 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (2.7ms)
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 35ms (Views: 31.2ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/accounts/2" for ::1 at 2016-12-09 00:24:46 -0200
+Processing by AccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"clOzK4dauA0Vs5xvdV0Eh8lql2u3DKX/HamC9uvCGi1eDlwmX864xTdAjNZbeBJfQO46LAPquPHRZDKkqKOvUg==", "id"=>"2"}
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" WHERE "transactions"."account_id" = $1 LIMIT $2[0m  [["account_id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/accounts_controller.rb:32:in `destroy'
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.7ms)
+Started GET "/accounts" for ::1 at 2016-12-09 00:26:30 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (3.7ms)
+  [1m[36mAccount Load (1.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 53ms (Views: 43.5ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/accounts/2" for ::1 at 2016-12-09 00:26:32 -0200
+Processing by AccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Oi9c3a9uy7qZulZN+D2GqOAY0jA8FtZSdTPUA1Ix7nsWcrPQd/rLcrtJRvTWGJBwaZx/d4jwy1y5/mRREVBbBA==", "id"=>"2"}
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" WHERE "transactions"."account_id" = $1 LIMIT $2[0m  [["account_id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/accounts_controller.rb:31:in `destroy'
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.7ms)
+Started DELETE "/accounts/2" for ::1 at 2016-12-09 00:27:11 -0200
+Processing by AccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Oi9c3a9uy7qZulZN+D2GqOAY0jA8FtZSdTPUA1Ix7nsWcrPQd/rLcrtJRvTWGJBwaZx/d4jwy1y5/mRREVBbBA==", "id"=>"2"}
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" WHERE "transactions"."account_id" = $1 LIMIT $2[0m  [["account_id", 2], ["LIMIT", 1]]
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = $1[0m  [["id", 2]]
+  [1m[35m (55.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/accounts
+Completed 302 Found in 81ms (ActiveRecord: 58.2ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:27:12 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (4.4ms)
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 37ms (Views: 33.8ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/accounts/3" for ::1 at 2016-12-09 00:27:14 -0200
+Processing by AccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MV/5AvgCOVXh4eRWZ+qd6aztjIpqXNy6b820290wi2wdAhYPIJY5ncMS9O9Jz4sxJWkhzd66wbSjAASJnlE+Ew==", "id"=>"3"}
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" WHERE "transactions"."account_id" = $1 LIMIT $2[0m  [["account_id", 3], ["LIMIT", 1]]
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = $1[0m  [["id", 3]]
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/accounts
+Completed 302 Found in 18ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:27:14 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (5.7ms)
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 41ms (Views: 37.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/transactions/new" for ::1 at 2016-12-09 00:27:17 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (3.9ms)
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (30.6ms)
+Completed 200 OK in 79ms (Views: 55.1ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:27:20 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (3.1ms)
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 40ms (Views: 37.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/accounts/new" for ::1 at 2016-12-09 00:27:21 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (3.2ms)
+  Rendered accounts/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for ::1 at 2016-12-09 00:27:26 -0200
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"obay0olJITWKKXi7xgsMqh2iDxnz/bMwUgF9HKEv6M2N613fUd0h/ajaaALoLhpylCaiXkcbrj6ezM1O4k5dsg==", "account"=>{"name"=>"Teste2", "balance"=>"0.00", "user_id"=>"1"}}
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT * FROM ACCOUNTS WHERE NAME = 'Teste2' AND USER_ID = 1[0m
+  [1m[36mAccount Load (61.9ms)[0m  [1m[32mINSERT INTO ACCOUNTS (NAME, USER_ID, CREATED_AT, UPDATED_AT, BALANCE) VALUES ('Teste2', 1, now(), now(), 0.000000);[0m
+Redirected to http://localhost:3000/accounts
+Completed 302 Found in 67ms (ActiveRecord: 62.8ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:27:26 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (2.7ms)
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/transactions/new" for ::1 at 2016-12-09 00:27:28 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (4.4ms)
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 64ms (Views: 60.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/transactions" for ::1 at 2016-12-09 00:27:38 -0200
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hb6YlLuD2rJeMj/3O5nj2BK4Ltr/QIdpEvePpZE5O+Ux43eZYxfaenzBL04VvPUAmzyDnUummmfeOj/30liOmg==", "transaction"=>{"user_id"=>"1", "account_id"=>"4", "amount"=>"14", "category_id"=>"1"}, "commit"=>"Incluir"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "account_id", "category_id", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["account_id", 4], ["category_id", 1], ["amount", 14.0]]
+  [1m[35m (40.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 43.5ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/transactions_controller.rb:13:in `create'
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.9ms)
+Started POST "/transactions" for ::1 at 2016-12-09 00:28:55 -0200
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hb6YlLuD2rJeMj/3O5nj2BK4Ltr/QIdpEvePpZE5O+Ux43eZYxfaenzBL04VvPUAmzyDnUummmfeOj/30liOmg==", "transaction"=>{"user_id"=>"1", "account_id"=>"4", "amount"=>"14", "category_id"=>"1"}, "commit"=>"Incluir"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "account_id", "category_id", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["account_id", 4], ["category_id", 1], ["amount", 14.0]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAccount Load (3.5ms)[0m  [1m[32mINSERT INTO ACCOUNTS (NAME, USER_ID, CREATED_AT, UPDATED_AT, BALANCE) VALUES ('Teste2', 1, now(), now(), 14.000000);[0m
+Redirected to http://localhost:3000/transactions/new
+Completed 302 Found in 37ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/transactions/new" for ::1 at 2016-12-09 00:28:55 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (3.8ms)
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 47ms (Views: 40.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:30:47 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (2.9ms)
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 42ms (Views: 36.0ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/accounts/5" for ::1 at 2016-12-09 00:30:50 -0200
+Processing by AccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6Of2p/jQORb0qXg7sKyjpF2DAZL8+hCAMYhayh1X3xTEuhmqIEQ53tZaaIKeibV81Aes1UgcDY79ReqYXjZqaw==", "id"=>"5"}
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" WHERE "transactions"."account_id" = $1 LIMIT $2[0m  [["account_id", 5], ["LIMIT", 1]]
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = $1[0m  [["id", 5]]
+  [1m[35m (101.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/accounts
+Completed 302 Found in 121ms (ActiveRecord: 106.5ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:30:50 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (4.8ms)
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 54ms (Views: 50.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/transactions/new" for ::1 at 2016-12-09 00:30:52 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (5.0ms)
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (41.3ms)
+Completed 200 OK in 85ms (Views: 57.6ms | ActiveRecord: 11.4ms)
+
+
+Started POST "/transactions" for ::1 at 2016-12-09 00:31:01 -0200
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vEc1AWA0ZPS7V/SLvFkLqSZ1NloowXfKEW/B+H4t22iQGtoMuKBkPJmk5DKSfB1xr/GbHZwnasTdonGqPUxuFw==", "transaction"=>{"user_id"=>"1", "account_id"=>"4", "amount"=>"12", "category_id"=>"1"}, "commit"=>"Incluir"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "account_id", "category_id", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["account_id", 4], ["category_id", 1], ["amount", 12.0]]
+  [1m[35m (46.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAccount Load (4.2ms)[0m  [1m[32mINSERT INTO ACCOUNTS (NAME, USER_ID, CREATED_AT, UPDATED_AT, BALANCE) VALUES ('Teste2', 1, now(), now(), 12.000000);[0m
+Redirected to http://localhost:3000/transactions/new
+Completed 302 Found in 63ms (ActiveRecord: 52.5ms)
+
+
+Started GET "/transactions/new" for ::1 at 2016-12-09 00:31:01 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (2.9ms)
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 45ms (Views: 42.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:31:06 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (4.8ms)
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 47ms (Views: 44.3ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/accounts/6" for ::1 at 2016-12-09 00:34:03 -0200
+Processing by AccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XMNelkiDVdw37JTY4XEEV1/dCRlUYy5DMM4uSLF4TftwnrGbkBdVFBUfhGHPVBKP1lmkXuCFM038A54a8hn4hA==", "id"=>"6"}
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" WHERE "transactions"."account_id" = $1 LIMIT $2[0m  [["account_id", 6], ["LIMIT", 1]]
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = $1[0m  [["id", 6]]
+  [1m[35m (51.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/accounts
+Completed 302 Found in 75ms (ActiveRecord: 53.8ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:34:03 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (3.2ms)
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/transactions/new" for ::1 at 2016-12-09 00:34:05 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (2.6ms)
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 57ms (Views: 40.2ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/transactions" for ::1 at 2016-12-09 00:34:12 -0200
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rBdlG/K9nXCNTz7UhTOhSBB/f0Eu9OOOzMQqpDzSBXyASooWKimduK+8Lm2rFreQmfvSBpoS/oAACZr2f7OwAw==", "transaction"=>{"user_id"=>"1", "account_id"=>"4", "amount"=>"12", "category_id"=>"1"}, "commit"=>"Incluir"}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "account_id", "category_id", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["account_id", 4], ["category_id", 1], ["amount", 12.0]]
+  [1m[35m (71.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAccount Load (5.7ms)[0m  [1m[32mINSERT INTO ACCOUNTS (NAME, USER_ID, CREATED_AT, UPDATED_AT, BALANCE) VALUES ('Teste2', 1, now(), now(), 12.000000);[0m
+Redirected to http://localhost:3000/transactions/new
+Completed 302 Found in 92ms (ActiveRecord: 80.6ms)
+
+
+Started GET "/transactions/new" for ::1 at 2016-12-09 00:34:12 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (2.8ms)
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 32ms (Views: 28.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:34:18 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (4.5ms)
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 61ms (Views: 57.7ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/accounts/7" for ::1 at 2016-12-09 00:45:29 -0200
+Processing by AccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"usLs0wzWqUw12bW+j2JNrZ8tgaElBfeg6L2oGdMgcQGWnwPe1EKphBcqpQehR1t1Fqks5pHj6q4kcBhLkEHEfg==", "id"=>"7"}
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" WHERE "transactions"."account_id" = $1 LIMIT $2[0m  [["account_id", 7], ["LIMIT", 1]]
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = $1[0m  [["id", 7]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/accounts
+Completed 302 Found in 21ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:45:29 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (2.4ms)
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/transactions/new" for ::1 at 2016-12-09 00:45:31 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (3.8ms)
+  [1m[36mAccount Load (2.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 56ms (Views: 47.3ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/transactions" for ::1 at 2016-12-09 00:45:39 -0200
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YZhCtlrIwo84q/olPruX+FZ3PZXtE9x2UmZ2ppMKIPhNxa27glzCRxpY6pwQnoEg3/OQ0ln1wXieq8b00GuVhw==", "transaction"=>{"user_id"=>"1", "account_id"=>"4", "amount"=>"2", "category_id"=>"1"}, "commit"=>"Incluir"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "account_id", "category_id", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["account_id", 4], ["category_id", 1], ["amount", 2.0]]
+  [1m[35m (283.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Load (0.6ms)[0m  [1m[32mINSERT INTO ACCOUNTS (NAME, USER_ID, CREATED_AT, UPDATED_AT, BALANCE) VALUES ('Teste2', 1, now(), now(), 2.000000);[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/transactions/new
+Completed 302 Found in 298ms (ActiveRecord: 289.3ms)
+
+
+Started GET "/transactions/new" for ::1 at 2016-12-09 00:45:39 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (2.7ms)
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 29ms (Views: 26.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:47:00 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (2.9ms)
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 48ms (Views: 35.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:47:00 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (4.7ms)
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/accounts/8" for ::1 at 2016-12-09 00:47:02 -0200
+Processing by AccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2vxA84hZ628uqBgg2f//mnyY/n/gWroDF5Nq8DZK/Bn2oa/+UM3rpwxbCJn32ulC9RxTOFS8pw3bXtqidStJZg==", "id"=>"8"}
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT  "transactions".* FROM "transactions" WHERE "transactions"."account_id" = $1 LIMIT $2[0m  [["account_id", 8], ["LIMIT", 1]]
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = $1[0m  [["id", 8]]
+  [1m[35m (63.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/accounts
+Completed 302 Found in 93ms (ActiveRecord: 67.9ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:47:02 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (5.3ms)
+  [1m[36mAccount Load (1.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 50ms (Views: 46.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/categories" for ::1 at 2016-12-09 00:47:04 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 50ms (Views: 43.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/transactions/new" for ::1 at 2016-12-09 00:47:05 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (7.1ms)
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (2.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 76ms (Views: 57.7ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/transactions" for ::1 at 2016-12-09 00:47:42 -0200
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rs5RzS5JKF7wWa2+1UmevzA4UhMMI4/NJkQTMCEIjdOCk77A9t0oltKqvQf7bIhnubz/VLjFksPqiaNiYmk4rA==", "transaction"=>{"user_id"=>"1", "account_id"=>"4", "amount"=>"13", "category_id"=>"1"}, "commit"=>"Incluir"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "account_id", "category_id", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["account_id", 4], ["category_id", 1], ["amount", 13.0]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "accounts" SET "balance" = $1, "updated_at" = $2 WHERE "accounts"."id" = $3[0m  [["balance", #<BigDecimal:b29a27cc,'0.13E2',9(18)>], ["updated_at", 2016-12-09 02:47:42 UTC], ["id", 4]]
+  [1m[35m (17.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/transactions/new
+Completed 302 Found in 69ms (ActiveRecord: 28.8ms)
+
+
+Started GET "/transactions/new" for ::1 at 2016-12-09 00:47:42 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (3.1ms)
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 57ms (Views: 49.9ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:47:46 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (3.7ms)
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:47:46 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (3.1ms)
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 30ms (Views: 27.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/transactions/new" for ::1 at 2016-12-09 00:47:48 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (5.8ms)
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 68ms (Views: 64.2ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/transactions" for ::1 at 2016-12-09 00:47:58 -0200
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VsMqHt6io/0M7RPWJ1Hco5CBKnww7NL+bJLeQ5Va5Ml6nsUTBjajNS4eA28JdMp7GQWHO4QKz/CgX24R1jtRtg==", "transaction"=>{"user_id"=>"1", "account_id"=>"4", "amount"=>"-35", "category_id"=>"1"}, "commit"=>"Incluir"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "account_id", "category_id", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["account_id", 4], ["category_id", 1], ["amount", -35.0]]
+  [1m[35m (50.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "accounts" SET "balance" = $1, "updated_at" = $2 WHERE "accounts"."id" = $3[0m  [["balance", #<BigDecimal:c9a2f98,'-0.22E2',9(18)>], ["updated_at", 2016-12-09 02:47:58 UTC], ["id", 4]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/transactions/new
+Completed 302 Found in 73ms (ActiveRecord: 60.4ms)
+
+
+Started GET "/transactions/new" for ::1 at 2016-12-09 00:47:58 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (3.5ms)
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/categories" for ::1 at 2016-12-09 00:48:00 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 54ms (Views: 47.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 00:48:01 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (5.2ms)
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 49ms (Views: 45.1ms | ActiveRecord: 0.9ms)
+
+

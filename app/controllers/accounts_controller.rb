@@ -1,3 +1,4 @@
+# coding: utf-8
 class AccountsController < ApplicationController
     
     def index
@@ -27,7 +28,11 @@ class AccountsController < ApplicationController
     end
     
     def destroy
-        Account.destroy params[:id]
-        redirect_to accounts_url
+      @transactions = Transaction.find_by(account_id: params[:id])
+      if @transactions
+        @transactions.destroy
+      end
+      Account.destroy params[:id]
+      redirect_to accounts_url
     end
 end
