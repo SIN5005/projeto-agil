@@ -7,16 +7,12 @@
 # Financial App 
 Sistema de Organização de Finanças Pessoais
 #
-*[Pivotal Tracker](https://www.pivotaltracker.com/n/projects/1791013)*
+*[Pivotal Tracker](https://www.pivotaltracker.com/n/projects/1860247)*
 
 ##### *Team:*
 ###### Ricardo Calegaro | Nº USP: 6411782 | *@ricardocalegaro*
 ###### Herik Lima | Nº USP: 9885074 | *@HerikLyma*
-###### Bruno | *@cryzon*
-###### Fiamma | *@FiammaEva*
-###### Lucas Freire |
-###### Fabio Andreolli Leivas | Nº USP: 7320813 
-
-
-
-
+###### Bruno Casado | Nº USP: 9869617 | *@cryzon*
+###### Fiamma | N°USP: 9769755 | *@FiammaEva*
+###### Lucas Freire Lima | Nº USP: 9566679 | *@darknerd*
+###### Fabio Andreolli Leivas | Nº USP: 7320813 | *@andreolli*
