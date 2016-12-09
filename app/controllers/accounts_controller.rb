@@ -22,7 +22,8 @@ class AccountsController < ApplicationController
             flash[:notice] = "O campo 'Saldo' deve ser preenchido"
             redirect_to accounts_new_url
         elsif 
-            flash[:notice] = @account.save[1]
+          #flash[:notice] = @account.save[1]
+            flash[:notice] = @account.save
             redirect_to accounts_url
         end
     end

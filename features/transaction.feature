@@ -9,9 +9,9 @@ Feature: Transaction Page
 	 When I click at the transactions link
 	 Then the transactions page should appears
 	 
-	 @registro
 	 @registra_conta
 	 @registra_categoria
+	 @registro
 	 Scenario: Register a transaction
 	 Given I am on transactions page
 	 When I select account_id  with an account

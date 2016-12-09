@@ -14,14 +14,14 @@ end
 
 Before("@registra_conta") do
   visit "/accounts/new"
-  fill_in("account_name", "Cucumber")
-  fill_in("account_balance", 1.00)
+  fill_in("account[name]", with: "Cucumber")
+  fill_in("account[balance]", with: 1.0)
   click_button("Criar Conta")
 end
 
 Before("@registra_categoria") do
   visit "/categories/new"
-  fill_in("category_description", "Capybara")
+  fill_in("category_description", with: "Capybara")
   click_button("Salvar")
 end
 

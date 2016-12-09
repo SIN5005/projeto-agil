@@ -20,13 +20,13 @@ Given(/^I am on transactions page$/) do
   visit "/transactions/new"
 end
 When(/^I select account_id  with an account$/) do
-  find("#transaction_account_id").find(:xpath, "option[2]").click
+  find("#transaction_account_id").find(:xpath, "option[2]").select_option
 end
 When(/^I fill amount with a value$/) do
   fill_in("transaction_amount", with: 12.54)
 end
 When(/^I select category_id with a category$/) do
-    find("#transaction_category_id").find(:xpath, "option[2]").click
+    find("#transaction_category_id").find(:xpath, "option[2]").select_option
 end
 When(/^I click on the insert transaction button$/) do
   click_button('Incluir')

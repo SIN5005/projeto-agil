@@ -50303,3 +50303,2435 @@ Processing by CategoriesController#new as HTML
   Rendered categories/new.html.erb within layouts/application (5.4ms)
 Completed 200 OK in 19ms (Views: 9.2ms | ActiveRecord: 2.1ms)
   [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:04:16 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (209.4ms)
+  Rendered users/index.html.erb within layouts/application (211.6ms)
+Completed 200 OK in 259ms (Views: 232.7ms | ActiveRecord: 3.7ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:04:16 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 4ms (ActiveRecord: 1.6ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:04:16 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (9.0ms)
+  Rendered users/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:04:16 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:04:16 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 6ms (ActiveRecord: 1.9ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:04:16 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:04:16 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:04:16 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.4ms)
+  [1m[36mAccount Load (2.0ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 53ms (Views: 17.4ms | ActiveRecord: 9.0ms)
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:04:16 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.5ms)
+  Rendered users/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:04:16 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 4ms (ActiveRecord: 1.9ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:04:16 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.3ms)
+  Rendered users/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:04:16 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:04:16 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 4ms (ActiveRecord: 1.6ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:04:16 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:04:16 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.1ms)
+  Rendered accounts/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 1.4ms)
+Started GET "/categories/new" for 127.0.0.1 at 2016-12-09 07:04:16 -0200
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (2.9ms)
+  Rendered categories/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 16ms (Views: 6.2ms | ActiveRecord: 1.5ms)
+  [1m[35m (4.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:07:11 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (205.9ms)
+  Rendered users/index.html.erb within layouts/application (208.1ms)
+Completed 200 OK in 258ms (Views: 229.4ms | ActiveRecord: 12.8ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:07:12 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 4ms (ActiveRecord: 1.7ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:07:12 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (9.1ms)
+  Rendered users/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:07:12 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:07:12 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 6ms (ActiveRecord: 2.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:07:12 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:07:12 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (2.5ms)
+  Rendered accounts/new.html.erb within layouts/application (37.2ms)
+Completed 200 OK in 45ms (Views: 40.6ms | ActiveRecord: 3.4ms)
+  [1m[35m (1.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:07:12 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.2ms)
+  Rendered users/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:07:12 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:07:12 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.1ms)
+  Rendered users/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:07:12 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:07:12 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 4ms (ActiveRecord: 1.7ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:07:12 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:07:12 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.3ms)
+  Rendered accounts/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+Started GET "/categories/new" for 127.0.0.1 at 2016-12-09 07:07:12 -0200
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (3.0ms)
+  Rendered categories/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 20ms (Views: 6.8ms | ActiveRecord: 2.8ms)
+  [1m[35m (3.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:08:13 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (206.2ms)
+  Rendered users/index.html.erb within layouts/application (208.5ms)
+Completed 200 OK in 259ms (Views: 231.6ms | ActiveRecord: 3.7ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:08:14 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 5ms (ActiveRecord: 2.7ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:08:14 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (8.5ms)
+  Rendered users/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:08:14 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:08:14 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 8ms (ActiveRecord: 3.3ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:08:14 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:08:14 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (4.9ms)
+  Rendered accounts/new.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 38ms (Views: 32.9ms | ActiveRecord: 4.0ms)
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:08:14 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.9ms)
+  Rendered users/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:08:14 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 3ms (ActiveRecord: 1.4ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:08:14 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.4ms)
+  Rendered users/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:08:14 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:08:14 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 4ms (ActiveRecord: 1.6ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:08:14 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:08:14 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.3ms)
+  Rendered accounts/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+Started GET "/categories/new" for 127.0.0.1 at 2016-12-09 07:08:14 -0200
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (3.2ms)
+  Rendered categories/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 19ms (Views: 6.8ms | ActiveRecord: 2.8ms)
+  [1m[35m (2.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:09:37 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (247.2ms)
+  Rendered users/index.html.erb within layouts/application (250.8ms)
+Completed 200 OK in 314ms (Views: 274.2ms | ActiveRecord: 7.3ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:09:37 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 5ms (ActiveRecord: 2.7ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:09:37 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.3ms)
+  Rendered users/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:09:37 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 21ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:09:37 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:09:37 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:09:37 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:09:37 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.9ms)
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 64ms (Views: 27.7ms | ActiveRecord: 10.3ms)
+  [1m[35m (1.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:09:38 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (7.3ms)
+  Rendered users/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:09:38 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 5ms (ActiveRecord: 2.4ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:09:38 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.8ms)
+  Rendered users/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:09:38 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:09:38 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 5ms (ActiveRecord: 2.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:09:38 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:09:38 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.5ms)
+  Rendered accounts/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 1.6ms)
+Started GET "/categories/new" for 127.0.0.1 at 2016-12-09 07:09:38 -0200
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (5.0ms)
+  Rendered categories/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 26ms (Views: 12.0ms | ActiveRecord: 2.9ms)
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:10:14 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (209.8ms)
+  Rendered users/index.html.erb within layouts/application (211.8ms)
+Completed 200 OK in 262ms (Views: 232.2ms | ActiveRecord: 7.8ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:10:14 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:10:14 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (8.9ms)
+  Rendered users/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:10:14 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:10:14 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 6ms (ActiveRecord: 2.1ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:10:15 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:10:15 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:10:15 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.4ms)
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 53ms (Views: 18.8ms | ActiveRecord: 7.6ms)
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:10:15 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (6.2ms)
+  Rendered users/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:10:15 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:10:15 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.0ms)
+  Rendered users/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:10:15 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:10:15 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 4ms (ActiveRecord: 1.6ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:10:15 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:10:15 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.8ms)
+  Rendered accounts/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 1.4ms)
+Started GET "/categories/new" for 127.0.0.1 at 2016-12-09 07:10:15 -0200
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (2.4ms)
+  Rendered categories/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 13ms (Views: 6.0ms | ActiveRecord: 1.7ms)
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:11:11 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (240.3ms)
+  Rendered users/index.html.erb within layouts/application (243.6ms)
+Completed 200 OK in 305ms (Views: 269.3ms | ActiveRecord: 5.5ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:11:11 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 5ms (ActiveRecord: 2.7ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:11:11 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (9.3ms)
+  Rendered users/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:11:11 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 21ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:11:11 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 7ms (ActiveRecord: 3.4ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:11:11 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:11:11 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (3.7ms)
+  Rendered accounts/new.html.erb within layouts/application (31.5ms)
+Completed 200 OK in 44ms (Views: 32.1ms | ActiveRecord: 5.3ms)
+  [1m[35m (2.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:11:11 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (6.6ms)
+  Rendered users/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:11:11 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:11:11 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.0ms)
+  Rendered users/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:11:11 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:11:11 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:11:11 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:11:11 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.6ms)
+  Rendered accounts/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:13:20 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (202.5ms)
+  Rendered users/index.html.erb within layouts/application (204.9ms)
+Completed 200 OK in 253ms (Views: 225.5ms | ActiveRecord: 4.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:13:20 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 4ms (ActiveRecord: 1.6ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:13:20 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (8.9ms)
+  Rendered users/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:13:20 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:13:20 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 8ms (ActiveRecord: 2.8ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:13:20 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:13:20 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (3.5ms)
+  Rendered accounts/new.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 40ms (Views: 35.7ms | ActiveRecord: 3.1ms)
+  [1m[35m (1.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:13:20 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.8ms)
+  Rendered users/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:13:20 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:13:20 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.8ms)
+  Rendered users/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:13:20 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:13:20 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:13:20 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:13:20 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.3ms)
+  Rendered accounts/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:14:46 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (208.2ms)
+  Rendered users/index.html.erb within layouts/application (210.1ms)
+Completed 200 OK in 258ms (Views: 231.1ms | ActiveRecord: 3.6ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:14:46 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:14:46 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (12.9ms)
+  Rendered users/index.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:14:46 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 19ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:14:46 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 7ms (ActiveRecord: 2.4ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:14:46 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:14:46 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (3.3ms)
+  Rendered accounts/new.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 39ms (Views: 32.9ms | ActiveRecord: 3.1ms)
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:14:46 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.8ms)
+  Rendered users/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:14:46 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:14:46 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.2ms)
+  Rendered users/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:14:46 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:14:46 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:14:46 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:14:46 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.3ms)
+  Rendered accounts/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (2.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:17:19 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (243.7ms)
+  Rendered users/index.html.erb within layouts/application (245.6ms)
+Completed 200 OK in 303ms (Views: 273.2ms | ActiveRecord: 5.1ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:17:20 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 5ms (ActiveRecord: 2.2ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:17:20 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (8.4ms)
+  Rendered users/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:17:20 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:17:20 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 9ms (ActiveRecord: 3.2ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:17:20 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:17:20 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.0ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:17:20 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.4ms)
+  [1m[36mAccount Load (1.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 53ms (Views: 18.4ms | ActiveRecord: 8.2ms)
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:17:20 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.2ms)
+  Rendered users/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:17:20 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:17:20 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.8ms)
+  Rendered users/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:17:20 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:17:20 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 4ms (ActiveRecord: 2.1ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:17:20 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:17:20 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.3ms)
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:19:02 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (200.0ms)
+  Rendered users/index.html.erb within layouts/application (208.2ms)
+Completed 200 OK in 259ms (Views: 229.8ms | ActiveRecord: 4.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:19:03 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 4ms (ActiveRecord: 1.7ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:19:03 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (9.3ms)
+  Rendered users/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:19:03 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:19:03 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 6ms (ActiveRecord: 2.2ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:19:03 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 13ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:19:03 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:19:03 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.4ms)
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 53ms (Views: 26.5ms | ActiveRecord: 6.5ms)
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:19:03 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (6.1ms)
+  Rendered users/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:19:03 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 4ms (ActiveRecord: 2.2ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:19:03 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.8ms)
+  Rendered users/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:19:03 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:19:03 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 5ms (ActiveRecord: 2.5ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:19:03 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:19:03 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.4ms)
+  Rendered accounts/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 1.4ms)
+Started GET "/categories/new" for 127.0.0.1 at 2016-12-09 07:19:03 -0200
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (3.0ms)
+  Rendered categories/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 14ms (Views: 6.7ms | ActiveRecord: 1.5ms)
+Started POST "/categories" for 127.0.0.1 at 2016-12-09 07:19:03 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "category"=>{"description"=>"Capybara"}, "commit"=>"Salvar"}
+  [1m[36mCategory Load (0.7ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Capybara', 59, now(), now());[0m
+Redirected to http://www.example.com/categories
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/categories" for 127.0.0.1 at 2016-12-09 07:19:03 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (3.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 59], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 20ms (Views: 16.0ms | ActiveRecord: 3.1ms)
+  [1m[35m (2.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:19:56 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (237.7ms)
+  Rendered users/index.html.erb within layouts/application (239.7ms)
+Completed 200 OK in 293ms (Views: 262.1ms | ActiveRecord: 7.8ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:19:56 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 5ms (ActiveRecord: 2.7ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:19:56 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (9.6ms)
+  Rendered users/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:19:56 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:19:56 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 7ms (ActiveRecord: 3.4ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:19:56 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:19:56 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:19:56 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.5ms)
+  [1m[36mAccount Load (2.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 56ms (Views: 17.9ms | ActiveRecord: 11.2ms)
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:19:56 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.6ms)
+  Rendered users/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:19:56 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:19:56 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.1ms)
+  Rendered users/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:19:56 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:19:56 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 5ms (ActiveRecord: 2.6ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:19:56 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:19:56 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.6ms)
+  Rendered accounts/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 16ms (Views: 11.9ms | ActiveRecord: 2.8ms)
+Started POST "/accounts" for 127.0.0.1 at 2016-12-09 07:19:56 -0200
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "account"=>{"name"=>"Cucumber", "balance"=>"1.0", "user_id"=>"61"}}
+  [1m[36mAccount Load (1.1ms)[0m  [1m[34mSELECT * FROM ACCOUNTS WHERE NAME = 'Cucumber' AND USER_ID = 61[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "user_id", "created_at", "updated_at", "balance") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cucumber"], ["user_id", 61], ["created_at", 2016-12-09 09:19:56 UTC], ["updated_at", 2016-12-09 09:19:56 UTC], ["balance", #<BigDecimal:dcdf188,'0.1E1',9(18)>]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 3.3ms)
+Started GET "/categories/new" for 127.0.0.1 at 2016-12-09 07:19:56 -0200
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (3.3ms)
+  Rendered categories/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 16ms (Views: 7.1ms | ActiveRecord: 3.6ms)
+Started POST "/categories" for 127.0.0.1 at 2016-12-09 07:19:56 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "category"=>{"description"=>"Capybara"}, "commit"=>"Salvar"}
+  [1m[36mCategory Load (1.0ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Capybara', 61, now(), now());[0m
+Redirected to http://www.example.com/categories
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+Started GET "/categories" for 127.0.0.1 at 2016-12-09 07:19:56 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 61], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 21ms (Views: 18.2ms | ActiveRecord: 1.8ms)
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:22:25 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (204.0ms)
+  Rendered users/index.html.erb within layouts/application (206.0ms)
+Completed 200 OK in 254ms (Views: 226.3ms | ActiveRecord: 5.2ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:22:25 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:22:25 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (9.1ms)
+  Rendered users/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:22:25 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:22:25 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 7ms (ActiveRecord: 2.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:22:25 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:22:25 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:22:25 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.4ms)
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 55ms (Views: 19.4ms | ActiveRecord: 6.8ms)
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:22:25 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.4ms)
+  Rendered users/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:22:25 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:22:25 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.8ms)
+  Rendered users/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:22:25 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:22:25 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 4ms (ActiveRecord: 1.6ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:22:25 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:22:25 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.5ms)
+  Rendered accounts/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 1.4ms)
+Started GET "/categories/new" for 127.0.0.1 at 2016-12-09 07:22:25 -0200
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (2.8ms)
+  Rendered categories/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 14ms (Views: 7.1ms | ActiveRecord: 1.5ms)
+Started POST "/categories" for 127.0.0.1 at 2016-12-09 07:22:25 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "category"=>{"description"=>"Capybara"}, "commit"=>"Salvar"}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Capybara', 63, now(), now());[0m
+Redirected to http://www.example.com/categories
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/categories" for 127.0.0.1 at 2016-12-09 07:22:25 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 63], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 1.4ms)
+  [1m[35m (2.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:27:53 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (202.6ms)
+  Rendered users/index.html.erb within layouts/application (204.5ms)
+Completed 200 OK in 254ms (Views: 224.8ms | ActiveRecord: 6.2ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:27:53 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 4ms (ActiveRecord: 1.7ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:27:53 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (9.3ms)
+  Rendered users/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:27:53 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:27:53 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 6ms (ActiveRecord: 2.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:27:53 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 13ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:27:53 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:27:53 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.3ms)
+  [1m[36mAccount Load (2.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 53ms (Views: 17.0ms | ActiveRecord: 8.8ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:27:53 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.0ms)
+  Rendered users/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:27:53 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:27:53 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.9ms)
+  Rendered users/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:27:53 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:27:53 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 4ms (ActiveRecord: 2.2ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:27:53 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:27:53 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.6ms)
+  Rendered accounts/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 16ms (Views: 11.9ms | ActiveRecord: 3.5ms)
+Started GET "/categories/new" for 127.0.0.1 at 2016-12-09 07:27:53 -0200
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (3.1ms)
+  Rendered categories/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 14ms (Views: 6.8ms | ActiveRecord: 1.6ms)
+Started POST "/categories" for 127.0.0.1 at 2016-12-09 07:27:53 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "category"=>{"description"=>"Capybara"}, "commit"=>"Salvar"}
+  [1m[36mCategory Load (0.7ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Capybara', 65, now(), now());[0m
+Redirected to http://www.example.com/categories
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/categories" for 127.0.0.1 at 2016-12-09 07:27:53 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 65], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:28:45 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (229.7ms)
+  Rendered users/index.html.erb within layouts/application (232.9ms)
+Completed 200 OK in 290ms (Views: 256.8ms | ActiveRecord: 5.2ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:28:46 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:28:46 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.8ms)
+  Rendered users/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:28:46 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:28:46 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (1.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 7ms (ActiveRecord: 4.6ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:28:46 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:28:46 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:28:46 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.8ms)
+  [1m[36mAccount Load (1.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 58ms (Views: 18.8ms | ActiveRecord: 12.3ms)
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:28:46 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.1ms)
+  Rendered users/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:28:46 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:28:46 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.5ms)
+  Rendered users/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:28:46 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:28:46 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 4ms (ActiveRecord: 1.8ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:28:46 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:28:46 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (2.0ms)
+  Rendered accounts/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 1.4ms)
+Started POST "/accounts" for 127.0.0.1 at 2016-12-09 07:28:46 -0200
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "account"=>{"name"=>"Cucumber", "balance"=>"1.0", "user_id"=>"67"}}
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT * FROM ACCOUNTS WHERE NAME = 'Cucumber' AND USER_ID = 67[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "user_id", "created_at", "updated_at", "balance") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cucumber"], ["user_id", 67], ["created_at", 2016-12-09 09:28:46 UTC], ["updated_at", 2016-12-09 09:28:46 UTC], ["balance", #<BigDecimal:d4d8570,'0.1E1',9(18)>]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 2.2ms)
+Started GET "/categories/new" for 127.0.0.1 at 2016-12-09 07:28:46 -0200
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (2.5ms)
+  Rendered categories/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 1.4ms)
+Started POST "/categories" for 127.0.0.1 at 2016-12-09 07:28:46 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "category"=>{"description"=>"Capybara"}, "commit"=>"Salvar"}
+  [1m[36mCategory Load (0.7ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Capybara', 67, now(), now());[0m
+Redirected to http://www.example.com/categories
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+Started GET "/categories" for 127.0.0.1 at 2016-12-09 07:28:46 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 67], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 20ms (Views: 17.4ms | ActiveRecord: 1.8ms)
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:29:15 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (204.5ms)
+  Rendered users/index.html.erb within layouts/application (207.7ms)
+Completed 200 OK in 259ms (Views: 229.9ms | ActiveRecord: 4.3ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:29:16 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 4ms (ActiveRecord: 1.6ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:29:16 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (7.6ms)
+  Rendered users/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:29:16 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:29:16 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 7ms (ActiveRecord: 2.1ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:29:16 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:29:16 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:29:16 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.6ms)
+  [1m[36mAccount Load (1.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 51ms (Views: 19.0ms | ActiveRecord: 7.0ms)
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:29:16 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.3ms)
+  Rendered users/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:29:16 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:29:16 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.9ms)
+  Rendered users/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:29:16 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:29:16 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 4ms (ActiveRecord: 1.6ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:29:16 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:29:16 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.4ms)
+  Rendered accounts/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 1.4ms)
+Started POST "/accounts" for 127.0.0.1 at 2016-12-09 07:29:16 -0200
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "account"=>{"name"=>"Cucumber", "balance"=>"1.0", "user_id"=>"69"}}
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT * FROM ACCOUNTS WHERE NAME = 'Cucumber' AND USER_ID = 69[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "user_id", "created_at", "updated_at", "balance") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cucumber"], ["user_id", 69], ["created_at", 2016-12-09 09:29:16 UTC], ["updated_at", 2016-12-09 09:29:16 UTC], ["balance", #<BigDecimal:c944934,'0.1E1',9(18)>]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 2.0ms)
+Started GET "/categories/new" for 127.0.0.1 at 2016-12-09 07:29:16 -0200
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (2.9ms)
+  Rendered categories/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 14ms (Views: 6.8ms | ActiveRecord: 1.3ms)
+Started POST "/categories" for 127.0.0.1 at 2016-12-09 07:29:16 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "category"=>{"description"=>"Capybara"}, "commit"=>"Salvar"}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Capybara', 69, now(), now());[0m
+Redirected to http://www.example.com/categories
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+Started GET "/categories" for 127.0.0.1 at 2016-12-09 07:29:16 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 69], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.9ms)
+  [1m[35m (3.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:31:19 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (200.4ms)
+  Rendered users/index.html.erb within layouts/application (205.6ms)
+Completed 200 OK in 256ms (Views: 226.1ms | ActiveRecord: 7.4ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:31:19 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (1.4ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 6ms (ActiveRecord: 3.4ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:31:19 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (9.1ms)
+  Rendered users/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:31:19 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:31:19 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 4ms (ActiveRecord: 1.9ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:31:19 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:31:19 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:31:19 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.4ms)
+  [1m[36mAccount Load (1.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 57ms (Views: 17.9ms | ActiveRecord: 12.2ms)
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:31:20 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.4ms)
+  Rendered users/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:31:20 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:31:20 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.6ms)
+  Rendered users/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:31:20 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:31:20 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:31:20 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:31:20 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.0ms)
+  Rendered accounts/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 1.4ms)
+Started POST "/accounts" for 127.0.0.1 at 2016-12-09 07:31:20 -0200
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "account"=>{"name"=>"Cucumber", "balance"=>"1.0", "user_id"=>"71"}}
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT * FROM ACCOUNTS WHERE NAME = 'Cucumber' AND USER_ID = 71[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "user_id", "created_at", "updated_at", "balance") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cucumber"], ["user_id", 71], ["created_at", 2016-12-09 09:31:20 UTC], ["updated_at", 2016-12-09 09:31:20 UTC], ["balance", #<BigDecimal:e5543b8,'0.1E1',9(18)>]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 2.7ms)
+Started GET "/categories/new" for 127.0.0.1 at 2016-12-09 07:31:20 -0200
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (2.9ms)
+  Rendered categories/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 14ms (Views: 6.5ms | ActiveRecord: 2.2ms)
+Started POST "/categories" for 127.0.0.1 at 2016-12-09 07:31:20 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "category"=>{"description"=>"Capybara"}, "commit"=>"Salvar"}
+  [1m[36mCategory Load (1.0ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Capybara', 71, now(), now());[0m
+Redirected to http://www.example.com/categories
+Completed 302 Found in 2ms (ActiveRecord: 1.0ms)
+Started GET "/categories" for 127.0.0.1 at 2016-12-09 07:31:20 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 71], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 1.6ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:31:46 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (204.2ms)
+  Rendered users/index.html.erb within layouts/application (206.0ms)
+Completed 200 OK in 254ms (Views: 227.1ms | ActiveRecord: 4.1ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:31:47 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:31:47 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (8.7ms)
+  Rendered users/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:31:47 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:31:47 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 6ms (ActiveRecord: 2.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:31:47 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 13ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:31:47 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:31:47 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.4ms)
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 54ms (Views: 19.3ms | ActiveRecord: 6.8ms)
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:31:47 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.6ms)
+  Rendered users/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:31:47 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:31:47 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.4ms)
+  Rendered users/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:31:47 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:31:47 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 4ms (ActiveRecord: 1.6ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:31:47 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started GET "/categories/new" for 127.0.0.1 at 2016-12-09 07:31:47 -0200
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (2.9ms)
+  Rendered categories/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 13ms (Views: 6.5ms | ActiveRecord: 1.0ms)
+Started POST "/categories" for 127.0.0.1 at 2016-12-09 07:31:47 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "category"=>{"description"=>"Capybara"}, "commit"=>"Salvar"}
+  [1m[36mCategory Load (0.7ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Capybara', 73, now(), now());[0m
+Redirected to http://www.example.com/categories
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/categories" for 127.0.0.1 at 2016-12-09 07:31:47 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 73], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 21ms (Views: 17.8ms | ActiveRecord: 1.6ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:31:47 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.3ms)
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 1.1ms)
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:34:27 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (202.7ms)
+  Rendered users/index.html.erb within layouts/application (204.7ms)
+Completed 200 OK in 255ms (Views: 225.4ms | ActiveRecord: 4.1ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 4ms (ActiveRecord: 2.2ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (10.0ms)
+  Rendered users/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 7ms (ActiveRecord: 3.2ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.5ms)
+  [1m[36mAccount Load (1.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 58ms (Views: 18.3ms | ActiveRecord: 13.1ms)
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.8ms)
+  Rendered users/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.7ms)
+  Rendered users/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 4ms (ActiveRecord: 1.8ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.6ms)
+  Rendered accounts/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 1.4ms)
+Started POST "/accounts" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "account"=>{"name"=>"Cucumber", "balance"=>"1.0", "user_id"=>"75"}}
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT * FROM ACCOUNTS WHERE NAME = 'Cucumber' AND USER_ID = 75[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "user_id", "created_at", "updated_at", "balance") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cucumber"], ["user_id", 75], ["created_at", 2016-12-09 09:34:28 UTC], ["updated_at", 2016-12-09 09:34:28 UTC], ["balance", #<BigDecimal:d415a98,'0.1E1',9(18)>]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/accounts
+Completed 302 Found in 7ms (ActiveRecord: 2.0ms)
+Started GET "/accounts" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.3ms)
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 75]]
+  Rendered accounts/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.7ms)
+Started GET "/categories/new" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (3.0ms)
+  Rendered categories/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 14ms (Views: 7.4ms | ActiveRecord: 1.4ms)
+Started POST "/categories" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "category"=>{"description"=>"Capybara"}, "commit"=>"Salvar"}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Capybara', 75, now(), now());[0m
+Redirected to http://www.example.com/categories
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+Started GET "/categories" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 75], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.8ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.3ms)
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 1.1ms)
+Started POST "/transactions" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "transaction"=>{"user_id"=>"75", "account_id"=>"", "amount"=>"12.54", "category_id"=>""}, "commit"=>"Incluir"}
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/transactions/new
+Completed 302 Found in 6ms (ActiveRecord: 0.9ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:34:28 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.6ms)
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 13ms (Views: 10.6ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:35:17 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (204.3ms)
+  Rendered users/index.html.erb within layouts/application (206.2ms)
+Completed 200 OK in 255ms (Views: 226.6ms | ActiveRecord: 4.6ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:35:17 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 4ms (ActiveRecord: 2.1ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:35:17 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (8.4ms)
+  Rendered users/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:35:17 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:35:17 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 7ms (ActiveRecord: 3.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:35:17 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:35:17 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:35:17 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.4ms)
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (5.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 54ms (Views: 14.5ms | ActiveRecord: 13.5ms)
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:35:17 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.1ms)
+  Rendered users/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:35:17 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 3ms (ActiveRecord: 1.7ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:35:17 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.2ms)
+  Rendered users/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:35:17 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:35:18 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 4ms (ActiveRecord: 1.7ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:35:18 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:35:18 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.3ms)
+  Rendered accounts/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 1.5ms)
+Started POST "/accounts" for 127.0.0.1 at 2016-12-09 07:35:18 -0200
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "account"=>{"name"=>"Cucumber", "balance"=>"1.0", "user_id"=>"77"}}
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT * FROM ACCOUNTS WHERE NAME = 'Cucumber' AND USER_ID = 77[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "user_id", "created_at", "updated_at", "balance") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cucumber"], ["user_id", 77], ["created_at", 2016-12-09 09:35:18 UTC], ["updated_at", 2016-12-09 09:35:18 UTC], ["balance", #<BigDecimal:d85f298,'0.1E1',9(18)>]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/accounts
+Completed 302 Found in 8ms (ActiveRecord: 1.9ms)
+Started GET "/accounts" for 127.0.0.1 at 2016-12-09 07:35:18 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.3ms)
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 77]]
+  Rendered accounts/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.7ms)
+Started GET "/categories/new" for 127.0.0.1 at 2016-12-09 07:35:18 -0200
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (2.9ms)
+  Rendered categories/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 13ms (Views: 6.5ms | ActiveRecord: 1.3ms)
+Started POST "/categories" for 127.0.0.1 at 2016-12-09 07:35:18 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "category"=>{"description"=>"Capybara"}, "commit"=>"Salvar"}
+  [1m[36mCategory Load (0.7ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Capybara', 77, now(), now());[0m
+Redirected to http://www.example.com/categories
+Completed 302 Found in 2ms (ActiveRecord: 0.7ms)
+Started GET "/categories" for 127.0.0.1 at 2016-12-09 07:35:18 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 77], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.8ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:35:18 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (2.1ms)
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 1.3ms)
+Started POST "/transactions" for 127.0.0.1 at 2016-12-09 07:35:18 -0200
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "transaction"=>{"user_id"=>"77", "account_id"=>"", "amount"=>"12.54", "category_id"=>""}, "commit"=>"Incluir"}
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/transactions/new
+Completed 302 Found in 7ms (ActiveRecord: 1.0ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:35:18 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.6ms)
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:35:55 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (245.2ms)
+  Rendered users/index.html.erb within layouts/application (248.9ms)
+Completed 200 OK in 312ms (Views: 274.3ms | ActiveRecord: 6.9ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 5ms (ActiveRecord: 2.5ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (8.5ms)
+  Rendered users/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 5ms (ActiveRecord: 2.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.4ms)
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (5.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 59ms (Views: 18.9ms | ActiveRecord: 11.1ms)
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (7.0ms)
+  Rendered users/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"bruno", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar conta"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[32mINSERT INTO USERS (NAME, EMAIL, PASSWORD, CREATED_AT, UPDATED_AT) VALUES('bruno', 'brncasado@gmail.com', md5('1234'), now(), now());[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 3ms (ActiveRecord: 1.3ms)
+Started GET "/users" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/_form.html.erb (2.3ms)
+  Rendered users/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+Started POST "/login?method=post" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"brncasado@gmail.com", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('brncasado@gmail.com') AND PASSWORD = MD5('1234');[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'brncasado@gmail.com'[0m
+Redirected to http://www.example.com/home
+Completed 302 Found in 4ms (ActiveRecord: 1.7ms)
+Started GET "/home" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.6ms)
+  Rendered accounts/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 1.6ms)
+Started POST "/accounts" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "account"=>{"name"=>"Cucumber", "balance"=>"1.0", "user_id"=>"79"}}
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT * FROM ACCOUNTS WHERE NAME = 'Cucumber' AND USER_ID = 79[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "user_id", "created_at", "updated_at", "balance") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cucumber"], ["user_id", 79], ["created_at", 2016-12-09 09:35:56 UTC], ["updated_at", 2016-12-09 09:35:56 UTC], ["balance", #<BigDecimal:cea80d8,'0.1E1',9(18)>]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/accounts
+Completed 302 Found in 8ms (ActiveRecord: 2.1ms)
+Started GET "/accounts" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.4ms)
+  [1m[36mAccount Load (1.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 79]]
+  Rendered accounts/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 1.4ms)
+Started GET "/categories/new" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (3.3ms)
+  Rendered categories/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 15ms (Views: 7.2ms | ActiveRecord: 2.9ms)
+Started POST "/categories" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "category"=>{"description"=>"Capybara"}, "commit"=>"Salvar"}
+  [1m[36mCategory Load (1.0ms)[0m  [1m[32mINSERT INTO CATEGORIES (DESCRIPTION, USER_ID, CREATED_AT, UPDATED_AT) VALUES('Capybara', 79, now(), now());[0m
+Redirected to http://www.example.com/categories
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+Started GET "/categories" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 79], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 1.5ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.3ms)
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 1.6ms)
+Started POST "/transactions" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "transaction"=>{"user_id"=>"79", "account_id"=>"8", "amount"=>"12.54", "category_id"=>"11"}, "commit"=>"Incluir"}
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "transactions" ("user_id", "account_id", "category_id", "amount") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 79], ["account_id", 8], ["category_id", 11], ["amount", 12.54]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "accounts" SET "balance" = $1, "updated_at" = $2 WHERE "accounts"."id" = $3[0m  [["balance", #<BigDecimal:cbaea94,'0.1354E2',18(27)>], ["updated_at", 2016-12-09 09:35:56 UTC], ["id", 8]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/transactions/new
+Completed 302 Found in 18ms (ActiveRecord: 5.3ms)
+Started GET "/transactions/new" for 127.0.0.1 at 2016-12-09 07:35:56 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (1.9ms)
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 1.1ms)
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m

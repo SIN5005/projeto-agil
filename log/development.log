@@ -7008,3 +7008,76 @@ Processing by CategoriesController#new as
 Completed 200 OK in 42ms (Views: 38.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/logout" for ::1 at 2016-12-09 07:11:48 -0200
+Processing by UsersController#logout as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-12-09 07:11:48 -0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-12-09 07:11:59 -0200
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 71ms (Views: 68.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?method=post" for ::1 at 2016-12-09 07:12:31 -0200
+Processing by LoginController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I7Q7LB1tWFi6nrvxQcP+6CCgLMprMh/cIlbFmUqwcR8P6dQhxflYkJhtq0hv5ugwqSSBjd/UAtLum3XLCdHEYA==", "email"=>"lando@lando", "password"=>"[FILTERED]", "entrar"=>"Entrar", "method"=>"post"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('lando@lando');[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('lando@lando');[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT * FROM USERS WHERE LOWER(EMAIL) = LOWER('lando@lando') AND PASSWORD = MD5('123lando');[0m
+  [1m[36mUser Load (3.7ms)[0m  [1m[33mUPDATE USERS SET RETRIES = 0 WHERE EMAIL = 'lando@lando'[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 37ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/home" for ::1 at 2016-12-09 07:12:31 -0200
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for ::1 at 2016-12-09 07:12:34 -0200
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (4.3ms)
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 ORDER BY "accounts"."id" ASC[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 54ms (Views: 50.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/accounts/new" for ::1 at 2016-12-09 07:13:26 -0200
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (3.6ms)
+  Rendered accounts/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 35ms (Views: 33.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for ::1 at 2016-12-09 07:27:21 -0200
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" INNER JOIN "users" ON "users"."id" = "categories"."user_id" WHERE "users"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1000]]
+  Rendered categories/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 64ms (Views: 60.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/transactions/new" for ::1 at 2016-12-09 07:27:24 -0200
+Processing by TransactionsController#new as HTML
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered layouts/_menu.html.erb (4.6ms)
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" ORDER BY "accounts"."name" ASC[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."description" ASC[0m
+  Rendered transactions/new.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 56ms (Views: 52.6ms | ActiveRecord: 1.3ms)
+
+
