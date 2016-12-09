@@ -1,7 +1,7 @@
 class AccountsController < ApplicationController
     
     def index
-        @contas = Account.order :id
+        @contas = Account.where({user_id: session[:user_id]}).order :id
     end
     
     def create
@@ -24,10 +24,6 @@ class AccountsController < ApplicationController
             flash[:notice] = @account.save[1]
             redirect_to accounts_url
         end
-        
-        #valores = params.require(:account).permit!
-        #Account.create valores
-        #redirect_to accounts_url
     end
     
     def destroy
