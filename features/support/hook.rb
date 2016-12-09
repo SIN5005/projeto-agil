@@ -11,3 +11,17 @@ Before('@registro') do
   click_button('Entrar')
   page.should have_content("Bem vindo")
 end
+
+Before("@registra_conta") do
+  visit "/accounts/new"
+  fill_in("account_name", "Cucumber")
+  fill_in("account_balance", 1.00)
+  click_button("Criar Conta")
+end
+
+Before("@registra_categoria") do
+  visit "/categories/new"
+  fill_in("category_description", "Capybara")
+  click_button("Salvar")
+end
+
