@@ -10,10 +10,10 @@ RSpec.describe Account, type: :model do
      
     context "Salvar conta" do
         it "Salvo com sucesso!" do
-             result = @account.save
+            result = @account.create
              
-             #expect(result[0]).to be_truthy
-             #expect(result[1]).to include("Salvo com sucesso!")
+            expect(result[0]).to be_truthy
+            expect(result[1]).to include("Salvo com sucesso!")
         end
         it "Erro ao salvar" do
             @account.name = nil
@@ -21,15 +21,15 @@ RSpec.describe Account, type: :model do
             @account.user_id = nil
             result = @account.save
 
-            #expect(result[0]).to be_falsey
-            #expect(result[1]).to include("Erro ao salvar")
+            expect(result[0]).to be_falsey
+            expect(result[1]).to include("Erro ao salvar")
         end
     end
      
     context "Validade de uma Conta" do
         it "Conta válida?" do
             expect(@account.valid?).to be_truthy
-         end
+        end
     end
     
     #https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
