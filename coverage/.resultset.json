@@ -1026,22 +1026,6 @@
         4,
         null,
         null,
-        1,
-        0,
-        null,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null,
         null
       ],
       "/home/ubuntu/workspace/projeto-agil/spec/models/transaction_spec.rb": [
@@ -1258,6 +1242,6 @@
         null
       ]
     },
-    "timestamp": 1481468793
+    "timestamp": 1481470137
   }
 }
