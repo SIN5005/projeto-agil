@@ -20,11 +20,11 @@ RSpec.describe AccountsController, type: :controller do
         end
 
         it "shoud return Salvo com sucesso e Nome da conta já utilizado" do
-            #post :create, account: {name: 'Visa', balance: 10.0, user_id: 1}
-            #expect( subject.request.flash[:notice] ).to include("Salvo com sucesso")
+            post :create, account: {name: 'Visa', balance: 10.0, user_id: 1}
+            expect( subject.request.flash[:notice] ).to include("Salvo com sucesso!")
 
-            #post :create, account: {name: 'Visa', balance: 10.0, user_id: 1}
-            #expect( subject.request.flash[:notice] ).to include("Nome da conta já utilizado")
+            post :create, account: {name: 'Visa', balance: 10.0, user_id: 1}
+            expect( subject.request.flash[:notice] ).to include("Nome da conta já utilizado")
         end
 
         it "shoud return O campo 'Saldo' deve ser preenchido" do
