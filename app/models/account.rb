@@ -27,12 +27,6 @@ class Account < ApplicationRecord
                                      Account.connection.quote(user_id)])
     end
     
-#    def order
-#        query = "SELECT * FROM ACCOUNTS WHERE USER_ID = %d ORDER BY 'NAME'"
-#        Account.find_by_sql(query % [Account.connection.quote(user_id)])
-        
-#    end
-    
     def name_already_registered
         not get_by_name.empty?
     end
