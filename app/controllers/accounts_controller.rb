@@ -22,18 +22,17 @@ class AccountsController < ApplicationController
             flash[:notice] = "O campo 'Saldo' deve ser preenchido"
             redirect_to accounts_new_url
         elsif 
-          #flash[:notice] = @account.save[1]
-            flash[:notice] = @account.save
+            flash[:notice] = @account.create
             redirect_to accounts_url
         end
     end
     
     def destroy
-      @transactions = Transaction.find_by(account_id: params[:id])
-      if @transactions
-        @transactions.destroy
-      end
-      Account.destroy params[:id]
-      redirect_to accounts_url
+        @transactions = Transaction.find_by(account_id: params[:id])
+        if @transactions
+            @transactions.destroy
+        end
+            Account.destroy params[:id]
+            redirect_to accounts_url
     end
 end

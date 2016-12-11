@@ -19,7 +19,7 @@ RSpec.describe Account, type: :model do
             @account.name = nil
             @account.balance = nil
             @account.user_id = nil
-            result = @account.save
+            result = @account.create
 
             expect(result[0]).to be_falsey
             expect(result[1]).to include("Erro ao salvar")
